@@ -60,12 +60,8 @@
     <Compile Include="Cep.cs" />
     <Compile Include="Classes\Contato.cs" />
     <Compile Include="Classes\Usuario.cs" />
-<<<<<<< Updated upstream
     <Compile Include="Conexões\conexaoMySql.cs" />
     <Compile Include="Cls_Uteis.cs" />
-=======
-    <Compile Include="Classes\Uteis.cs" />
->>>>>>> Stashed changes
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
