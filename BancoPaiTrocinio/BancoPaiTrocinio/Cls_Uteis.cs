@@ -9,7 +9,7 @@ using System.IO;
 
 namespace BancoPaiTrocinio
 {
-    public class Uteis
+    public class Cls_Uteis
     {
         public static bool ValidaSenhaLogin(string senha)
         {
