@@ -38,5 +38,9 @@ namespace BancoPaiTrocinio
             DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void Frm_Login_Load(object sender, EventArgs e) {
+
+        }
     }
 }
