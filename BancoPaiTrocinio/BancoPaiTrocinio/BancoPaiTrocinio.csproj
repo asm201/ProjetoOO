@@ -57,11 +57,11 @@
     <Compile Include="CadastroCliente.Designer.cs">
       <DependentUpon>CadastroCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Cep.cs" />
+    <Compile Include="Classes\Cep.cs" />
     <Compile Include="Classes\Contato.cs" />
     <Compile Include="Classes\Usuario.cs" />
     <Compile Include="Conexões\conexaoMySql.cs" />
-    <Compile Include="Cls_Uteis.cs" />
+    <Compile Include="Classes\Cls_Uteis.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
