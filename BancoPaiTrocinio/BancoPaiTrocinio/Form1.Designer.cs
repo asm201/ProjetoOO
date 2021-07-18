@@ -88,7 +88,7 @@
             this.clienteToolStripMenuItem,
             this.funcionarioToolStripMenuItem});
             this.conectarToolStripMenuItem.Name = "conectarToolStripMenuItem";
-            this.conectarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.conectarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.conectarToolStripMenuItem.Text = "Conectar";
             // 
             // clienteToolStripMenuItem
@@ -124,21 +124,21 @@
             // cadastrarToolStripMenuItem
             // 
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
             this.cadastrarToolStripMenuItem.Click += new System.EventHandler(this.cadastrarToolStripMenuItem_Click);
             // 
             // desconectarToolStripMenuItem
             // 
             this.desconectarToolStripMenuItem.Name = "desconectarToolStripMenuItem";
-            this.desconectarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.desconectarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.desconectarToolStripMenuItem.Text = "Desconectar";
             this.desconectarToolStripMenuItem.Click += new System.EventHandler(this.desconectarToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -155,19 +155,19 @@
             // depositarToolStripMenuItem
             // 
             this.depositarToolStripMenuItem.Name = "depositarToolStripMenuItem";
-            this.depositarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.depositarToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.depositarToolStripMenuItem.Text = "Depositar";
             // 
             // transferirToolStripMenuItem
             // 
             this.transferirToolStripMenuItem.Name = "transferirToolStripMenuItem";
-            this.transferirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.transferirToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.transferirToolStripMenuItem.Text = "Transferir";
             // 
             // verSaldoToolStripMenuItem
             // 
             this.verSaldoToolStripMenuItem.Name = "verSaldoToolStripMenuItem";
-            this.verSaldoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verSaldoToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.verSaldoToolStripMenuItem.Text = "Ver saldo";
             // 
             // gerenteDeClientesToolStripMenuItem
@@ -193,6 +193,7 @@
             this.Controls.Add(this.Mnu_Principal);
             this.Name = "Frm_BancoPaiTrocinio";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Mnu_Principal.ResumeLayout(false);
             this.Mnu_Principal.PerformLayout();
             this.ResumeLayout(false);

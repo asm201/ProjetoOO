@@ -104,7 +104,7 @@
             // 
             // Txt_Profissao
             // 
-            this.Txt_Profissao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.Txt_Profissao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Profissao.Location = new System.Drawing.Point(341, 36);
             this.Txt_Profissao.Name = "Txt_Profissao";
@@ -193,7 +193,7 @@
             // 
             // Txt_Logradouro
             // 
-            this.Txt_Logradouro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.Txt_Logradouro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Logradouro.Location = new System.Drawing.Point(144, 39);
             this.Txt_Logradouro.Name = "Txt_Logradouro";
@@ -301,7 +301,7 @@
             // 
             // Txt_NomeCliente
             // 
-            this.Txt_NomeCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.Txt_NomeCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_NomeCliente.Location = new System.Drawing.Point(8, 37);
             this.Txt_NomeCliente.Name = "Txt_NomeCliente";
@@ -319,7 +319,7 @@
             // 
             // Txt_CPF
             // 
-            this.Txt_CPF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.Txt_CPF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_CPF.Location = new System.Drawing.Point(11, 76);
             this.Txt_CPF.Name = "Txt_CPF";
@@ -361,7 +361,7 @@
             // 
             // Txt_SenhaConfirmacao
             // 
-            this.Txt_SenhaConfirmacao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.Txt_SenhaConfirmacao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_SenhaConfirmacao.Location = new System.Drawing.Point(373, 39);
             this.Txt_SenhaConfirmacao.Name = "Txt_SenhaConfirmacao";
@@ -379,7 +379,7 @@
             // 
             // Txt_Senha
             // 
-            this.Txt_Senha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.Txt_Senha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Senha.Location = new System.Drawing.Point(373, 13);
             this.Txt_Senha.Name = "Txt_Senha";
@@ -397,7 +397,7 @@
             // 
             // Txt_Usuario
             // 
-            this.Txt_Usuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.Txt_Usuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Usuario.Location = new System.Drawing.Point(6, 32);
             this.Txt_Usuario.Name = "Txt_Usuario";
@@ -424,7 +424,7 @@
             this.salvarToolStripButton.Text = "&Salvar";
             this.salvarToolStripButton.Click += new System.EventHandler(this.salvarToolStripButton_Click);
             // 
-            // CadastroClientes
+            // CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -433,7 +433,7 @@
             this.Controls.Add(this.Grp_Endereco);
             this.Controls.Add(this.Grp_DadosPessoais);
             this.Controls.Add(this.Grp_Cadastro);
-            this.Name = "CadastroClientes";
+            this.Name = "CadastroCliente";
             this.Size = new System.Drawing.Size(781, 495);
             this.Grp_Outros.ResumeLayout(false);
             this.Grp_Outros.PerformLayout();
@@ -483,13 +483,13 @@
         private System.Windows.Forms.Label Lbl_CPF;
         private System.Windows.Forms.GroupBox Grp_Cadastro;
         private System.Windows.Forms.ToolStrip Tls_Principal;
-        private System.Windows.Forms.ToolStripButton salvarToolStripButton;
         private System.Windows.Forms.Label Lbl_SenhaConfirmacao;
         private System.Windows.Forms.TextBox Txt_SenhaConfirmacao;
         private System.Windows.Forms.Label Lbl_Senha;
         private System.Windows.Forms.TextBox Txt_Senha;
         private System.Windows.Forms.Label Lbl_Usuario;
         private System.Windows.Forms.TextBox Txt_Usuario;
+        private System.Windows.Forms.ToolStripButton salvarToolStripButton;
     }
 }
 
