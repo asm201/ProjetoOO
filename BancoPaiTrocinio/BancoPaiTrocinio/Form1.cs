@@ -269,6 +269,9 @@ namespace BancoPaiTrocinio
             Tbc_Aplicacoes.TabPages.Remove(tb);
         }
 
+        private void Frm_BancoPaiTrocinio_Load(object sender, EventArgs e) {
+
+        }
     }
 }
 

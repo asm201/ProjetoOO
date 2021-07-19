@@ -194,6 +194,7 @@
             this.Name = "Frm_BancoPaiTrocinio";
             this.Text = "Banco Pai Trocinio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Frm_BancoPaiTrocinio_Load);
             this.Mnu_Principal.ResumeLayout(false);
             this.Mnu_Principal.PerformLayout();
             this.ResumeLayout(false);

@@ -168,6 +168,7 @@ namespace BancoPaiTrocinio {
                 DataTable query2 = connect.RetornaSQL($"SELECT ctt_id FROM contato WHERE ctt_id_usuario = {query.Rows[0]["u_id"]};");
                 connect.ExecutaSQL($"UPDATE usuario SET u_ctt_id = {query2.Rows[0]["ctt_id"]} WHERE u_cpf = '{Convert.ToString(Txt_CPF.Text)}';");
                 MessageBox.Show("Cadastro realizado com sucesso!");
+                LimparFormulario();
             } catch (Exception ex) {
                 MessageBox.Show("Erro : " + ex.Message);
             }
