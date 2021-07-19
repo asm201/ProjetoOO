@@ -28,9 +28,62 @@ namespace BancoPaiTrocinio.Classes
 
         [Required(ErrorMessage = "RG é obrigatorio")]
         public string u_senha { get; set; }
+
+        [Required(ErrorMessage = "CEP é obrigatorio")]
+        [RegularExpression("([0-9]+)", ErrorMessage = "CEP do Cliente somente aceita valores numéricos")]
+        [StringLength(8, MinimumLength = 8, ErrorMessage = "CEP do Cliente deve ter 8 digitos")]
+        public string u_cep { get; set; }
+
+        [Required(ErrorMessage = "Logradouro é obrigatorio")]
+        [StringLength(100, ErrorMessage = "Logradouro deve ter no máximo 100 digitos")]
+        public string u_logradouro { get; set; }
+
+        [Required(ErrorMessage = "Complemento é obrigatorio")]
+        [StringLength(100, ErrorMessage = "Complemento deve ter no máximo 100 digitos")]
+        public string u_complemento { get; set; }
+
+        [Required(ErrorMessage = "Bairro é obrigatorio")]
+        [StringLength(50, ErrorMessage = "Bairro deve ter no máximo 50 digitos")]
+        public string u_bairro { get; set; }
+
+        [Required(ErrorMessage = "Cidade é obrigatorio")]
+        [StringLength(50, ErrorMessage = "Cidade deve ter no máximo 50 digitos")]
+        public string u_cidade { get; set; }
+
+        [Required(ErrorMessage = "Estado é obrigatorio")]
+        [StringLength(50, ErrorMessage = "Estado deve ter no máximo 50 digitos")]
+        public string u_estado { get; set; }
+
         public int u_id_cliente { get; set; }
         public int u_id_func { get; set; }
         public int u_ctt_id { get; set; }
 
+        public void ValidaClasse()
+        {
+            ValidationContext context = new ValidationContext(this, serviceProvider: null, items: null);
+            List<ValidationResult> results = new List<ValidationResult>();
+            bool isValid = Validator.TryValidateObject(this, context, results, true);
+
+            if (isValid == false)
+            {
+                StringBuilder sbrErrors = new StringBuilder();
+                foreach (var validationResult in results)
+                {
+                    sbrErrors.AppendLine(validationResult.ErrorMessage);
+                }
+                throw new ValidationException(sbrErrors.ToString());
+            }
+        }
+
+        public void ValidaComplemento()
+        {
+            bool validaCPF = Cls_Uteis.Valida(this.u_cpf);
+            if (validaCPF == false)
+            {
+                throw new Exception("Cpf invalido!");
+            }
+        }
+
     }
+
 }

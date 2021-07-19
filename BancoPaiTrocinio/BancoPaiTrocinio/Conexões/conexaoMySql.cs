@@ -8,27 +8,33 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace BancoPaiTrocinio.Conexões {
-    class ConexaoMySql {
+    class ConexaoMySql
+    {
 
         public static MySqlConnection conexao;
         public static MySqlCommand command;
         public static MySqlDataAdapter adapter;
 
-        public static void Conectar() {
+        public static void Conectar()
+        {
             conexao = new MySqlConnection("server=127.0.0.1;port=3306;database=banco_db;uid=root;pwd=;");
-            try {
+            try
+            {
                 conexao.Open();
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 MessageBox.Show(e.Message.ToString());
             }
         }
 
-        public static void Desconectar() {
+        public static void Desconectar()
+        {
             conexao.Close();
         }
 
-        public int ExecutaSQL(string instrucaoSQL) {
+        public int ExecutaSQL(string instrucaoSQL)
+        {
             Conectar();
             command = new MySqlCommand(instrucaoSQL, conexao);
             command.ExecuteNonQuery();
@@ -36,7 +42,8 @@ namespace BancoPaiTrocinio.Conexões {
             return 1;
         }
 
-        public DataTable RetornaSQL(string instrucaoSQL) {
+        public DataTable RetornaSQL(string instrucaoSQL)
+        {
             Conectar();
             MySqlDataAdapter adapter = new MySqlDataAdapter(instrucaoSQL, conexao);
             DataTable dt = new DataTable();

@@ -360,7 +360,6 @@
             this.Grp_Cadastro.TabIndex = 56;
             this.Grp_Cadastro.TabStop = false;
             this.Grp_Cadastro.Text = "groupBox1";
-            this.Grp_Cadastro.Enter += new System.EventHandler(this.Grp_Cadastro_Enter);
             // 
             // Lbl_SenhaConfirmacao
             // 
@@ -379,6 +378,7 @@
             this.Txt_SenhaConfirmacao.Name = "Txt_SenhaConfirmacao";
             this.Txt_SenhaConfirmacao.Size = new System.Drawing.Size(300, 20);
             this.Txt_SenhaConfirmacao.TabIndex = 3;
+            this.Txt_SenhaConfirmacao.UseSystemPasswordChar = true;
             // 
             // Lbl_Senha
             // 
@@ -397,6 +397,7 @@
             this.Txt_Senha.Name = "Txt_Senha";
             this.Txt_Senha.Size = new System.Drawing.Size(300, 20);
             this.Txt_Senha.TabIndex = 2;
+            this.Txt_Senha.UseSystemPasswordChar = true;
             // 
             // Lbl_Usuario
             // 
