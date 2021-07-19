@@ -192,7 +192,7 @@
             this.Controls.Add(this.Tbc_Aplicacoes);
             this.Controls.Add(this.Mnu_Principal);
             this.Name = "Frm_BancoPaiTrocinio";
-            this.Text = "Form1";
+            this.Text = "Banco Pai Trocinio";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Mnu_Principal.ResumeLayout(false);
             this.Mnu_Principal.PerformLayout();

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroCliente));
             this.Grp_Outros = new System.Windows.Forms.GroupBox();
             this.Lbl_Telefone = new System.Windows.Forms.Label();
             this.Txt_Telefone = new System.Windows.Forms.TextBox();
@@ -59,21 +58,22 @@
             this.Txt_Senha = new System.Windows.Forms.TextBox();
             this.Lbl_Usuario = new System.Windows.Forms.Label();
             this.Txt_Usuario = new System.Windows.Forms.TextBox();
-            this.Tls_Principal = new System.Windows.Forms.ToolStrip();
-            this.salvarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.Cadastrar = new System.Windows.Forms.Button();
             this.Cancelar = new System.Windows.Forms.Button();
+            this.Txt_Rg = new System.Windows.Forms.TextBox();
+            this.Lbl_Rg = new System.Windows.Forms.Label();
+            this.Txt_Email = new System.Windows.Forms.TextBox();
+            this.Lbl_Email = new System.Windows.Forms.Label();
+            this.Txt_Celular = new System.Windows.Forms.TextBox();
+            this.Lbl_Celular = new System.Windows.Forms.Label();
             this.Grp_Outros.SuspendLayout();
             this.Grp_Endereco.SuspendLayout();
             this.Grp_DadosPessoais.SuspendLayout();
             this.Grp_Cadastro.SuspendLayout();
-            this.Tls_Principal.SuspendLayout();
             this.SuspendLayout();
             // 
             // Grp_Outros
             // 
-            this.Grp_Outros.Controls.Add(this.Lbl_Telefone);
-            this.Grp_Outros.Controls.Add(this.Txt_Telefone);
             this.Grp_Outros.Controls.Add(this.Txt_Profissao);
             this.Grp_Outros.Controls.Add(this.Lbl_Profissao);
             this.Grp_Outros.Location = new System.Drawing.Point(3, 423);
@@ -86,7 +86,7 @@
             // Lbl_Telefone
             // 
             this.Lbl_Telefone.AutoSize = true;
-            this.Lbl_Telefone.Location = new System.Drawing.Point(6, 20);
+            this.Lbl_Telefone.Location = new System.Drawing.Point(282, 60);
             this.Lbl_Telefone.Name = "Lbl_Telefone";
             this.Lbl_Telefone.Size = new System.Drawing.Size(39, 13);
             this.Lbl_Telefone.TabIndex = 42;
@@ -94,16 +94,16 @@
             // 
             // Txt_Telefone
             // 
-            this.Txt_Telefone.Location = new System.Drawing.Point(6, 36);
+            this.Txt_Telefone.Location = new System.Drawing.Point(285, 76);
             this.Txt_Telefone.Name = "Txt_Telefone";
-            this.Txt_Telefone.Size = new System.Drawing.Size(328, 20);
+            this.Txt_Telefone.Size = new System.Drawing.Size(191, 20);
             this.Txt_Telefone.TabIndex = 14;
             // 
             // Txt_Profissao
             // 
             this.Txt_Profissao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_Profissao.Location = new System.Drawing.Point(341, 36);
+            this.Txt_Profissao.Location = new System.Drawing.Point(6, 36);
             this.Txt_Profissao.Name = "Txt_Profissao";
             this.Txt_Profissao.Size = new System.Drawing.Size(338, 20);
             this.Txt_Profissao.TabIndex = 15;
@@ -111,7 +111,7 @@
             // Lbl_Profissao
             // 
             this.Lbl_Profissao.AutoSize = true;
-            this.Lbl_Profissao.Location = new System.Drawing.Point(339, 20);
+            this.Lbl_Profissao.Location = new System.Drawing.Point(6, 20);
             this.Lbl_Profissao.Name = "Lbl_Profissao";
             this.Lbl_Profissao.Size = new System.Drawing.Size(39, 13);
             this.Lbl_Profissao.TabIndex = 46;
@@ -240,13 +240,21 @@
             // 
             // Grp_DadosPessoais
             // 
+            this.Grp_DadosPessoais.Controls.Add(this.Lbl_Celular);
+            this.Grp_DadosPessoais.Controls.Add(this.Txt_Celular);
+            this.Grp_DadosPessoais.Controls.Add(this.Lbl_Email);
+            this.Grp_DadosPessoais.Controls.Add(this.Txt_Email);
+            this.Grp_DadosPessoais.Controls.Add(this.Lbl_Telefone);
+            this.Grp_DadosPessoais.Controls.Add(this.Lbl_Rg);
+            this.Grp_DadosPessoais.Controls.Add(this.Txt_Telefone);
+            this.Grp_DadosPessoais.Controls.Add(this.Txt_Rg);
             this.Grp_DadosPessoais.Controls.Add(this.Txt_NomeCliente);
             this.Grp_DadosPessoais.Controls.Add(this.Lbl_NomeCliente);
             this.Grp_DadosPessoais.Controls.Add(this.Txt_CPF);
             this.Grp_DadosPessoais.Controls.Add(this.Lbl_CPF);
             this.Grp_DadosPessoais.Location = new System.Drawing.Point(3, 101);
             this.Grp_DadosPessoais.Name = "Grp_DadosPessoais";
-            this.Grp_DadosPessoais.Size = new System.Drawing.Size(590, 160);
+            this.Grp_DadosPessoais.Size = new System.Drawing.Size(685, 160);
             this.Grp_DadosPessoais.TabIndex = 57;
             this.Grp_DadosPessoais.TabStop = false;
             this.Grp_DadosPessoais.Text = "groupBox1";
@@ -258,7 +266,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_NomeCliente.Location = new System.Drawing.Point(8, 37);
             this.Txt_NomeCliente.Name = "Txt_NomeCliente";
-            this.Txt_NomeCliente.Size = new System.Drawing.Size(576, 20);
+            this.Txt_NomeCliente.Size = new System.Drawing.Size(671, 20);
             this.Txt_NomeCliente.TabIndex = 4;
             // 
             // Lbl_NomeCliente
@@ -276,7 +284,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_CPF.Location = new System.Drawing.Point(11, 76);
             this.Txt_CPF.Name = "Txt_CPF";
-            this.Txt_CPF.Size = new System.Drawing.Size(169, 20);
+            this.Txt_CPF.Size = new System.Drawing.Size(241, 20);
             this.Txt_CPF.TabIndex = 4;
             // 
             // Lbl_CPF
@@ -296,9 +304,9 @@
             this.Grp_Cadastro.Controls.Add(this.Txt_Senha);
             this.Grp_Cadastro.Controls.Add(this.Lbl_Usuario);
             this.Grp_Cadastro.Controls.Add(this.Txt_Usuario);
-            this.Grp_Cadastro.Location = new System.Drawing.Point(3, 28);
+            this.Grp_Cadastro.Location = new System.Drawing.Point(3, 3);
             this.Grp_Cadastro.Name = "Grp_Cadastro";
-            this.Grp_Cadastro.Size = new System.Drawing.Size(685, 66);
+            this.Grp_Cadastro.Size = new System.Drawing.Size(685, 91);
             this.Grp_Cadastro.TabIndex = 56;
             this.Grp_Cadastro.TabStop = false;
             this.Grp_Cadastro.Text = "groupBox1";
@@ -306,7 +314,7 @@
             // Lbl_SenhaConfirmacao
             // 
             this.Lbl_SenhaConfirmacao.AutoSize = true;
-            this.Lbl_SenhaConfirmacao.Location = new System.Drawing.Point(328, 42);
+            this.Lbl_SenhaConfirmacao.Location = new System.Drawing.Point(282, 42);
             this.Lbl_SenhaConfirmacao.Name = "Lbl_SenhaConfirmacao";
             this.Lbl_SenhaConfirmacao.Size = new System.Drawing.Size(39, 13);
             this.Lbl_SenhaConfirmacao.TabIndex = 55;
@@ -324,7 +332,7 @@
             // Lbl_Senha
             // 
             this.Lbl_Senha.AutoSize = true;
-            this.Lbl_Senha.Location = new System.Drawing.Point(328, 16);
+            this.Lbl_Senha.Location = new System.Drawing.Point(322, 16);
             this.Lbl_Senha.Name = "Lbl_Senha";
             this.Lbl_Senha.Size = new System.Drawing.Size(39, 13);
             this.Lbl_Senha.TabIndex = 53;
@@ -342,7 +350,7 @@
             // Lbl_Usuario
             // 
             this.Lbl_Usuario.AutoSize = true;
-            this.Lbl_Usuario.Location = new System.Drawing.Point(8, 16);
+            this.Lbl_Usuario.Location = new System.Drawing.Point(3, 20);
             this.Lbl_Usuario.Name = "Lbl_Usuario";
             this.Lbl_Usuario.Size = new System.Drawing.Size(39, 13);
             this.Lbl_Usuario.TabIndex = 51;
@@ -352,30 +360,10 @@
             // 
             this.Txt_Usuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_Usuario.Location = new System.Drawing.Point(6, 32);
+            this.Txt_Usuario.Location = new System.Drawing.Point(6, 36);
             this.Txt_Usuario.Name = "Txt_Usuario";
             this.Txt_Usuario.Size = new System.Drawing.Size(246, 20);
             this.Txt_Usuario.TabIndex = 1;
-            // 
-            // Tls_Principal
-            // 
-            this.Tls_Principal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salvarToolStripButton});
-            this.Tls_Principal.Location = new System.Drawing.Point(0, 0);
-            this.Tls_Principal.Name = "Tls_Principal";
-            this.Tls_Principal.Size = new System.Drawing.Size(781, 25);
-            this.Tls_Principal.TabIndex = 60;
-            this.Tls_Principal.Text = "toolStrip1";
-            // 
-            // salvarToolStripButton
-            // 
-            this.salvarToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.salvarToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("salvarToolStripButton.Image")));
-            this.salvarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.salvarToolStripButton.Name = "salvarToolStripButton";
-            this.salvarToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.salvarToolStripButton.Text = "&Salvar";
-            this.salvarToolStripButton.Click += new System.EventHandler(this.salvarToolStripButton_Click);
             // 
             // Cadastrar
             // 
@@ -397,13 +385,62 @@
             this.Cancelar.UseVisualStyleBackColor = true;
             this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
+            // Txt_Rg
+            // 
+            this.Txt_Rg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Txt_Rg.Location = new System.Drawing.Point(11, 114);
+            this.Txt_Rg.Name = "Txt_Rg";
+            this.Txt_Rg.Size = new System.Drawing.Size(241, 20);
+            this.Txt_Rg.TabIndex = 31;
+            // 
+            // Lbl_Rg
+            // 
+            this.Lbl_Rg.AutoSize = true;
+            this.Lbl_Rg.Location = new System.Drawing.Point(8, 99);
+            this.Lbl_Rg.Name = "Lbl_Rg";
+            this.Lbl_Rg.Size = new System.Drawing.Size(39, 13);
+            this.Lbl_Rg.TabIndex = 32;
+            this.Lbl_Rg.Text = "Label1";
+            // 
+            // Txt_Email
+            // 
+            this.Txt_Email.Location = new System.Drawing.Point(285, 114);
+            this.Txt_Email.Name = "Txt_Email";
+            this.Txt_Email.Size = new System.Drawing.Size(394, 20);
+            this.Txt_Email.TabIndex = 43;
+            // 
+            // Lbl_Email
+            // 
+            this.Lbl_Email.AutoSize = true;
+            this.Lbl_Email.Location = new System.Drawing.Point(282, 98);
+            this.Lbl_Email.Name = "Lbl_Email";
+            this.Lbl_Email.Size = new System.Drawing.Size(39, 13);
+            this.Lbl_Email.TabIndex = 44;
+            this.Lbl_Email.Text = "Label1";
+            // 
+            // Txt_Celular
+            // 
+            this.Txt_Celular.Location = new System.Drawing.Point(491, 76);
+            this.Txt_Celular.Name = "Txt_Celular";
+            this.Txt_Celular.Size = new System.Drawing.Size(188, 20);
+            this.Txt_Celular.TabIndex = 45;
+            // 
+            // Lbl_Celular
+            // 
+            this.Lbl_Celular.AutoSize = true;
+            this.Lbl_Celular.Location = new System.Drawing.Point(488, 60);
+            this.Lbl_Celular.Name = "Lbl_Celular";
+            this.Lbl_Celular.Size = new System.Drawing.Size(39, 13);
+            this.Lbl_Celular.TabIndex = 46;
+            this.Lbl_Celular.Text = "Label1";
+            // 
             // CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.Cadastrar);
-            this.Controls.Add(this.Tls_Principal);
             this.Controls.Add(this.Grp_Outros);
             this.Controls.Add(this.Grp_Endereco);
             this.Controls.Add(this.Grp_DadosPessoais);
@@ -419,10 +456,7 @@
             this.Grp_DadosPessoais.PerformLayout();
             this.Grp_Cadastro.ResumeLayout(false);
             this.Grp_Cadastro.PerformLayout();
-            this.Tls_Principal.ResumeLayout(false);
-            this.Tls_Principal.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -452,16 +486,20 @@
         private System.Windows.Forms.TextBox Txt_CPF;
         private System.Windows.Forms.Label Lbl_CPF;
         private System.Windows.Forms.GroupBox Grp_Cadastro;
-        private System.Windows.Forms.ToolStrip Tls_Principal;
         private System.Windows.Forms.Label Lbl_SenhaConfirmacao;
         private System.Windows.Forms.TextBox Txt_SenhaConfirmacao;
         private System.Windows.Forms.Label Lbl_Senha;
         private System.Windows.Forms.TextBox Txt_Senha;
         private System.Windows.Forms.Label Lbl_Usuario;
         private System.Windows.Forms.TextBox Txt_Usuario;
-        private System.Windows.Forms.ToolStripButton salvarToolStripButton;
         private System.Windows.Forms.Button Cadastrar;
         private System.Windows.Forms.Button Cancelar;
+        private System.Windows.Forms.Label Lbl_Celular;
+        private System.Windows.Forms.TextBox Txt_Celular;
+        private System.Windows.Forms.Label Lbl_Email;
+        private System.Windows.Forms.TextBox Txt_Email;
+        private System.Windows.Forms.Label Lbl_Rg;
+        private System.Windows.Forms.TextBox Txt_Rg;
     }
 }
 

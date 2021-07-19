@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 using MySql.Data.MySqlClient;
+using BancoPaiTrocinio.Classes;
 
 namespace BancoPaiTrocinio
 {
@@ -22,9 +23,12 @@ namespace BancoPaiTrocinio
             Grp_DadosPessoais.Text = "Dados Pessoais";
             Grp_Endereco.Text = "Endereço";
             Grp_Outros.Text = "Outros";
+            Lbl_Celular.Text = "Celular";
+            Lbl_Email.Text = "E-mail";
+            Lbl_Rg.Text = "RG";
             Lbl_Usuario.Text = "Usuario";
             Lbl_Senha.Text = "Senha";
-            Lbl_Senha.Text = "Confirmar Senha";
+            Lbl_SenhaConfirmacao.Text = "Confirmar Senha";
             Lbl_Bairro.Text = "Bairro";
             Lbl_CEP.Text = "CEP";
             Lbl_Complemento.Text = "Complemento";
@@ -66,7 +70,6 @@ namespace BancoPaiTrocinio
             Cmb_Estados.Items.Add("Sergipe(SE)");
             Cmb_Estados.Items.Add("Tocantins(TO)");
 
-            Tls_Principal.Items[0].ToolTipText = "Capturar um cliente já cadastrado na base";
 
 
             LimparFormulario();
@@ -77,6 +80,9 @@ namespace BancoPaiTrocinio
             Txt_Usuario.Text = "";
             Txt_Senha.Text = "";
             Txt_SenhaConfirmacao.Text = "";
+            Txt_Celular.Text = "";
+            Txt_Rg.Text = "";
+            Txt_Email.Text = "";
             Txt_NomeCliente.Text = "";
             Txt_CPF.Text = "";
             Cmb_Estados.SelectedIndex = -1;
@@ -87,7 +93,7 @@ namespace BancoPaiTrocinio
             Txt_Bairro.Text = "";
             Txt_Telefone.Text = "";
             Txt_Profissao.Text = "";
-            
+
         }
 
         private void Txt_CEP_Leave(object sender, EventArgs e)
@@ -120,6 +126,36 @@ namespace BancoPaiTrocinio
             }
         }
 
+        //Usuario LeituraFormulario()
+        //{
+        //    Usuario u = new Usuario();
+        //    u.u_nome = Txt_NomeCliente.Text;
+
+        //    u.u_cpf = Txt_CPF.Text;
+        //    //termino isso mais tarde
+
+        //    u.u_cep = Txt_CEP.Text;
+        //    u.Logradouro = Txt_Logradouro.Text;
+        //    u.Complemento = Txt_Complemento.Text;
+        //    c.Cidade = Txt_Cidade.Text;
+        //    c.Bairro = Txt_Bairro.Text;
+        //    if (Cmb_Estados.SelectedIndex < 0)
+        //    {
+        //        c.Estado = "";
+        //    }
+        //    else
+        //    {
+        //        c.Estado = Cmb_Estados.Items[Cmb_Estados.SelectedIndex].ToString();
+        //    }
+
+        //    c.Telefone = Txt_Telefone.Text;
+
+        //    c.Profissao = Txt_Profissao.Text;
+
+        //    return c;
+        //}
+
+
         private void salvarToolStripButton_Click(object sender, EventArgs e)
         {
 
@@ -133,8 +169,10 @@ namespace BancoPaiTrocinio
 
         }
 
-        private void cadastrar_Click(object sender, EventArgs e) {
-            try {
+        private void cadastrar_Click(object sender, EventArgs e) 
+        {
+            try 
+            {
                 connect.executaSQL("INSERT INTO TABLE 'usuario' () VALUES ()");
                 MessageBox.Show("Cadastro realizado com sucesso!");
             }
@@ -143,8 +181,9 @@ namespace BancoPaiTrocinio
             }
         }
 
-        private void Cancelar_Click(object sender, EventArgs e) {
- 
+        private void Cancelar_Click(object sender, EventArgs e) 
+        {
+
         }
     }
 }
