@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.Grp_Outros = new System.Windows.Forms.GroupBox();
-            this.Lbl_Telefone = new System.Windows.Forms.Label();
-            this.Txt_Telefone = new System.Windows.Forms.TextBox();
             this.Txt_Profissao = new System.Windows.Forms.TextBox();
             this.Lbl_Profissao = new System.Windows.Forms.Label();
+            this.Lbl_Telefone = new System.Windows.Forms.Label();
+            this.Txt_Telefone = new System.Windows.Forms.TextBox();
             this.Grp_Endereco = new System.Windows.Forms.GroupBox();
             this.Cmb_Estados = new System.Windows.Forms.ComboBox();
             this.Lbl_Cidade = new System.Windows.Forms.Label();
@@ -47,6 +47,12 @@
             this.Txt_Bairro = new System.Windows.Forms.TextBox();
             this.Lbl_Estado = new System.Windows.Forms.Label();
             this.Grp_DadosPessoais = new System.Windows.Forms.GroupBox();
+            this.Lbl_Celular = new System.Windows.Forms.Label();
+            this.Txt_Celular = new System.Windows.Forms.TextBox();
+            this.Lbl_Email = new System.Windows.Forms.Label();
+            this.Txt_Email = new System.Windows.Forms.TextBox();
+            this.Lbl_Rg = new System.Windows.Forms.Label();
+            this.Txt_Rg = new System.Windows.Forms.TextBox();
             this.Txt_NomeCliente = new System.Windows.Forms.TextBox();
             this.Lbl_NomeCliente = new System.Windows.Forms.Label();
             this.Txt_CPF = new System.Windows.Forms.TextBox();
@@ -60,12 +66,6 @@
             this.Txt_Usuario = new System.Windows.Forms.TextBox();
             this.Cadastrar = new System.Windows.Forms.Button();
             this.Cancelar = new System.Windows.Forms.Button();
-            this.Txt_Rg = new System.Windows.Forms.TextBox();
-            this.Lbl_Rg = new System.Windows.Forms.Label();
-            this.Txt_Email = new System.Windows.Forms.TextBox();
-            this.Lbl_Email = new System.Windows.Forms.Label();
-            this.Txt_Celular = new System.Windows.Forms.TextBox();
-            this.Lbl_Celular = new System.Windows.Forms.Label();
             this.Grp_Outros.SuspendLayout();
             this.Grp_Endereco.SuspendLayout();
             this.Grp_DadosPessoais.SuspendLayout();
@@ -82,22 +82,6 @@
             this.Grp_Outros.TabIndex = 59;
             this.Grp_Outros.TabStop = false;
             this.Grp_Outros.Text = "groupBox1";
-            // 
-            // Lbl_Telefone
-            // 
-            this.Lbl_Telefone.AutoSize = true;
-            this.Lbl_Telefone.Location = new System.Drawing.Point(282, 60);
-            this.Lbl_Telefone.Name = "Lbl_Telefone";
-            this.Lbl_Telefone.Size = new System.Drawing.Size(39, 13);
-            this.Lbl_Telefone.TabIndex = 42;
-            this.Lbl_Telefone.Text = "Label1";
-            // 
-            // Txt_Telefone
-            // 
-            this.Txt_Telefone.Location = new System.Drawing.Point(285, 76);
-            this.Txt_Telefone.Name = "Txt_Telefone";
-            this.Txt_Telefone.Size = new System.Drawing.Size(191, 20);
-            this.Txt_Telefone.TabIndex = 14;
             // 
             // Txt_Profissao
             // 
@@ -116,6 +100,22 @@
             this.Lbl_Profissao.Size = new System.Drawing.Size(39, 13);
             this.Lbl_Profissao.TabIndex = 46;
             this.Lbl_Profissao.Text = "Label1";
+            // 
+            // Lbl_Telefone
+            // 
+            this.Lbl_Telefone.AutoSize = true;
+            this.Lbl_Telefone.Location = new System.Drawing.Point(282, 60);
+            this.Lbl_Telefone.Name = "Lbl_Telefone";
+            this.Lbl_Telefone.Size = new System.Drawing.Size(39, 13);
+            this.Lbl_Telefone.TabIndex = 42;
+            this.Lbl_Telefone.Text = "Label1";
+            // 
+            // Txt_Telefone
+            // 
+            this.Txt_Telefone.Location = new System.Drawing.Point(285, 76);
+            this.Txt_Telefone.Name = "Txt_Telefone";
+            this.Txt_Telefone.Size = new System.Drawing.Size(191, 20);
+            this.Txt_Telefone.TabIndex = 14;
             // 
             // Grp_Endereco
             // 
@@ -260,6 +260,56 @@
             this.Grp_DadosPessoais.Text = "groupBox1";
             this.Grp_DadosPessoais.Enter += new System.EventHandler(this.Grp_DadosPessoais_Enter);
             // 
+            // Lbl_Celular
+            // 
+            this.Lbl_Celular.AutoSize = true;
+            this.Lbl_Celular.Location = new System.Drawing.Point(488, 60);
+            this.Lbl_Celular.Name = "Lbl_Celular";
+            this.Lbl_Celular.Size = new System.Drawing.Size(39, 13);
+            this.Lbl_Celular.TabIndex = 46;
+            this.Lbl_Celular.Text = "Label1";
+            // 
+            // Txt_Celular
+            // 
+            this.Txt_Celular.Location = new System.Drawing.Point(491, 76);
+            this.Txt_Celular.Name = "Txt_Celular";
+            this.Txt_Celular.Size = new System.Drawing.Size(188, 20);
+            this.Txt_Celular.TabIndex = 45;
+            // 
+            // Lbl_Email
+            // 
+            this.Lbl_Email.AutoSize = true;
+            this.Lbl_Email.Location = new System.Drawing.Point(282, 98);
+            this.Lbl_Email.Name = "Lbl_Email";
+            this.Lbl_Email.Size = new System.Drawing.Size(39, 13);
+            this.Lbl_Email.TabIndex = 44;
+            this.Lbl_Email.Text = "Label1";
+            // 
+            // Txt_Email
+            // 
+            this.Txt_Email.Location = new System.Drawing.Point(285, 114);
+            this.Txt_Email.Name = "Txt_Email";
+            this.Txt_Email.Size = new System.Drawing.Size(394, 20);
+            this.Txt_Email.TabIndex = 43;
+            // 
+            // Lbl_Rg
+            // 
+            this.Lbl_Rg.AutoSize = true;
+            this.Lbl_Rg.Location = new System.Drawing.Point(8, 99);
+            this.Lbl_Rg.Name = "Lbl_Rg";
+            this.Lbl_Rg.Size = new System.Drawing.Size(39, 13);
+            this.Lbl_Rg.TabIndex = 32;
+            this.Lbl_Rg.Text = "Label1";
+            // 
+            // Txt_Rg
+            // 
+            this.Txt_Rg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Txt_Rg.Location = new System.Drawing.Point(11, 114);
+            this.Txt_Rg.Name = "Txt_Rg";
+            this.Txt_Rg.Size = new System.Drawing.Size(241, 20);
+            this.Txt_Rg.TabIndex = 31;
+            // 
             // Txt_NomeCliente
             // 
             this.Txt_NomeCliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -310,6 +360,7 @@
             this.Grp_Cadastro.TabIndex = 56;
             this.Grp_Cadastro.TabStop = false;
             this.Grp_Cadastro.Text = "groupBox1";
+            this.Grp_Cadastro.Enter += new System.EventHandler(this.Grp_Cadastro_Enter);
             // 
             // Lbl_SenhaConfirmacao
             // 
@@ -384,56 +435,6 @@
             this.Cancelar.Text = "Cancelar";
             this.Cancelar.UseVisualStyleBackColor = true;
             this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
-            // 
-            // Txt_Rg
-            // 
-            this.Txt_Rg.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_Rg.Location = new System.Drawing.Point(11, 114);
-            this.Txt_Rg.Name = "Txt_Rg";
-            this.Txt_Rg.Size = new System.Drawing.Size(241, 20);
-            this.Txt_Rg.TabIndex = 31;
-            // 
-            // Lbl_Rg
-            // 
-            this.Lbl_Rg.AutoSize = true;
-            this.Lbl_Rg.Location = new System.Drawing.Point(8, 99);
-            this.Lbl_Rg.Name = "Lbl_Rg";
-            this.Lbl_Rg.Size = new System.Drawing.Size(39, 13);
-            this.Lbl_Rg.TabIndex = 32;
-            this.Lbl_Rg.Text = "Label1";
-            // 
-            // Txt_Email
-            // 
-            this.Txt_Email.Location = new System.Drawing.Point(285, 114);
-            this.Txt_Email.Name = "Txt_Email";
-            this.Txt_Email.Size = new System.Drawing.Size(394, 20);
-            this.Txt_Email.TabIndex = 43;
-            // 
-            // Lbl_Email
-            // 
-            this.Lbl_Email.AutoSize = true;
-            this.Lbl_Email.Location = new System.Drawing.Point(282, 98);
-            this.Lbl_Email.Name = "Lbl_Email";
-            this.Lbl_Email.Size = new System.Drawing.Size(39, 13);
-            this.Lbl_Email.TabIndex = 44;
-            this.Lbl_Email.Text = "Label1";
-            // 
-            // Txt_Celular
-            // 
-            this.Txt_Celular.Location = new System.Drawing.Point(491, 76);
-            this.Txt_Celular.Name = "Txt_Celular";
-            this.Txt_Celular.Size = new System.Drawing.Size(188, 20);
-            this.Txt_Celular.TabIndex = 45;
-            // 
-            // Lbl_Celular
-            // 
-            this.Lbl_Celular.AutoSize = true;
-            this.Lbl_Celular.Location = new System.Drawing.Point(488, 60);
-            this.Lbl_Celular.Name = "Lbl_Celular";
-            this.Lbl_Celular.Size = new System.Drawing.Size(39, 13);
-            this.Lbl_Celular.TabIndex = 46;
-            this.Lbl_Celular.Text = "Label1";
             // 
             // CadastroCliente
             // 

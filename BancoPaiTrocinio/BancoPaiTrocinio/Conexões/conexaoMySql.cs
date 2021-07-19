@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,13 +8,13 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace BancoPaiTrocinio.Conexões {
-    class conexaoMySql {
+    class ConexaoMySql {
 
         public static MySqlConnection conexao;
         public static MySqlCommand command;
         public static MySqlDataAdapter adapter;
 
-        public static void conectar() {
+        public static void Conectar() {
             conexao = new MySqlConnection("server=127.0.0.1;port=3306;database=banco_db;uid=root;pwd=;");
             try {
                 conexao.Open();
@@ -23,23 +24,25 @@ namespace BancoPaiTrocinio.Conexões {
             }
         }
 
-        public static void desconectar() {
+        public static void Desconectar() {
             conexao.Close();
         }
 
-        public Int32 executaSQL(string instrucaoSQL) {
-            conectar();
+        public int ExecutaSQL(string instrucaoSQL) {
+            Conectar();
             command = new MySqlCommand(instrucaoSQL, conexao);
             command.ExecuteNonQuery();
-            desconectar();
+            Desconectar();
             return 1;
         }
 
-        public MySqlDataAdapter retornaSQL(string instrucaoSQL) {
-            conectar();
+        public DataTable RetornaSQL(string instrucaoSQL) {
+            Conectar();
             MySqlDataAdapter adapter = new MySqlDataAdapter(instrucaoSQL, conexao);
-            desconectar();
-            return adapter;
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            Desconectar();
+            return dt;
         }
     }
 }
