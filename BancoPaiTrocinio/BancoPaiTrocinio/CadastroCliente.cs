@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
+using MySql.Data.MySqlClient;
 
 namespace BancoPaiTrocinio
 {
     public partial class CadastroCliente : UserControl
     {
+        Conexões.conexaoMySql connect = new Conexões.conexaoMySql();
         public CadastroCliente()
         {
             InitializeComponent();
@@ -33,10 +35,7 @@ namespace BancoPaiTrocinio
             Lbl_Profissao.Text = "Profissão";
             Lbl_Telefone.Text = "Telefone";
             Lbl_Cidade.Text = "Cidade";
-            Rdb_Masculino.Text = "Masculino";
-            Rdb_Feminino.Text = "Feminino";
-            Rdb_Indefinido.Text = "Indefinido";
-            Grp_Genero.Text = "Genero";
+            
 
             Cmb_Estados.Items.Clear();
             Cmb_Estados.Items.Add("Acre (AC)");
@@ -88,7 +87,7 @@ namespace BancoPaiTrocinio
             Txt_Bairro.Text = "";
             Txt_Telefone.Text = "";
             Txt_Profissao.Text = "";
-            Rdb_Masculino.Checked = true;
+            
         }
 
         private void Txt_CEP_Leave(object sender, EventArgs e)
@@ -126,5 +125,26 @@ namespace BancoPaiTrocinio
 
         }
 
+        private void CadastroCliente_Load(object sender, EventArgs e) {
+
+        }
+
+        private void Grp_DadosPessoais_Enter(object sender, EventArgs e) {
+
+        }
+
+        private void cadastrar_Click(object sender, EventArgs e) {
+            try {
+                connect.executaSQL("INSERT INTO TABLE 'usuario' () VALUES ()");
+                MessageBox.Show("Cadastro realizado com sucesso!");
+            }
+            catch(Exception ex) {
+                MessageBox.Show("Erro : " + ex.Message);
+            }
+        }
+
+        private void Cancelar_Click(object sender, EventArgs e) {
+ 
+        }
     }
 }

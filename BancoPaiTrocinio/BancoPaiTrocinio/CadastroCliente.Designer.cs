@@ -48,10 +48,6 @@
             this.Txt_Bairro = new System.Windows.Forms.TextBox();
             this.Lbl_Estado = new System.Windows.Forms.Label();
             this.Grp_DadosPessoais = new System.Windows.Forms.GroupBox();
-            this.Grp_Genero = new System.Windows.Forms.GroupBox();
-            this.Rdb_Indefinido = new System.Windows.Forms.RadioButton();
-            this.Rdb_Feminino = new System.Windows.Forms.RadioButton();
-            this.Rdb_Masculino = new System.Windows.Forms.RadioButton();
             this.Txt_NomeCliente = new System.Windows.Forms.TextBox();
             this.Lbl_NomeCliente = new System.Windows.Forms.Label();
             this.Txt_CPF = new System.Windows.Forms.TextBox();
@@ -65,10 +61,11 @@
             this.Txt_Usuario = new System.Windows.Forms.TextBox();
             this.Tls_Principal = new System.Windows.Forms.ToolStrip();
             this.salvarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.Cadastrar = new System.Windows.Forms.Button();
+            this.Cancelar = new System.Windows.Forms.Button();
             this.Grp_Outros.SuspendLayout();
             this.Grp_Endereco.SuspendLayout();
             this.Grp_DadosPessoais.SuspendLayout();
-            this.Grp_Genero.SuspendLayout();
             this.Grp_Cadastro.SuspendLayout();
             this.Tls_Principal.SuspendLayout();
             this.SuspendLayout();
@@ -243,7 +240,6 @@
             // 
             // Grp_DadosPessoais
             // 
-            this.Grp_DadosPessoais.Controls.Add(this.Grp_Genero);
             this.Grp_DadosPessoais.Controls.Add(this.Txt_NomeCliente);
             this.Grp_DadosPessoais.Controls.Add(this.Lbl_NomeCliente);
             this.Grp_DadosPessoais.Controls.Add(this.Txt_CPF);
@@ -254,50 +250,7 @@
             this.Grp_DadosPessoais.TabIndex = 57;
             this.Grp_DadosPessoais.TabStop = false;
             this.Grp_DadosPessoais.Text = "groupBox1";
-            // 
-            // Grp_Genero
-            // 
-            this.Grp_Genero.Controls.Add(this.Rdb_Indefinido);
-            this.Grp_Genero.Controls.Add(this.Rdb_Feminino);
-            this.Grp_Genero.Controls.Add(this.Rdb_Masculino);
-            this.Grp_Genero.Location = new System.Drawing.Point(378, 76);
-            this.Grp_Genero.Name = "Grp_Genero";
-            this.Grp_Genero.Size = new System.Drawing.Size(206, 76);
-            this.Grp_Genero.TabIndex = 50;
-            this.Grp_Genero.TabStop = false;
-            // 
-            // Rdb_Indefinido
-            // 
-            this.Rdb_Indefinido.AutoSize = true;
-            this.Rdb_Indefinido.Location = new System.Drawing.Point(57, 53);
-            this.Rdb_Indefinido.Name = "Rdb_Indefinido";
-            this.Rdb_Indefinido.Size = new System.Drawing.Size(85, 17);
-            this.Rdb_Indefinido.TabIndex = 7;
-            this.Rdb_Indefinido.TabStop = true;
-            this.Rdb_Indefinido.Text = "radioButton3";
-            this.Rdb_Indefinido.UseVisualStyleBackColor = true;
-            // 
-            // Rdb_Feminino
-            // 
-            this.Rdb_Feminino.AutoSize = true;
-            this.Rdb_Feminino.Location = new System.Drawing.Point(115, 19);
-            this.Rdb_Feminino.Name = "Rdb_Feminino";
-            this.Rdb_Feminino.Size = new System.Drawing.Size(85, 17);
-            this.Rdb_Feminino.TabIndex = 6;
-            this.Rdb_Feminino.TabStop = true;
-            this.Rdb_Feminino.Text = "radioButton2";
-            this.Rdb_Feminino.UseVisualStyleBackColor = true;
-            // 
-            // Rdb_Masculino
-            // 
-            this.Rdb_Masculino.AutoSize = true;
-            this.Rdb_Masculino.Location = new System.Drawing.Point(7, 19);
-            this.Rdb_Masculino.Name = "Rdb_Masculino";
-            this.Rdb_Masculino.Size = new System.Drawing.Size(85, 17);
-            this.Rdb_Masculino.TabIndex = 5;
-            this.Rdb_Masculino.TabStop = true;
-            this.Rdb_Masculino.Text = "radioButton1";
-            this.Rdb_Masculino.UseVisualStyleBackColor = true;
+            this.Grp_DadosPessoais.Enter += new System.EventHandler(this.Grp_DadosPessoais_Enter);
             // 
             // Txt_NomeCliente
             // 
@@ -424,25 +377,46 @@
             this.salvarToolStripButton.Text = "&Salvar";
             this.salvarToolStripButton.Click += new System.EventHandler(this.salvarToolStripButton_Click);
             // 
+            // Cadastrar
+            // 
+            this.Cadastrar.Location = new System.Drawing.Point(613, 496);
+            this.Cadastrar.Name = "Cadastrar";
+            this.Cadastrar.Size = new System.Drawing.Size(75, 23);
+            this.Cadastrar.TabIndex = 61;
+            this.Cadastrar.Text = "Cadastrar";
+            this.Cadastrar.UseVisualStyleBackColor = true;
+            this.Cadastrar.Click += new System.EventHandler(this.cadastrar_Click);
+            // 
+            // Cancelar
+            // 
+            this.Cancelar.Location = new System.Drawing.Point(694, 496);
+            this.Cancelar.Name = "Cancelar";
+            this.Cancelar.Size = new System.Drawing.Size(75, 23);
+            this.Cancelar.TabIndex = 62;
+            this.Cancelar.Text = "Cancelar";
+            this.Cancelar.UseVisualStyleBackColor = true;
+            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
+            // 
             // CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.Cancelar);
+            this.Controls.Add(this.Cadastrar);
             this.Controls.Add(this.Tls_Principal);
             this.Controls.Add(this.Grp_Outros);
             this.Controls.Add(this.Grp_Endereco);
             this.Controls.Add(this.Grp_DadosPessoais);
             this.Controls.Add(this.Grp_Cadastro);
             this.Name = "CadastroCliente";
-            this.Size = new System.Drawing.Size(781, 495);
+            this.Size = new System.Drawing.Size(781, 532);
+            this.Load += new System.EventHandler(this.CadastroCliente_Load);
             this.Grp_Outros.ResumeLayout(false);
             this.Grp_Outros.PerformLayout();
             this.Grp_Endereco.ResumeLayout(false);
             this.Grp_Endereco.PerformLayout();
             this.Grp_DadosPessoais.ResumeLayout(false);
             this.Grp_DadosPessoais.PerformLayout();
-            this.Grp_Genero.ResumeLayout(false);
-            this.Grp_Genero.PerformLayout();
             this.Grp_Cadastro.ResumeLayout(false);
             this.Grp_Cadastro.PerformLayout();
             this.Tls_Principal.ResumeLayout(false);
@@ -473,10 +447,6 @@
         private System.Windows.Forms.TextBox Txt_Bairro;
         private System.Windows.Forms.Label Lbl_Estado;
         private System.Windows.Forms.GroupBox Grp_DadosPessoais;
-        private System.Windows.Forms.GroupBox Grp_Genero;
-        private System.Windows.Forms.RadioButton Rdb_Indefinido;
-        private System.Windows.Forms.RadioButton Rdb_Feminino;
-        private System.Windows.Forms.RadioButton Rdb_Masculino;
         private System.Windows.Forms.TextBox Txt_NomeCliente;
         private System.Windows.Forms.Label Lbl_NomeCliente;
         private System.Windows.Forms.TextBox Txt_CPF;
@@ -490,6 +460,8 @@
         private System.Windows.Forms.Label Lbl_Usuario;
         private System.Windows.Forms.TextBox Txt_Usuario;
         private System.Windows.Forms.ToolStripButton salvarToolStripButton;
+        private System.Windows.Forms.Button Cadastrar;
+        private System.Windows.Forms.Button Cancelar;
     }
 }
 

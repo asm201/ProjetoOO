@@ -32,7 +32,7 @@ namespace BancoPaiTrocinio.Conexões {
             command = new MySqlCommand(instrucaoSQL, conexao);
             command.ExecuteNonQuery();
             desconectar();
-            return 0;
+            return 1;
         }
 
         public MySqlDataAdapter retornaSQL(string instrucaoSQL) {
