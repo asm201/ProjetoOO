@@ -182,12 +182,12 @@ namespace BancoPaiTrocinio
                 u = LeituraFormulario();
                 u.ValidaClasse();
                 u.ValidaComplemento();
-                connect.ExecutaSQL("INSERT INTO usuario (u_cpf,u_rg,u_senha,u_nome,u_logradouro,u_complemento,u_bairro,u_cidade,u_estado,u_cep)VALUES('" + Convert.ToString(Txt_CPF.Text) + "','" + Convert.ToString(Txt_Rg.Text) + "','" + Convert.ToString(Txt_Senha.Text) + "','" + Convert.ToString(Txt_NomeCliente.Text) + "','" + Convert.ToString(Txt_Logradouro.Text) + "','" + Convert.ToString(Txt_Complemento.Text) + "','" + Convert.ToString(Txt_Bairro.Text) + "','" + Convert.ToString(Txt_Cidade.Text) + "','" + Convert.ToString(Cmb_Estados.Text) + "','" + Convert.ToString(Txt_CEP.Text) + "');");
-                DataTable query = connect.RetornaSQL($"SELECT u_id FROM usuario WHERE u_cpf='{Convert.ToString(Txt_CPF.Text)}';");
+                connect.ExecutaSQL("INSERT INTO usuario (u_cpf,u_rg,u_senha,u_nome,u_logradouro,u_complemento,u_bairro,u_cidade,u_estado,u_cep)VALUES('" + Convert.ToString(u.u_cpf) + "','" + Convert.ToString(u.u_rg) + "','" + Convert.ToString(u.u_senha) + "','" + Convert.ToString(u.u_nome) + "','" + Convert.ToString(u.u_logradouro) + "','" + Convert.ToString(u.u_complemento) + "','" + Convert.ToString(u.u_bairro) + "','" + Convert.ToString(u.u_cidade) + "','" + Convert.ToString(u.u_estado) + "','" + Convert.ToString(u.u_cep) + "');");
+                DataTable query = connect.RetornaSQL($"SELECT u_id FROM usuario WHERE u_cpf='{Convert.ToString(u.u_cpf)}';");
                 //Messagebox.show($"funcionou {query.rows[0]["u_id"]}");
-                connect.ExecutaSQL($"INSERT INTO contato (ctt_id_usuario,ctt_tel,ctt_cel,ctt_email) VALUES ({query.Rows[0]["u_id"]},'{Convert.ToString(Txt_Telefone.Text)}','{Convert.ToString(Txt_Celular.Text)}','{Convert.ToString(Txt_Email.Text)}');");
+                connect.ExecutaSQL($"INSERT INTO contato (ctt_id_usuario,ctt_tel,ctt_cel,ctt_email) VALUES ({query.Rows[0]["u_id"]},'{Convert.ToString(u.ctt_tel)}','{Convert.ToString(u.ctt_cel)}','{Convert.ToString(u.ctt_email)}');");
                 DataTable query2 = connect.RetornaSQL($"SELECT ctt_id FROM contato WHERE ctt_id_usuario = {query.Rows[0]["u_id"]};");
-                connect.ExecutaSQL($"UPDATE usuario SET u_ctt_id = {query2.Rows[0]["ctt_id"]} WHERE u_cpf = '{Convert.ToString(Txt_CPF.Text)}';");
+                connect.ExecutaSQL($"UPDATE usuario SET u_ctt_id = {query2.Rows[0]["ctt_id"]} WHERE u_cpf = '{Convert.ToString(u.u_cpf)}';");
                 MessageBox.Show("Cadastro realizado com sucesso!");
             }
             catch (Exception ex)
