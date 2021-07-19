@@ -116,31 +116,34 @@ namespace BancoPaiTrocinio {
             }
         }
 
-        //Usuario LeituraFormulario()
-        //{
-        //    Usuario u = new Usuario();
-        //    u.u_nome = Txt_NomeCliente.Text;
+        Usuario LeituraFormulario()
+        {
+            Usuario u = new Usuario();
+            u.u_nome = Txt_NomeCliente.Text;
+            u.u_rg = Txt_Rg.Text;
+            u.u_cpf = Txt_CPF.Text;
+            if(Txt_Senha.Text == Txt_SenhaConfirmacao.Text)
+            {
+                u.u_senha = Txt_Senha.Text;
+            }
 
-        //    u.u_cpf = Txt_CPF.Text;
-        //    //termino isso mais tarde
+            u.u_cep = Txt_CEP.Text;
+            u.Logradouro = Txt_Logradouro.Text;
+            u.Complemento = Txt_Complemento.Text;
+            c.Cidade = Txt_Cidade.Text;
+            c.Bairro = Txt_Bairro.Text;
+            if (Cmb_Estados.SelectedIndex < 0)
+            {
+                c.Estado = "";
+            }
+            else
+            {
+                c.Estado = Cmb_Estados.Items[Cmb_Estados.SelectedIndex].ToString();
+            }
 
-        //    u.u_cep = Txt_CEP.Text;
-        //    u.Logradouro = Txt_Logradouro.Text;
-        //    u.Complemento = Txt_Complemento.Text;
-        //    c.Cidade = Txt_Cidade.Text;
-        //    c.Bairro = Txt_Bairro.Text;
-        //    if (Cmb_Estados.SelectedIndex < 0)
-        //    {
-        //        c.Estado = "";
-        //    }
-        //    else
-        //    {
-        //        c.Estado = Cmb_Estados.Items[Cmb_Estados.SelectedIndex].ToString();
-        //    }
+            u.ctt_tel = Txt_Telefone.Text;
 
-        //    u.ctt_tel = Txt_Telefone.Text;
-
-        //    u.u_p = Txt_Profissao.Text;
+            u.u_p = Txt_Profissao.Text;
 
         //    return u;
         //}
@@ -158,9 +161,10 @@ namespace BancoPaiTrocinio {
 
         }
 
-        private void cadastrar_Click(object sender, EventArgs e) {
-            try {
-                //LeituraFormulario();
+        private void cadastrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
                 connect.ExecutaSQL("INSERT INTO usuario (u_cpf,u_rg,u_senha,u_nome,u_logradouro,u_complemento,u_bairro,u_cidade,u_estado,u_cep)VALUES('" + Convert.ToString(Txt_CPF.Text) + "','" + Convert.ToString(Txt_Rg.Text) + "','" + Convert.ToString(Txt_Senha.Text) + "','" + Convert.ToString(Txt_NomeCliente.Text) + "','" + Convert.ToString(Txt_Logradouro.Text) + "','" + Convert.ToString(Txt_Complemento.Text) + "','" + Convert.ToString(Txt_Bairro.Text) + "','" + Convert.ToString(Txt_Cidade.Text) + "','" + Convert.ToString(Cmb_Estados.Text) + "','" + Convert.ToString(Txt_CEP.Text) + "');");
                 DataTable query = connect.RetornaSQL($"SELECT u_id FROM usuario WHERE u_cpf='{Convert.ToString(Txt_CPF.Text)}';");
                 //Messagebox.show($"funcionou {query.rows[0]["u_id"]}");
