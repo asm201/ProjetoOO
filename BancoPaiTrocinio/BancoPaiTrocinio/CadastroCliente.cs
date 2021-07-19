@@ -11,13 +11,10 @@ using Microsoft.VisualBasic;
 using MySql.Data.MySqlClient;
 using BancoPaiTrocinio.Classes;
 
-namespace BancoPaiTrocinio
-{
-    public partial class CadastroCliente : UserControl
-    {
+namespace BancoPaiTrocinio {
+    public partial class CadastroCliente : UserControl {
         Conexões.ConexaoMySql connect = new Conexões.ConexaoMySql();
-        public CadastroCliente()
-        {
+        public CadastroCliente() {
             InitializeComponent();
             Grp_Cadastro.Text = "Cadastro";
             Grp_DadosPessoais.Text = "Dados Pessoais";
@@ -39,7 +36,7 @@ namespace BancoPaiTrocinio
             Lbl_Profissao.Text = "Profissão";
             Lbl_Telefone.Text = "Telefone";
             Lbl_Cidade.Text = "Cidade";
-            
+
 
             Cmb_Estados.Items.Clear();
             Cmb_Estados.Items.Add("Acre (AC)");
@@ -75,8 +72,7 @@ namespace BancoPaiTrocinio
             LimparFormulario();
         }
 
-        private void LimparFormulario()
-        {
+        private void LimparFormulario() {
             Txt_Usuario.Text = "";
             Txt_Senha.Text = "";
             Txt_SenhaConfirmacao.Text = "";
@@ -96,15 +92,11 @@ namespace BancoPaiTrocinio
 
         }
 
-        private void Txt_CEP_Leave(object sender, EventArgs e)
-        {
+        private void Txt_CEP_Leave(object sender, EventArgs e) {
             string vCep = Txt_CEP.Text;
-            if (vCep != "")
-            {
-                if (vCep.Length == 8)
-                {
-                    if (Information.IsNumeric(vCep))
-                    {
+            if (vCep != "") {
+                if (vCep.Length == 8) {
+                    if (Information.IsNumeric(vCep)) {
                         var vJson = Cls_Uteis.GeraJSONCEP(vCep);
                         Cep.Unit cep = new Cep.Unit();
                         cep = Cep.DeserializedClassUnit(vJson);
@@ -113,11 +105,9 @@ namespace BancoPaiTrocinio
                         Txt_Cidade.Text = cep.localidade;
                         Txt_Bairro.Text = cep.bairro;
                         Cmb_Estados.SelectedIndex = -1;
-                        for (int i = 0; i <= Cmb_Estados.Items.Count - 1; i++)
-                        {
+                        for (int i = 0; i <= Cmb_Estados.Items.Count - 1; i++) {
                             var vPos = Strings.InStr(Cmb_Estados.Items[i].ToString(), "(" + cep.uf + ")");
-                            if (vPos > 0)
-                            {
+                            if (vPos > 0) {
                                 Cmb_Estados.SelectedIndex = i;
                             }
                         }
@@ -126,38 +116,37 @@ namespace BancoPaiTrocinio
             }
         }
 
-        Usuario LeituraFormulario()
-        {
-            Usuario u = new Usuario();
-            u.u_nome = Txt_NomeCliente.Text;
+        //Usuario LeituraFormulario()
+        //{
+        //    Usuario u = new Usuario();
+        //    u.u_nome = Txt_NomeCliente.Text;
 
-            u.u_cpf = Txt_CPF.Text;
-            //termino isso mais tarde
+        //    u.u_cpf = Txt_CPF.Text;
+        //    //termino isso mais tarde
 
-            u.u_cep = Txt_CEP.Text;
-            u.Logradouro = Txt_Logradouro.Text;
-            u.Complemento = Txt_Complemento.Text;
-            c.Cidade = Txt_Cidade.Text;
-            c.Bairro = Txt_Bairro.Text;
-            if (Cmb_Estados.SelectedIndex < 0)
-            {
-                c.Estado = "";
-            }
-            else
-            {
-                c.Estado = Cmb_Estados.Items[Cmb_Estados.SelectedIndex].ToString();
-            }
+        //    u.u_cep = Txt_CEP.Text;
+        //    u.Logradouro = Txt_Logradouro.Text;
+        //    u.Complemento = Txt_Complemento.Text;
+        //    c.Cidade = Txt_Cidade.Text;
+        //    c.Bairro = Txt_Bairro.Text;
+        //    if (Cmb_Estados.SelectedIndex < 0)
+        //    {
+        //        c.Estado = "";
+        //    }
+        //    else
+        //    {
+        //        c.Estado = Cmb_Estados.Items[Cmb_Estados.SelectedIndex].ToString();
+        //    }
 
-            u.ctt_tel = Txt_Telefone.Text;
+        //    u.ctt_tel = Txt_Telefone.Text;
 
-            u.u_p = Txt_Profissao.Text;
+        //    u.u_p = Txt_Profissao.Text;
 
-            return u;
-        }
+        //    return u;
+        //}
 
 
-        private void salvarToolStripButton_Click(object sender, EventArgs e)
-        {
+        private void salvarToolStripButton_Click(object sender, EventArgs e) {
 
         }
 
@@ -169,10 +158,9 @@ namespace BancoPaiTrocinio
 
         }
 
-        private void cadastrar_Click(object sender, EventArgs e)
-        {
-            try
-            {
+        private void cadastrar_Click(object sender, EventArgs e) {
+            try {
+                //LeituraFormulario();
                 connect.ExecutaSQL("INSERT INTO usuario (u_cpf,u_rg,u_senha,u_nome,u_logradouro,u_complemento,u_bairro,u_cidade,u_estado,u_cep)VALUES('" + Convert.ToString(Txt_CPF.Text) + "','" + Convert.ToString(Txt_Rg.Text) + "','" + Convert.ToString(Txt_Senha.Text) + "','" + Convert.ToString(Txt_NomeCliente.Text) + "','" + Convert.ToString(Txt_Logradouro.Text) + "','" + Convert.ToString(Txt_Complemento.Text) + "','" + Convert.ToString(Txt_Bairro.Text) + "','" + Convert.ToString(Txt_Cidade.Text) + "','" + Convert.ToString(Cmb_Estados.Text) + "','" + Convert.ToString(Txt_CEP.Text) + "');");
                 DataTable query = connect.RetornaSQL($"SELECT u_id FROM usuario WHERE u_cpf='{Convert.ToString(Txt_CPF.Text)}';");
                 //Messagebox.show($"funcionou {query.rows[0]["u_id"]}");
@@ -186,8 +174,7 @@ namespace BancoPaiTrocinio
             }
         }
 
-        private void Cancelar_Click(object sender, EventArgs e) 
-        {
+        private void Cancelar_Click(object sender, EventArgs e) {
 
         }
     }
