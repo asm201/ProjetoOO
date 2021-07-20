@@ -60,6 +60,10 @@ namespace BancoPaiTrocinio.User_Control {
             this.Txt_Departamento = new System.Windows.Forms.TextBox();
             this.Txt_Salario = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Lbl_Usuario = new System.Windows.Forms.Label();
+            this.Txt_Usuario = new System.Windows.Forms.TextBox();
+            this.Txt_Senha = new System.Windows.Forms.TextBox();
+            this.Lbl_Senha = new System.Windows.Forms.Label();
             this.dados_func.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -127,7 +131,7 @@ namespace BancoPaiTrocinio.User_Control {
             // Lbl_Rg
             // 
             this.Lbl_Rg.AutoSize = true;
-            this.Lbl_Rg.Location = new System.Drawing.Point(274, 70);
+            this.Lbl_Rg.Location = new System.Drawing.Point(274, 99);
             this.Lbl_Rg.Name = "Lbl_Rg";
             this.Lbl_Rg.Size = new System.Drawing.Size(23, 13);
             this.Lbl_Rg.TabIndex = 51;
@@ -136,7 +140,7 @@ namespace BancoPaiTrocinio.User_Control {
             // Lbl_Telefone
             // 
             this.Lbl_Telefone.AutoSize = true;
-            this.Lbl_Telefone.Location = new System.Drawing.Point(274, 115);
+            this.Lbl_Telefone.Location = new System.Drawing.Point(274, 144);
             this.Lbl_Telefone.Name = "Lbl_Telefone";
             this.Lbl_Telefone.Size = new System.Drawing.Size(107, 13);
             this.Lbl_Telefone.TabIndex = 52;
@@ -144,7 +148,7 @@ namespace BancoPaiTrocinio.User_Control {
             // 
             // Txt_Telefone
             // 
-            this.Txt_Telefone.Location = new System.Drawing.Point(277, 131);
+            this.Txt_Telefone.Location = new System.Drawing.Point(277, 160);
             this.Txt_Telefone.Name = "Txt_Telefone";
             this.Txt_Telefone.Size = new System.Drawing.Size(171, 20);
             this.Txt_Telefone.TabIndex = 48;
@@ -153,14 +157,14 @@ namespace BancoPaiTrocinio.User_Control {
             // 
             this.Txt_Email.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_Email.Location = new System.Drawing.Point(277, 176);
+            this.Txt_Email.Location = new System.Drawing.Point(277, 205);
             this.Txt_Email.Name = "Txt_Email";
             this.Txt_Email.Size = new System.Drawing.Size(353, 20);
             this.Txt_Email.TabIndex = 53;
             // 
             // Txt_Rg
             // 
-            this.Txt_Rg.Location = new System.Drawing.Point(277, 85);
+            this.Txt_Rg.Location = new System.Drawing.Point(277, 114);
             this.Txt_Rg.Name = "Txt_Rg";
             this.Txt_Rg.Size = new System.Drawing.Size(200, 20);
             this.Txt_Rg.TabIndex = 50;
@@ -168,7 +172,7 @@ namespace BancoPaiTrocinio.User_Control {
             // Lbl_Email
             // 
             this.Lbl_Email.AutoSize = true;
-            this.Lbl_Email.Location = new System.Drawing.Point(274, 160);
+            this.Lbl_Email.Location = new System.Drawing.Point(274, 189);
             this.Lbl_Email.Name = "Lbl_Email";
             this.Lbl_Email.Size = new System.Drawing.Size(35, 13);
             this.Lbl_Email.TabIndex = 54;
@@ -177,7 +181,7 @@ namespace BancoPaiTrocinio.User_Control {
             // Lbl_CPF
             // 
             this.Lbl_CPF.AutoSize = true;
-            this.Lbl_CPF.Location = new System.Drawing.Point(274, 26);
+            this.Lbl_CPF.Location = new System.Drawing.Point(274, 55);
             this.Lbl_CPF.Name = "Lbl_CPF";
             this.Lbl_CPF.Size = new System.Drawing.Size(27, 13);
             this.Lbl_CPF.TabIndex = 49;
@@ -187,14 +191,14 @@ namespace BancoPaiTrocinio.User_Control {
             // 
             this.Txt_Celular.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_Celular.Location = new System.Drawing.Point(463, 131);
+            this.Txt_Celular.Location = new System.Drawing.Point(463, 160);
             this.Txt_Celular.Name = "Txt_Celular";
             this.Txt_Celular.Size = new System.Drawing.Size(167, 20);
             this.Txt_Celular.TabIndex = 55;
             // 
             // Txt_CPF
             // 
-            this.Txt_CPF.Location = new System.Drawing.Point(277, 42);
+            this.Txt_CPF.Location = new System.Drawing.Point(277, 71);
             this.Txt_CPF.Name = "Txt_CPF";
             this.Txt_CPF.Size = new System.Drawing.Size(200, 20);
             this.Txt_CPF.TabIndex = 47;
@@ -202,7 +206,7 @@ namespace BancoPaiTrocinio.User_Control {
             // Lbl_Celular
             // 
             this.Lbl_Celular.AutoSize = true;
-            this.Lbl_Celular.Location = new System.Drawing.Point(460, 115);
+            this.Lbl_Celular.Location = new System.Drawing.Point(460, 144);
             this.Lbl_Celular.Name = "Lbl_Celular";
             this.Lbl_Celular.Size = new System.Drawing.Size(84, 13);
             this.Lbl_Celular.TabIndex = 56;
@@ -210,7 +214,7 @@ namespace BancoPaiTrocinio.User_Control {
             // 
             // Txt_Nome
             // 
-            this.Txt_Nome.Location = new System.Drawing.Point(26, 42);
+            this.Txt_Nome.Location = new System.Drawing.Point(26, 71);
             this.Txt_Nome.Name = "Txt_Nome";
             this.Txt_Nome.Size = new System.Drawing.Size(245, 20);
             this.Txt_Nome.TabIndex = 57;
@@ -218,7 +222,7 @@ namespace BancoPaiTrocinio.User_Control {
             // lbl_nome
             // 
             this.lbl_nome.AutoSize = true;
-            this.lbl_nome.Location = new System.Drawing.Point(23, 26);
+            this.lbl_nome.Location = new System.Drawing.Point(23, 55);
             this.lbl_nome.Name = "lbl_nome";
             this.lbl_nome.Size = new System.Drawing.Size(35, 13);
             this.lbl_nome.TabIndex = 58;
@@ -227,7 +231,7 @@ namespace BancoPaiTrocinio.User_Control {
             // lbl_logradouro
             // 
             this.lbl_logradouro.AutoSize = true;
-            this.lbl_logradouro.Location = new System.Drawing.Point(23, 115);
+            this.lbl_logradouro.Location = new System.Drawing.Point(23, 144);
             this.lbl_logradouro.Name = "lbl_logradouro";
             this.lbl_logradouro.Size = new System.Drawing.Size(61, 13);
             this.lbl_logradouro.TabIndex = 59;
@@ -235,14 +239,14 @@ namespace BancoPaiTrocinio.User_Control {
             // 
             // Txt_Logradouro
             // 
-            this.Txt_Logradouro.Location = new System.Drawing.Point(26, 131);
+            this.Txt_Logradouro.Location = new System.Drawing.Point(26, 160);
             this.Txt_Logradouro.Name = "Txt_Logradouro";
             this.Txt_Logradouro.Size = new System.Drawing.Size(245, 20);
             this.Txt_Logradouro.TabIndex = 60;
             // 
             // Txt_Cidade
             // 
-            this.Txt_Cidade.Location = new System.Drawing.Point(26, 216);
+            this.Txt_Cidade.Location = new System.Drawing.Point(26, 245);
             this.Txt_Cidade.Name = "Txt_Cidade";
             this.Txt_Cidade.Size = new System.Drawing.Size(245, 20);
             this.Txt_Cidade.TabIndex = 61;
@@ -250,7 +254,7 @@ namespace BancoPaiTrocinio.User_Control {
             // lbl_cidade
             // 
             this.lbl_cidade.AutoSize = true;
-            this.lbl_cidade.Location = new System.Drawing.Point(26, 200);
+            this.lbl_cidade.Location = new System.Drawing.Point(26, 229);
             this.lbl_cidade.Name = "lbl_cidade";
             this.lbl_cidade.Size = new System.Drawing.Size(40, 13);
             this.lbl_cidade.TabIndex = 62;
@@ -258,7 +262,7 @@ namespace BancoPaiTrocinio.User_Control {
             // 
             // Txt_Bairro
             // 
-            this.Txt_Bairro.Location = new System.Drawing.Point(277, 216);
+            this.Txt_Bairro.Location = new System.Drawing.Point(277, 245);
             this.Txt_Bairro.Name = "Txt_Bairro";
             this.Txt_Bairro.Size = new System.Drawing.Size(171, 20);
             this.Txt_Bairro.TabIndex = 63;
@@ -267,7 +271,7 @@ namespace BancoPaiTrocinio.User_Control {
             // 
             this.Txt_Estado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_Estado.Location = new System.Drawing.Point(463, 216);
+            this.Txt_Estado.Location = new System.Drawing.Point(463, 245);
             this.Txt_Estado.Name = "Txt_Estado";
             this.Txt_Estado.Size = new System.Drawing.Size(167, 20);
             this.Txt_Estado.TabIndex = 64;
@@ -275,7 +279,7 @@ namespace BancoPaiTrocinio.User_Control {
             // lbl_bairro
             // 
             this.lbl_bairro.AutoSize = true;
-            this.lbl_bairro.Location = new System.Drawing.Point(274, 200);
+            this.lbl_bairro.Location = new System.Drawing.Point(274, 229);
             this.lbl_bairro.Name = "lbl_bairro";
             this.lbl_bairro.Size = new System.Drawing.Size(34, 13);
             this.lbl_bairro.TabIndex = 65;
@@ -284,7 +288,7 @@ namespace BancoPaiTrocinio.User_Control {
             // lbl_estado
             // 
             this.lbl_estado.AutoSize = true;
-            this.lbl_estado.Location = new System.Drawing.Point(460, 200);
+            this.lbl_estado.Location = new System.Drawing.Point(460, 229);
             this.lbl_estado.Name = "lbl_estado";
             this.lbl_estado.Size = new System.Drawing.Size(40, 13);
             this.lbl_estado.TabIndex = 66;
@@ -294,6 +298,10 @@ namespace BancoPaiTrocinio.User_Control {
             // 
             this.dados_func.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dados_func.Controls.Add(this.Lbl_Senha);
+            this.dados_func.Controls.Add(this.Txt_Senha);
+            this.dados_func.Controls.Add(this.Txt_Usuario);
+            this.dados_func.Controls.Add(this.Lbl_Usuario);
             this.dados_func.Controls.Add(this.lbl_complemento);
             this.dados_func.Controls.Add(this.Txt_Complemento);
             this.dados_func.Controls.Add(this.lbl_funcao);
@@ -324,7 +332,7 @@ namespace BancoPaiTrocinio.User_Control {
             this.dados_func.Controls.Add(this.Lbl_Rg);
             this.dados_func.Location = new System.Drawing.Point(4, 3);
             this.dados_func.Name = "dados_func";
-            this.dados_func.Size = new System.Drawing.Size(659, 251);
+            this.dados_func.Size = new System.Drawing.Size(659, 275);
             this.dados_func.TabIndex = 1;
             this.dados_func.TabStop = false;
             this.dados_func.Text = "Dados do Funcionário";
@@ -332,7 +340,7 @@ namespace BancoPaiTrocinio.User_Control {
             // lbl_complemento
             // 
             this.lbl_complemento.AutoSize = true;
-            this.lbl_complemento.Location = new System.Drawing.Point(26, 161);
+            this.lbl_complemento.Location = new System.Drawing.Point(26, 190);
             this.lbl_complemento.Name = "lbl_complemento";
             this.lbl_complemento.Size = new System.Drawing.Size(71, 13);
             this.lbl_complemento.TabIndex = 74;
@@ -340,7 +348,7 @@ namespace BancoPaiTrocinio.User_Control {
             // 
             // Txt_Complemento
             // 
-            this.Txt_Complemento.Location = new System.Drawing.Point(26, 176);
+            this.Txt_Complemento.Location = new System.Drawing.Point(26, 205);
             this.Txt_Complemento.Name = "Txt_Complemento";
             this.Txt_Complemento.Size = new System.Drawing.Size(245, 20);
             this.Txt_Complemento.TabIndex = 73;
@@ -348,7 +356,7 @@ namespace BancoPaiTrocinio.User_Control {
             // lbl_funcao
             // 
             this.lbl_funcao.AutoSize = true;
-            this.lbl_funcao.Location = new System.Drawing.Point(480, 69);
+            this.lbl_funcao.Location = new System.Drawing.Point(480, 98);
             this.lbl_funcao.Name = "lbl_funcao";
             this.lbl_funcao.Size = new System.Drawing.Size(43, 13);
             this.lbl_funcao.TabIndex = 72;
@@ -357,7 +365,7 @@ namespace BancoPaiTrocinio.User_Control {
             // lbl_salario
             // 
             this.lbl_salario.AutoSize = true;
-            this.lbl_salario.Location = new System.Drawing.Point(480, 26);
+            this.lbl_salario.Location = new System.Drawing.Point(480, 55);
             this.lbl_salario.Name = "lbl_salario";
             this.lbl_salario.Size = new System.Drawing.Size(39, 13);
             this.lbl_salario.TabIndex = 71;
@@ -366,7 +374,7 @@ namespace BancoPaiTrocinio.User_Control {
             // lbl_departamento
             // 
             this.lbl_departamento.AutoSize = true;
-            this.lbl_departamento.Location = new System.Drawing.Point(23, 69);
+            this.lbl_departamento.Location = new System.Drawing.Point(23, 98);
             this.lbl_departamento.Name = "lbl_departamento";
             this.lbl_departamento.Size = new System.Drawing.Size(74, 13);
             this.lbl_departamento.TabIndex = 70;
@@ -376,14 +384,14 @@ namespace BancoPaiTrocinio.User_Control {
             // 
             this.Txt_Funcao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_Funcao.Location = new System.Drawing.Point(483, 85);
+            this.Txt_Funcao.Location = new System.Drawing.Point(483, 114);
             this.Txt_Funcao.Name = "Txt_Funcao";
             this.Txt_Funcao.Size = new System.Drawing.Size(147, 20);
             this.Txt_Funcao.TabIndex = 69;
             // 
             // Txt_Departamento
             // 
-            this.Txt_Departamento.Location = new System.Drawing.Point(26, 85);
+            this.Txt_Departamento.Location = new System.Drawing.Point(26, 114);
             this.Txt_Departamento.Name = "Txt_Departamento";
             this.Txt_Departamento.Size = new System.Drawing.Size(245, 20);
             this.Txt_Departamento.TabIndex = 68;
@@ -392,7 +400,7 @@ namespace BancoPaiTrocinio.User_Control {
             // 
             this.Txt_Salario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_Salario.Location = new System.Drawing.Point(483, 42);
+            this.Txt_Salario.Location = new System.Drawing.Point(483, 71);
             this.Txt_Salario.Name = "Txt_Salario";
             this.Txt_Salario.Size = new System.Drawing.Size(147, 20);
             this.Txt_Salario.TabIndex = 67;
@@ -403,11 +411,45 @@ namespace BancoPaiTrocinio.User_Control {
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(4, 260);
+            this.dataGridView2.Location = new System.Drawing.Point(4, 284);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(774, 269);
+            this.dataGridView2.Size = new System.Drawing.Size(774, 245);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // Lbl_Usuario
+            // 
+            this.Lbl_Usuario.AutoSize = true;
+            this.Lbl_Usuario.Location = new System.Drawing.Point(23, 16);
+            this.Lbl_Usuario.Name = "Lbl_Usuario";
+            this.Lbl_Usuario.Size = new System.Drawing.Size(43, 13);
+            this.Lbl_Usuario.TabIndex = 75;
+            this.Lbl_Usuario.Text = "Usuário";
+            // 
+            // Txt_Usuario
+            // 
+            this.Txt_Usuario.Location = new System.Drawing.Point(26, 32);
+            this.Txt_Usuario.Name = "Txt_Usuario";
+            this.Txt_Usuario.Size = new System.Drawing.Size(321, 20);
+            this.Txt_Usuario.TabIndex = 76;
+            // 
+            // Txt_Senha
+            // 
+            this.Txt_Senha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Txt_Senha.Location = new System.Drawing.Point(353, 32);
+            this.Txt_Senha.Name = "Txt_Senha";
+            this.Txt_Senha.Size = new System.Drawing.Size(277, 20);
+            this.Txt_Senha.TabIndex = 77;
+            // 
+            // Lbl_Senha
+            // 
+            this.Lbl_Senha.AutoSize = true;
+            this.Lbl_Senha.Location = new System.Drawing.Point(350, 16);
+            this.Lbl_Senha.Name = "Lbl_Senha";
+            this.Lbl_Senha.Size = new System.Drawing.Size(38, 13);
+            this.Lbl_Senha.TabIndex = 78;
+            this.Lbl_Senha.Text = "Senha";
             // 
             // AcessoFuncionarios
             // 
@@ -473,5 +515,9 @@ namespace BancoPaiTrocinio.User_Control {
         private System.Windows.Forms.Label lbl_complemento;
         private System.Windows.Forms.TextBox Txt_Complemento;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label Lbl_Senha;
+        private System.Windows.Forms.TextBox Txt_Senha;
+        private System.Windows.Forms.TextBox Txt_Usuario;
+        private System.Windows.Forms.Label Lbl_Usuario;
     }
 }

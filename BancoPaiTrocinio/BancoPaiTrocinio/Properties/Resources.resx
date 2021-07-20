@@ -121,8 +121,17 @@
   <data name="Arquivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imagens\arquivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Banco" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagens\banco.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="banco1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagens\banco.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Cadastros" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imagens\cadastros.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Connectar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagens\connectar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DeleteAll" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imagens\deleteall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -135,6 +144,21 @@
   </data>
   <data name="DeleteTab" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imagens\deletetab.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="depositar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagens\depositar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="depositar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagens\depositar (2).ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="desconnect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagens\desconnect.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Diretor" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagens\diretor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="diretor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagens\diretor.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ExcluirBarra" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imagens\excluirbarra.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,6 +202,15 @@
   <data name="Frm_ValidaSenha1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imagens\frm_validasenha.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Funcioanrio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagens\funcioanrio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gerente" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagens\gerente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Info" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagens\info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="key" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imagens\key.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -192,6 +225,12 @@
   </data>
   <data name="question1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imagens\question.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Sair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagens\sair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Transferencia" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagens\transferencia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\imagens\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
