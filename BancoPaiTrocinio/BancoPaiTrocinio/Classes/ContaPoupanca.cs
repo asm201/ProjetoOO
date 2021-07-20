@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BancoPaiTrocinio.Classes
 {
-    class ContaPoupanca
+    class ContaPoupanca : ContaBancaria
     {
     }
 }

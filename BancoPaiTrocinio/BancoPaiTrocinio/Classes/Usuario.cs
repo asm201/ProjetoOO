@@ -54,7 +54,7 @@ namespace BancoPaiTrocinio.Classes
         [StringLength(50, ErrorMessage = "Estado deve ter no máximo 50 digitos")]
         public string u_estado { get; set; }
 
-        public string u_profissao { get; set; }
+        
 
         public int u_id_cliente { get; set; }
         public int u_id_func { get; set; }
