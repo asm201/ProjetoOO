@@ -94,6 +94,7 @@ namespace BancoPaiTrocinio.User_Control {
             this.Inserir.TabIndex = 3;
             this.Inserir.Text = "Inserir";
             this.Inserir.UseVisualStyleBackColor = true;
+            this.Inserir.Click += new System.EventHandler(this.Inserir_Click);
             // 
             // Excluir
             // 
