@@ -48,9 +48,9 @@
             this.Lbl_Depositar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Depositar.Location = new System.Drawing.Point(465, 13);
             this.Lbl_Depositar.Name = "Lbl_Depositar";
-            this.Lbl_Depositar.Size = new System.Drawing.Size(552, 25);
+            this.Lbl_Depositar.Size = new System.Drawing.Size(540, 25);
             this.Lbl_Depositar.TabIndex = 1;
-            this.Lbl_Depositar.Text = "Qual o valor que você deseja depositare em sua conta ?";
+            this.Lbl_Depositar.Text = "Qual o valor que você deseja depositar em sua conta ?";
             // 
             // textBox1
             // 

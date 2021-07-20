@@ -42,10 +42,10 @@
             this.Lbl_Tranferir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_Tranferir.Location = new System.Drawing.Point(295, 11);
             this.Lbl_Tranferir.Name = "Lbl_Tranferir";
-            this.Lbl_Tranferir.Size = new System.Drawing.Size(839, 25);
+            this.Lbl_Tranferir.Size = new System.Drawing.Size(850, 25);
             this.Lbl_Tranferir.TabIndex = 0;
             this.Lbl_Tranferir.Text = "Por favor informe o número da conta que se deseja transferir e o valor a ser tran" +
-    "ferido.";
+    "sferido.";
             // 
             // Lbl_NumeroConta
             // 

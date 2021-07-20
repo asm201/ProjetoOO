@@ -30,13 +30,13 @@
         {
             this.Lbl_Nome = new System.Windows.Forms.Label();
             this.Grp_DadosPessoais = new System.Windows.Forms.GroupBox();
-            this.Nome = new System.Windows.Forms.Label();
-            this.cpf = new System.Windows.Forms.Label();
-            this.Lbl_Cpf = new System.Windows.Forms.Label();
-            this.Lbl_Rg = new System.Windows.Forms.Label();
-            this.rg = new System.Windows.Forms.Label();
-            this.Lbl_Usuario = new System.Windows.Forms.Label();
             this.usuario = new System.Windows.Forms.Label();
+            this.Lbl_Usuario = new System.Windows.Forms.Label();
+            this.rg = new System.Windows.Forms.Label();
+            this.Lbl_Rg = new System.Windows.Forms.Label();
+            this.Lbl_Cpf = new System.Windows.Forms.Label();
+            this.cpf = new System.Windows.Forms.Label();
+            this.Nome = new System.Windows.Forms.Label();
             this.Grp_Contatos = new System.Windows.Forms.GroupBox();
             this.email = new System.Windows.Forms.Label();
             this.Lbl_Email = new System.Windows.Forms.Label();
@@ -45,27 +45,27 @@
             this.telefone = new System.Windows.Forms.Label();
             this.Lbl_Telefone = new System.Windows.Forms.Label();
             this.Grp_Endereço = new System.Windows.Forms.GroupBox();
+            this.estado = new System.Windows.Forms.Label();
+            this.Lbl_Estado = new System.Windows.Forms.Label();
+            this.cidade = new System.Windows.Forms.Label();
+            this.Lbl_Cidade = new System.Windows.Forms.Label();
+            this.bairro = new System.Windows.Forms.Label();
+            this.Lbl_Bairro = new System.Windows.Forms.Label();
             this.coplemento = new System.Windows.Forms.Label();
             this.Lbl_Complemento = new System.Windows.Forms.Label();
             this.Lbl_Logradouro = new System.Windows.Forms.Label();
             this.logradouro = new System.Windows.Forms.Label();
             this.cep = new System.Windows.Forms.Label();
             this.Lbl_Cep = new System.Windows.Forms.Label();
-            this.Lbl_Bairro = new System.Windows.Forms.Label();
-            this.bairro = new System.Windows.Forms.Label();
-            this.Lbl_Cidade = new System.Windows.Forms.Label();
-            this.cidade = new System.Windows.Forms.Label();
-            this.Lbl_Estado = new System.Windows.Forms.Label();
-            this.estado = new System.Windows.Forms.Label();
             this.Grp_DadosBancarios = new System.Windows.Forms.GroupBox();
+            this.saldo = new System.Windows.Forms.Label();
+            this.Lbl_Saldo = new System.Windows.Forms.Label();
             this.numeroAgencia = new System.Windows.Forms.Label();
             this.Lbl_NumeroAgencia = new System.Windows.Forms.Label();
             this.Lbl_NumeroConta = new System.Windows.Forms.Label();
             this.numeroConta = new System.Windows.Forms.Label();
             this.tipoConta = new System.Windows.Forms.Label();
             this.Lbl_Tipo = new System.Windows.Forms.Label();
-            this.Lbl_Saldo = new System.Windows.Forms.Label();
-            this.saldo = new System.Windows.Forms.Label();
             this.Grp_DadosPessoais.SuspendLayout();
             this.Grp_Contatos.SuspendLayout();
             this.Grp_Endereço.SuspendLayout();
@@ -99,55 +99,15 @@
             this.Grp_DadosPessoais.TabStop = false;
             this.Grp_DadosPessoais.Text = "Dados Pessoais";
             // 
-            // Nome
+            // usuario
             // 
-            this.Nome.AutoSize = true;
-            this.Nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nome.Location = new System.Drawing.Point(6, 29);
-            this.Nome.Name = "Nome";
-            this.Nome.Size = new System.Drawing.Size(182, 20);
-            this.Nome.TabIndex = 1;
-            this.Nome.Text = "Adnré Sirikaku Miyashiro";
-            // 
-            // cpf
-            // 
-            this.cpf.AutoSize = true;
-            this.cpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cpf.Location = new System.Drawing.Point(242, 29);
-            this.cpf.Name = "cpf";
-            this.cpf.Size = new System.Drawing.Size(108, 20);
-            this.cpf.TabIndex = 2;
-            this.cpf.Text = "11111111111";
-            // 
-            // Lbl_Cpf
-            // 
-            this.Lbl_Cpf.AutoSize = true;
-            this.Lbl_Cpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Cpf.Location = new System.Drawing.Point(242, 16);
-            this.Lbl_Cpf.Name = "Lbl_Cpf";
-            this.Lbl_Cpf.Size = new System.Drawing.Size(30, 13);
-            this.Lbl_Cpf.TabIndex = 3;
-            this.Lbl_Cpf.Text = "CPF";
-            // 
-            // Lbl_Rg
-            // 
-            this.Lbl_Rg.AutoSize = true;
-            this.Lbl_Rg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Rg.Location = new System.Drawing.Point(373, 16);
-            this.Lbl_Rg.Name = "Lbl_Rg";
-            this.Lbl_Rg.Size = new System.Drawing.Size(25, 13);
-            this.Lbl_Rg.TabIndex = 4;
-            this.Lbl_Rg.Text = "RG";
-            // 
-            // rg
-            // 
-            this.rg.AutoSize = true;
-            this.rg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rg.Location = new System.Drawing.Point(373, 29);
-            this.rg.Name = "rg";
-            this.rg.Size = new System.Drawing.Size(90, 20);
-            this.rg.TabIndex = 5;
-            this.rg.Text = "555555555";
+            this.usuario.AutoSize = true;
+            this.usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usuario.Location = new System.Drawing.Point(490, 29);
+            this.usuario.Name = "usuario";
+            this.usuario.Size = new System.Drawing.Size(90, 20);
+            this.usuario.TabIndex = 7;
+            this.usuario.Text = "Carlos_123";
             // 
             // Lbl_Usuario
             // 
@@ -159,15 +119,55 @@
             this.Lbl_Usuario.TabIndex = 6;
             this.Lbl_Usuario.Text = "Usuario";
             // 
-            // usuario
+            // rg
             // 
-            this.usuario.AutoSize = true;
-            this.usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usuario.Location = new System.Drawing.Point(490, 29);
-            this.usuario.Name = "usuario";
-            this.usuario.Size = new System.Drawing.Size(90, 20);
-            this.usuario.TabIndex = 7;
-            this.usuario.Text = "Carlos_123";
+            this.rg.AutoSize = true;
+            this.rg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rg.Location = new System.Drawing.Point(373, 29);
+            this.rg.Name = "rg";
+            this.rg.Size = new System.Drawing.Size(90, 20);
+            this.rg.TabIndex = 5;
+            this.rg.Text = "555555555";
+            // 
+            // Lbl_Rg
+            // 
+            this.Lbl_Rg.AutoSize = true;
+            this.Lbl_Rg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Rg.Location = new System.Drawing.Point(373, 16);
+            this.Lbl_Rg.Name = "Lbl_Rg";
+            this.Lbl_Rg.Size = new System.Drawing.Size(25, 13);
+            this.Lbl_Rg.TabIndex = 4;
+            this.Lbl_Rg.Text = "RG";
+            // 
+            // Lbl_Cpf
+            // 
+            this.Lbl_Cpf.AutoSize = true;
+            this.Lbl_Cpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Cpf.Location = new System.Drawing.Point(242, 16);
+            this.Lbl_Cpf.Name = "Lbl_Cpf";
+            this.Lbl_Cpf.Size = new System.Drawing.Size(30, 13);
+            this.Lbl_Cpf.TabIndex = 3;
+            this.Lbl_Cpf.Text = "CPF";
+            // 
+            // cpf
+            // 
+            this.cpf.AutoSize = true;
+            this.cpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cpf.Location = new System.Drawing.Point(242, 29);
+            this.cpf.Name = "cpf";
+            this.cpf.Size = new System.Drawing.Size(108, 20);
+            this.cpf.TabIndex = 2;
+            this.cpf.Text = "11111111111";
+            // 
+            // Nome
+            // 
+            this.Nome.AutoSize = true;
+            this.Nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nome.Location = new System.Drawing.Point(6, 29);
+            this.Nome.Name = "Nome";
+            this.Nome.Size = new System.Drawing.Size(182, 20);
+            this.Nome.TabIndex = 1;
+            this.Nome.Text = "André Sirikaku Miyashiro";
             // 
             // Grp_Contatos
             // 
@@ -265,6 +265,66 @@
             this.Grp_Endereço.TabStop = false;
             this.Grp_Endereço.Text = "Endereço";
             // 
+            // estado
+            // 
+            this.estado.AutoSize = true;
+            this.estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.estado.Location = new System.Drawing.Point(268, 78);
+            this.estado.Name = "estado";
+            this.estado.Size = new System.Drawing.Size(82, 20);
+            this.estado.TabIndex = 11;
+            this.estado.Text = "São Paulo";
+            // 
+            // Lbl_Estado
+            // 
+            this.Lbl_Estado.AutoSize = true;
+            this.Lbl_Estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Estado.Location = new System.Drawing.Point(265, 65);
+            this.Lbl_Estado.Name = "Lbl_Estado";
+            this.Lbl_Estado.Size = new System.Drawing.Size(46, 13);
+            this.Lbl_Estado.TabIndex = 10;
+            this.Lbl_Estado.Text = "Estado";
+            // 
+            // cidade
+            // 
+            this.cidade.AutoSize = true;
+            this.cidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cidade.Location = new System.Drawing.Point(131, 78);
+            this.cidade.Name = "cidade";
+            this.cidade.Size = new System.Drawing.Size(82, 20);
+            this.cidade.TabIndex = 9;
+            this.cidade.Text = "São Paulo";
+            // 
+            // Lbl_Cidade
+            // 
+            this.Lbl_Cidade.AutoSize = true;
+            this.Lbl_Cidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Cidade.Location = new System.Drawing.Point(131, 65);
+            this.Lbl_Cidade.Name = "Lbl_Cidade";
+            this.Lbl_Cidade.Size = new System.Drawing.Size(46, 13);
+            this.Lbl_Cidade.TabIndex = 8;
+            this.Lbl_Cidade.Text = "Cidade";
+            // 
+            // bairro
+            // 
+            this.bairro.AutoSize = true;
+            this.bairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bairro.Location = new System.Drawing.Point(6, 78);
+            this.bairro.Name = "bairro";
+            this.bairro.Size = new System.Drawing.Size(119, 20);
+            this.bairro.TabIndex = 7;
+            this.bairro.Text = "Vila Clementina";
+            // 
+            // Lbl_Bairro
+            // 
+            this.Lbl_Bairro.AutoSize = true;
+            this.Lbl_Bairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Bairro.Location = new System.Drawing.Point(6, 65);
+            this.Lbl_Bairro.Name = "Lbl_Bairro";
+            this.Lbl_Bairro.Size = new System.Drawing.Size(40, 13);
+            this.Lbl_Bairro.TabIndex = 6;
+            this.Lbl_Bairro.Text = "Bairro";
+            // 
             // coplemento
             // 
             this.coplemento.AutoSize = true;
@@ -325,66 +385,6 @@
             this.Lbl_Cep.TabIndex = 0;
             this.Lbl_Cep.Text = "CEP";
             // 
-            // Lbl_Bairro
-            // 
-            this.Lbl_Bairro.AutoSize = true;
-            this.Lbl_Bairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Bairro.Location = new System.Drawing.Point(6, 65);
-            this.Lbl_Bairro.Name = "Lbl_Bairro";
-            this.Lbl_Bairro.Size = new System.Drawing.Size(40, 13);
-            this.Lbl_Bairro.TabIndex = 6;
-            this.Lbl_Bairro.Text = "Bairro";
-            // 
-            // bairro
-            // 
-            this.bairro.AutoSize = true;
-            this.bairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bairro.Location = new System.Drawing.Point(6, 78);
-            this.bairro.Name = "bairro";
-            this.bairro.Size = new System.Drawing.Size(119, 20);
-            this.bairro.TabIndex = 7;
-            this.bairro.Text = "Vila Clementina";
-            // 
-            // Lbl_Cidade
-            // 
-            this.Lbl_Cidade.AutoSize = true;
-            this.Lbl_Cidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Cidade.Location = new System.Drawing.Point(131, 65);
-            this.Lbl_Cidade.Name = "Lbl_Cidade";
-            this.Lbl_Cidade.Size = new System.Drawing.Size(46, 13);
-            this.Lbl_Cidade.TabIndex = 8;
-            this.Lbl_Cidade.Text = "Cidade";
-            // 
-            // cidade
-            // 
-            this.cidade.AutoSize = true;
-            this.cidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cidade.Location = new System.Drawing.Point(131, 78);
-            this.cidade.Name = "cidade";
-            this.cidade.Size = new System.Drawing.Size(82, 20);
-            this.cidade.TabIndex = 9;
-            this.cidade.Text = "São Paulo";
-            // 
-            // Lbl_Estado
-            // 
-            this.Lbl_Estado.AutoSize = true;
-            this.Lbl_Estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Estado.Location = new System.Drawing.Point(265, 65);
-            this.Lbl_Estado.Name = "Lbl_Estado";
-            this.Lbl_Estado.Size = new System.Drawing.Size(46, 13);
-            this.Lbl_Estado.TabIndex = 10;
-            this.Lbl_Estado.Text = "Estado";
-            // 
-            // estado
-            // 
-            this.estado.AutoSize = true;
-            this.estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.estado.Location = new System.Drawing.Point(268, 78);
-            this.estado.Name = "estado";
-            this.estado.Size = new System.Drawing.Size(82, 20);
-            this.estado.TabIndex = 11;
-            this.estado.Text = "São Paulo";
-            // 
             // Grp_DadosBancarios
             // 
             this.Grp_DadosBancarios.Controls.Add(this.saldo);
@@ -401,6 +401,26 @@
             this.Grp_DadosBancarios.TabIndex = 9;
             this.Grp_DadosBancarios.TabStop = false;
             this.Grp_DadosBancarios.Text = "Dados Bancarios";
+            // 
+            // saldo
+            // 
+            this.saldo.AutoSize = true;
+            this.saldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saldo.Location = new System.Drawing.Point(398, 30);
+            this.saldo.Name = "saldo";
+            this.saldo.Size = new System.Drawing.Size(106, 20);
+            this.saldo.TabIndex = 7;
+            this.saldo.Text = "R$120005,00";
+            // 
+            // Lbl_Saldo
+            // 
+            this.Lbl_Saldo.AutoSize = true;
+            this.Lbl_Saldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_Saldo.Location = new System.Drawing.Point(399, 17);
+            this.Lbl_Saldo.Name = "Lbl_Saldo";
+            this.Lbl_Saldo.Size = new System.Drawing.Size(39, 13);
+            this.Lbl_Saldo.TabIndex = 6;
+            this.Lbl_Saldo.Text = "Saldo";
             // 
             // numeroAgencia
             // 
@@ -461,26 +481,6 @@
             this.Lbl_Tipo.Size = new System.Drawing.Size(87, 13);
             this.Lbl_Tipo.TabIndex = 0;
             this.Lbl_Tipo.Text = "Tipo de Conta";
-            // 
-            // Lbl_Saldo
-            // 
-            this.Lbl_Saldo.AutoSize = true;
-            this.Lbl_Saldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Saldo.Location = new System.Drawing.Point(399, 17);
-            this.Lbl_Saldo.Name = "Lbl_Saldo";
-            this.Lbl_Saldo.Size = new System.Drawing.Size(39, 13);
-            this.Lbl_Saldo.TabIndex = 6;
-            this.Lbl_Saldo.Text = "Saldo";
-            // 
-            // saldo
-            // 
-            this.saldo.AutoSize = true;
-            this.saldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saldo.Location = new System.Drawing.Point(398, 30);
-            this.saldo.Name = "saldo";
-            this.saldo.Size = new System.Drawing.Size(106, 20);
-            this.saldo.TabIndex = 7;
-            this.saldo.Text = "R$120005,00";
             // 
             // VerDados
             // 
