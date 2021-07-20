@@ -137,6 +137,12 @@
     <EmbeddedResource Include="User Control\AcessoFuncionarios.resx">
       <DependentUpon>AcessoFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Control\Depositar.resx">
+      <DependentUpon>Depositar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\Transferencia.resx">
+      <DependentUpon>Transferencia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User Control\VerDados.resx">
       <DependentUpon>VerDados.cs</DependentUpon>
     </EmbeddedResource>

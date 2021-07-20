@@ -17,6 +17,8 @@ namespace BancoPaiTrocinio
         int controleCliente = 0;
         int controleAcessoFunc = 0;
         int controleVerDados = 0;
+        int controleDepositar = 0;
+        int controleTransferir = 0;
         public Frm_BancoPaiTrocinio()
         {
             InitializeComponent();
@@ -285,6 +287,14 @@ namespace BancoPaiTrocinio
             {
                 controleVerDados = 0;
             }
+            if (tb.Name == "Depositar")
+            {
+                controleDepositar = 0;
+            }
+            if (tb.Name == "Transferencia")
+            {
+                controleTransferir = 0;
+            }
             Tbc_Aplicacoes.TabPages.Remove(tb);
         }
 
@@ -304,6 +314,44 @@ namespace BancoPaiTrocinio
             else
             {
                 MessageBox.Show("Não posso abrir os dados de clientes, pois ja tem um aberto", "Banco Paitrocínio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void depositarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (controleDepositar == 0)
+            {
+                controleDepositar++;
+                Depositar u = new Depositar();
+                TabPage tb = new TabPage();
+                u.Dock = DockStyle.Fill;
+                tb.Name = "Depositar";
+                tb.Text = "Depositar";
+                tb.Controls.Add(u);
+                Tbc_Aplicacoes.TabPages.Add(tb);
+            }
+            else
+            {
+                MessageBox.Show("Não posso abrir esta pagina, pois ja tem um aberto", "Banco Paitrocínio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void transferirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (controleTransferir == 0)
+            {
+                controleTransferir++;
+                Transferencia u = new Transferencia();
+                TabPage tb = new TabPage();
+                u.Dock = DockStyle.Fill;
+                tb.Name = "Transferencia";
+                tb.Text = "Transferencia";
+                tb.Controls.Add(u);
+                Tbc_Aplicacoes.TabPages.Add(tb);
+            }
+            else
+            {
+                MessageBox.Show("Não posso abrir esta pagina, pois ja tem um aberto", "Banco Paitrocínio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
