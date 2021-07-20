@@ -52,6 +52,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Cliente.cs" />
+    <Compile Include="Classes\ContaBancaria.cs" />
+    <Compile Include="Classes\ContaCorrente.cs" />
+    <Compile Include="Classes\ContaPoupanca.cs" />
+    <Compile Include="Classes\Funcionario.cs" />
     <Compile Include="User Control\CadastroCliente.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -89,6 +94,12 @@
     <Compile Include="User Control\AcessoFuncionarios.Designer.cs">
       <DependentUpon>AcessoFuncionarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Control\VerDados.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\VerDados.Designer.cs">
+      <DependentUpon>VerDados.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Fomularios\Frm_Questao.resx">
       <DependentUpon>Frm_Questao.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +124,9 @@
     </Compile>
     <EmbeddedResource Include="User Control\AcessoFuncionarios.resx">
       <DependentUpon>AcessoFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\VerDados.resx">
+      <DependentUpon>VerDados.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

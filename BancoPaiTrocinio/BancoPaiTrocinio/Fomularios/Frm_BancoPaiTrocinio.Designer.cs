@@ -155,20 +155,21 @@
             // depositarToolStripMenuItem
             // 
             this.depositarToolStripMenuItem.Name = "depositarToolStripMenuItem";
-            this.depositarToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.depositarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.depositarToolStripMenuItem.Text = "Depositar";
             // 
             // transferirToolStripMenuItem
             // 
             this.transferirToolStripMenuItem.Name = "transferirToolStripMenuItem";
-            this.transferirToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.transferirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.transferirToolStripMenuItem.Text = "Transferir";
             // 
             // verSaldoToolStripMenuItem
             // 
             this.verSaldoToolStripMenuItem.Name = "verSaldoToolStripMenuItem";
-            this.verSaldoToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.verSaldoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verSaldoToolStripMenuItem.Text = "Ver saldo";
+            this.verSaldoToolStripMenuItem.Click += new System.EventHandler(this.verSaldoToolStripMenuItem_Click);
             // 
             // gerenteDeClientesToolStripMenuItem
             // 

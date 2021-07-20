@@ -283,6 +283,10 @@ namespace BancoPaiTrocinio
             Tbc_Aplicacoes.TabPages.Remove(tb);
         }
 
+        private void verSaldoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

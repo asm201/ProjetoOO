@@ -65,7 +65,6 @@
             this.Lbl_Usuario = new System.Windows.Forms.Label();
             this.Txt_Usuario = new System.Windows.Forms.TextBox();
             this.Cadastrar = new System.Windows.Forms.Button();
-            this.Cancelar = new System.Windows.Forms.Button();
             this.Grp_Outros.SuspendLayout();
             this.Grp_Endereco.SuspendLayout();
             this.Grp_DadosPessoais.SuspendLayout();
@@ -427,21 +426,10 @@
             this.Cadastrar.UseVisualStyleBackColor = true;
             this.Cadastrar.Click += new System.EventHandler(this.cadastrar_Click);
             // 
-            // Cancelar
-            // 
-            this.Cancelar.Location = new System.Drawing.Point(694, 496);
-            this.Cancelar.Name = "Cancelar";
-            this.Cancelar.Size = new System.Drawing.Size(75, 23);
-            this.Cancelar.TabIndex = 62;
-            this.Cancelar.Text = "Cancelar";
-            this.Cancelar.UseVisualStyleBackColor = true;
-            this.Cancelar.Click += new System.EventHandler(this.Cancelar_Click);
-            // 
             // CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.Cancelar);
             this.Controls.Add(this.Cadastrar);
             this.Controls.Add(this.Grp_Outros);
             this.Controls.Add(this.Grp_Endereco);
@@ -495,7 +483,6 @@
         private System.Windows.Forms.Label Lbl_Usuario;
         private System.Windows.Forms.TextBox Txt_Usuario;
         private System.Windows.Forms.Button Cadastrar;
-        private System.Windows.Forms.Button Cancelar;
         private System.Windows.Forms.Label Lbl_Celular;
         private System.Windows.Forms.TextBox Txt_Celular;
         private System.Windows.Forms.Label Lbl_Email;
