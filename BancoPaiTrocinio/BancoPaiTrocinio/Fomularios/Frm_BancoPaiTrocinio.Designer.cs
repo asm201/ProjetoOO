@@ -157,12 +157,14 @@
             this.depositarToolStripMenuItem.Name = "depositarToolStripMenuItem";
             this.depositarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.depositarToolStripMenuItem.Text = "Depositar";
+            this.depositarToolStripMenuItem.Click += new System.EventHandler(this.depositarToolStripMenuItem_Click);
             // 
             // transferirToolStripMenuItem
             // 
             this.transferirToolStripMenuItem.Name = "transferirToolStripMenuItem";
             this.transferirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.transferirToolStripMenuItem.Text = "Transferir";
+            this.transferirToolStripMenuItem.Click += new System.EventHandler(this.transferirToolStripMenuItem_Click);
             // 
             // verSaldoToolStripMenuItem
             // 

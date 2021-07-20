@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BancoPaiTrocinio.Classes
 {
-    class Funcionario
+    class Funcionario : Usuario
     {
     }
 }

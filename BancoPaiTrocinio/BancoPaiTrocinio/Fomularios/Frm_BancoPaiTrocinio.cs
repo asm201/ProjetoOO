@@ -14,9 +14,11 @@ namespace BancoPaiTrocinio
     public partial class Frm_BancoPaiTrocinio : Form
     {
         int controleCadastroCliente = 0;
-        int controleCliente = 0;
         int controleAcessoFunc = 0;
         int controleVerDados = 0;
+        int controleDepositar = 0;
+        int controleTransferir = 0;
+        int controleAcessoCliente = 0;
         public Frm_BancoPaiTrocinio()
         {
             InitializeComponent();
@@ -40,8 +42,12 @@ namespace BancoPaiTrocinio
                 conectarToolStripMenuItem.Enabled = false;
                 desconectarToolStripMenuItem.Enabled = true;
                 clienteToolStripMenuItem1.Enabled = true;
+                cadastrarToolStripMenuItem.Enabled = false;
 
-
+                if (!(Tbc_Aplicacoes.SelectedTab == null))
+                {
+                    ApagaAba(Tbc_Aplicacoes.SelectedTab);
+                }
 
                 MessageBox.Show("Bem vindo " + login + "!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -64,8 +70,12 @@ namespace BancoPaiTrocinio
                 conectarToolStripMenuItem.Enabled = false;
                 desconectarToolStripMenuItem.Enabled = true;
                 gerenteDeClientesToolStripMenuItem.Enabled = true;
+                cadastrarToolStripMenuItem.Enabled = false;
 
-
+                if (!(Tbc_Aplicacoes.SelectedTab == null))
+                {
+                    ApagaAba(Tbc_Aplicacoes.SelectedTab);
+                }
 
                 MessageBox.Show("Bem vindo " + login + "!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -88,8 +98,12 @@ namespace BancoPaiTrocinio
                 conectarToolStripMenuItem.Enabled = false;
                 desconectarToolStripMenuItem.Enabled = true;
                 diretorToolStripMenuItem1.Enabled = true;
+                cadastrarToolStripMenuItem.Enabled = false;
 
-
+                if (!(Tbc_Aplicacoes.SelectedTab == null))
+                {
+                    ApagaAba(Tbc_Aplicacoes.SelectedTab);
+                }
 
                 MessageBox.Show("Bem vindo " + login + "!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -104,10 +118,8 @@ namespace BancoPaiTrocinio
         {
             Frm_Questao db = new Frm_Questao("question", "Você deseja se desconctar?");
             db.ShowDialog();
-            //if (MessageBox.Show("Você realmente dejesa validar o CPF?", "Mensagem de Validação", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             if (db.DialogResult == DialogResult.Yes)
             {
-                //Tbc_Aplicacoes.TabPages.Remove(Tbc_Aplicacoes.SelectedTab);
                 for (int i = Tbc_Aplicacoes.TabPages.Count - 1; i >= 0; i--)
                 {
                     ApagaAba(Tbc_Aplicacoes.TabPages[i]);
@@ -117,7 +129,7 @@ namespace BancoPaiTrocinio
                 conectarToolStripMenuItem.Enabled = true;
                 desconectarToolStripMenuItem.Enabled = false;
                 cadastrarToolStripMenuItem.Enabled = true;
-                diretorToolStripMenuItem.Enabled = false;
+                diretorToolStripMenuItem1.Enabled = false;
                 gerenteDeClientesToolStripMenuItem.Enabled = false;
                 clienteToolStripMenuItem1.Enabled = false;
 
@@ -131,21 +143,14 @@ namespace BancoPaiTrocinio
             {
                 var contextMenu = new ContextMenuStrip();
                 var vToolTip1 = DesenhaItemMenu("Apagar a aba", "DeleteTab");
-                var vToolTip2 = DesenhaItemMenu("Apagar todos as abas a esquerda", "DeleteLeft");
-                var vToolTip3 = DesenhaItemMenu("Apagar todos as abas a direita", "DeleteRight");
-                var vToolTip4 = DesenhaItemMenu("Apagar todas menos essa", "DeleteAll");
 
 
                 contextMenu.Items.Add(vToolTip1);
-                contextMenu.Items.Add(vToolTip2);
-                contextMenu.Items.Add(vToolTip3);
-                contextMenu.Items.Add(vToolTip4);
+
                 contextMenu.Show(this, new Point(e.X, e.Y));
 
                 vToolTip1.Click += new System.EventHandler(vToolTip1_Click);
-                vToolTip2.Click += new System.EventHandler(vToolTip2_Click);
-                vToolTip3.Click += new System.EventHandler(vToolTip3_Click);
-                vToolTip4.Click += new System.EventHandler(vToolTip4_Click);
+
             }
         }
 
@@ -157,29 +162,6 @@ namespace BancoPaiTrocinio
             }
         }
 
-        void vToolTip2_Click(object sender1, EventArgs e1)
-        {
-            if (!(Tbc_Aplicacoes.SelectedTab == null))
-            {
-                ApagaEsquerda(Tbc_Aplicacoes.SelectedIndex);
-            }
-        }
-        void vToolTip3_Click(object sender1, EventArgs e1)
-        {
-            if (!(Tbc_Aplicacoes.SelectedTab == null))
-            {
-                ApagaDireita(Tbc_Aplicacoes.SelectedIndex);
-            }
-        }
-        void vToolTip4_Click(object sender1, EventArgs e1)
-        {
-            if (!(Tbc_Aplicacoes.SelectedTab == null))
-            {
-                ApagaEsquerda(Tbc_Aplicacoes.SelectedIndex);
-                ApagaDireita(Tbc_Aplicacoes.SelectedIndex);
-            }
-
-        }
 
         ToolStripMenuItem DesenhaItemMenu(string text, string nomeImagem)
         {
@@ -192,20 +174,6 @@ namespace BancoPaiTrocinio
             return vToolTip;
         }
 
-        void ApagaDireita(int itemSelecionado)
-        {
-            for (int i = Tbc_Aplicacoes.TabPages.Count - 1; i > itemSelecionado; i--)
-            {
-                ApagaAba(Tbc_Aplicacoes.TabPages[i]);
-            }
-        }
-        void ApagaEsquerda(int itemSelecionado)
-        {
-            for (int i = itemSelecionado - 1; i >= 0; i--)
-            {
-                ApagaAba(Tbc_Aplicacoes.TabPages[i]);
-            }
-        }
 
 
 
@@ -219,7 +187,6 @@ namespace BancoPaiTrocinio
                 u.Dock = DockStyle.Fill;
                 tb.Name = "Cadastro de Clientes";
                 tb.Text = "Cadastro de Clientes";
-                tb.ImageIndex = 7;
                 tb.Controls.Add(u);
                 Tbc_Aplicacoes.TabPages.Add(tb);
             }
@@ -235,23 +202,22 @@ namespace BancoPaiTrocinio
         }
 
         private void gerenteDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {/*
-            if (controleCliente == 0)
+        {
+            if (controleAcessoCliente == 0)
             {
-                controleCliente++;
-                ControleCliente u = new ControleCliente();
+                controleAcessoCliente++;
+                AcessoCliente u = new AcessoCliente();
                 TabPage tb = new TabPage();
                 u.Dock = DockStyle.Fill;
-                tb.Name = "Controle de Clientes";
-                tb.Text = "Controle de Clientes";
-                tb.ImageIndex = 7;
+                tb.Name = "Acesso ao Cliente";
+                tb.Text = "Acesso ao Cliente";
                 tb.Controls.Add(u);
                 Tbc_Aplicacoes.TabPages.Add(tb);
             }
             else
             {
                 MessageBox.Show("Não posso abrir o cadastro de clientes, pois ja tem um aberto", "Banco ByteBank", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-           }*/
+           }
         }
 
         private void diretorToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -263,11 +229,10 @@ namespace BancoPaiTrocinio
                 u.Dock = DockStyle.Fill;
                 tb.Name = "Acesso Funcionarios";
                 tb.Text = "Acesso Funcionarios";
-                //tb.ImageIndex = 7;
                 tb.Controls.Add(u);
                 Tbc_Aplicacoes.TabPages.Add(tb);
             } else {
-                MessageBox.Show("Não posso abrir o cadastro de clientes, pois ja tem um aberto", "Banco Paitrocínio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Não posso abrir o acesso ao clientes, pois ja tem um aberto", "Banco Paitrocínio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -277,13 +242,25 @@ namespace BancoPaiTrocinio
             {
                 controleCadastroCliente = 0;
             }
-            if (tb.Name == "Controle de Clientes")
+            if (tb.Name == "Acesso ao Cliente")
             {
-                controleCliente = 0;
+                controleAcessoCliente = 0;
             }
             if (tb.Name == "Ver Dados")
             {
                 controleVerDados = 0;
+            }
+            if (tb.Name == "Depositar")
+            {
+                controleDepositar = 0;
+            }
+            if (tb.Name == "Transferencia")
+            {
+                controleTransferir = 0;
+            }
+            if (tb.Name == "Acesso Funcionarios")
+            {
+                controleAcessoFunc = 0;
             }
             Tbc_Aplicacoes.TabPages.Remove(tb);
         }
@@ -304,6 +281,44 @@ namespace BancoPaiTrocinio
             else
             {
                 MessageBox.Show("Não posso abrir os dados de clientes, pois ja tem um aberto", "Banco Paitrocínio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void depositarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (controleDepositar == 0)
+            {
+                controleDepositar++;
+                Depositar u = new Depositar();
+                TabPage tb = new TabPage();
+                u.Dock = DockStyle.Fill;
+                tb.Name = "Depositar";
+                tb.Text = "Depositar";
+                tb.Controls.Add(u);
+                Tbc_Aplicacoes.TabPages.Add(tb);
+            }
+            else
+            {
+                MessageBox.Show("Não posso abrir esta pagina, pois ja tem um aberto", "Banco Paitrocínio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void transferirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (controleTransferir == 0)
+            {
+                controleTransferir++;
+                Transferencia u = new Transferencia();
+                TabPage tb = new TabPage();
+                u.Dock = DockStyle.Fill;
+                tb.Name = "Transferencia";
+                tb.Text = "Transferencia";
+                tb.Controls.Add(u);
+                Tbc_Aplicacoes.TabPages.Add(tb);
+            }
+            else
+            {
+                MessageBox.Show("Não posso abrir esta pagina, pois ja tem um aberto", "Banco Paitrocínio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

@@ -10,5 +10,7 @@ namespace BancoPaiTrocinio.Classes
     {
         public int c_id { get; set; }
         public int c_id_usuario { get; set; }
+
+        public string c_profissao { get; set; }
     }
 }

@@ -126,38 +126,38 @@ namespace BancoPaiTrocinio
             }
         }
 
-        Usuario LeituraFormulario()
+        Cliente LeituraFormulario()
         {
-            Usuario u = new Usuario();
-            u.u_nome = Txt_NomeCliente.Text;
-            u.u_rg = Txt_Rg.Text;
-            u.u_cpf = Txt_CPF.Text;
+            Cliente c = new Cliente();
+            c.u_nome = Txt_NomeCliente.Text;
+            c.u_rg = Txt_Rg.Text;
+            c.u_cpf = Txt_CPF.Text;
             if(Txt_Senha.Text == Txt_SenhaConfirmacao.Text)
             {
-                u.u_senha = Txt_Senha.Text;
+                c.u_senha = Txt_Senha.Text;
             }
 
-            u.u_cep = Txt_CEP.Text;
-            u.u_logradouro = Txt_Logradouro.Text;
-            u.u_complemento = Txt_Complemento.Text;
-            u.u_cidade = Txt_Cidade.Text;
-            u.u_bairro = Txt_Bairro.Text;
+            c.u_cep = Txt_CEP.Text;
+            c.u_logradouro = Txt_Logradouro.Text;
+            c.u_complemento = Txt_Complemento.Text;
+            c.u_cidade = Txt_Cidade.Text;
+            c.u_bairro = Txt_Bairro.Text;
             if (Cmb_Estados.SelectedIndex < 0)
             {
-                u.u_estado = "";
+                c.u_estado = "";
             }
             else
             {
-                 u.u_estado = Cmb_Estados.Items[Cmb_Estados.SelectedIndex].ToString();
+                 c.u_estado = Cmb_Estados.Items[Cmb_Estados.SelectedIndex].ToString();
             }
 
-            u.ctt_tel = Txt_Telefone.Text;
-            u.ctt_cel = Txt_Celular.Text;
+            c.ctt_tel = Txt_Telefone.Text;
+            c.ctt_cel = Txt_Celular.Text;
 
 
-            u.u_profissao = Txt_Profissao.Text;
+            c.c_profissao = Txt_Profissao.Text;
 
-            return u;
+            return c;
         }
 
 
