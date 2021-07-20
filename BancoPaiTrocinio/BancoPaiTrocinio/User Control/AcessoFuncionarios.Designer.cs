@@ -24,7 +24,6 @@ namespace BancoPaiTrocinio.User_Control {
         /// o conteúdo deste método com o editor de código.
         /// </summary>
         private void InitializeComponent() {
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Atualizar = new System.Windows.Forms.Button();
             this.Inserir = new System.Windows.Forms.Button();
             this.Excluir = new System.Windows.Forms.Button();
@@ -60,20 +59,10 @@ namespace BancoPaiTrocinio.User_Control {
             this.Txt_Funcao = new System.Windows.Forms.TextBox();
             this.Txt_Departamento = new System.Windows.Forms.TextBox();
             this.Txt_Salario = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dados_func.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(4, 260);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(774, 269);
-            this.dataGridView2.TabIndex = 0;
             // 
             // Atualizar
             // 
@@ -408,7 +397,18 @@ namespace BancoPaiTrocinio.User_Control {
             this.Txt_Salario.Name = "Txt_Salario";
             this.Txt_Salario.Size = new System.Drawing.Size(147, 20);
             this.Txt_Salario.TabIndex = 67;
-            this.Txt_Salario.Text = "R$";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(4, 260);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(774, 269);
+            this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // AcessoFuncionarios
             // 
@@ -424,9 +424,10 @@ namespace BancoPaiTrocinio.User_Control {
             this.Controls.Add(this.dataGridView2);
             this.Name = "AcessoFuncionarios";
             this.Size = new System.Drawing.Size(781, 532);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.Load += new System.EventHandler(this.AcessoFuncionarios_Load);
             this.dados_func.ResumeLayout(false);
             this.dados_func.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -437,7 +438,6 @@ namespace BancoPaiTrocinio.User_Control {
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button Atualizar;
         private System.Windows.Forms.Button Inserir;
         private System.Windows.Forms.Button Excluir;
@@ -473,5 +473,6 @@ namespace BancoPaiTrocinio.User_Control {
         private System.Windows.Forms.TextBox Txt_Salario;
         private System.Windows.Forms.Label lbl_complemento;
         private System.Windows.Forms.TextBox Txt_Complemento;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
