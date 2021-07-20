@@ -94,6 +94,18 @@
     <Compile Include="User Control\AcessoFuncionarios.Designer.cs">
       <DependentUpon>AcessoFuncionarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Control\Depositar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\Depositar.Designer.cs">
+      <DependentUpon>Depositar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control\Transferencia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\Transferencia.Designer.cs">
+      <DependentUpon>Transferencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Control\VerDados.cs">
       <SubType>UserControl</SubType>
     </Compile>

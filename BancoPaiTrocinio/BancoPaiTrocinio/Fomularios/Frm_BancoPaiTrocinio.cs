@@ -15,7 +15,8 @@ namespace BancoPaiTrocinio
     {
         int controleCadastroCliente = 0;
         int controleCliente = 0;
-        int controleAcessoFunc;
+        int controleAcessoFunc = 0;
+        int controleVerDados = 0;
         public Frm_BancoPaiTrocinio()
         {
             InitializeComponent();
@@ -280,12 +281,30 @@ namespace BancoPaiTrocinio
             {
                 controleCliente = 0;
             }
+            if (tb.Name == "Ver Dados")
+            {
+                controleVerDados = 0;
+            }
             Tbc_Aplicacoes.TabPages.Remove(tb);
         }
 
         private void verSaldoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (controleVerDados == 0)
+            {
+                controleVerDados++;
+                VerDados u = new VerDados();
+                TabPage tb = new TabPage();
+                u.Dock = DockStyle.Fill;
+                tb.Name = "Ver Dados";
+                tb.Text = "Ver Dados";
+                tb.Controls.Add(u);
+                Tbc_Aplicacoes.TabPages.Add(tb);
+            }
+            else
+            {
+                MessageBox.Show("Não posso abrir os dados de clientes, pois ja tem um aberto", "Banco Paitrocínio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }
