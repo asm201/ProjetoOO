@@ -57,6 +57,12 @@
     <Compile Include="Classes\ContaCorrente.cs" />
     <Compile Include="Classes\ContaPoupanca.cs" />
     <Compile Include="Classes\Funcionario.cs" />
+    <Compile Include="User Control\AcessoCliente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control\AcessoCliente.Designer.cs">
+      <DependentUpon>AcessoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="User Control\CadastroCliente.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </Compile>
     <EmbeddedResource Include="Fomularios\Frm_Questao.resx">
       <DependentUpon>Frm_Questao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control\AcessoCliente.resx">
+      <DependentUpon>AcessoCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\CadastroCliente.resx">
       <DependentUpon>CadastroCliente.cs</DependentUpon>

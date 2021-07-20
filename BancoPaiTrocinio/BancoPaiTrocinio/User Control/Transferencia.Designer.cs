@@ -40,7 +40,7 @@
             // 
             this.Lbl_Tranferir.AutoSize = true;
             this.Lbl_Tranferir.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Tranferir.Location = new System.Drawing.Point(4, 9);
+            this.Lbl_Tranferir.Location = new System.Drawing.Point(295, 11);
             this.Lbl_Tranferir.Name = "Lbl_Tranferir";
             this.Lbl_Tranferir.Size = new System.Drawing.Size(839, 25);
             this.Lbl_Tranferir.TabIndex = 0;
@@ -51,7 +51,7 @@
             // 
             this.Lbl_NumeroConta.AutoSize = true;
             this.Lbl_NumeroConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_NumeroConta.Location = new System.Drawing.Point(130, 69);
+            this.Lbl_NumeroConta.Location = new System.Drawing.Point(448, 72);
             this.Lbl_NumeroConta.Name = "Lbl_NumeroConta";
             this.Lbl_NumeroConta.Size = new System.Drawing.Size(130, 16);
             this.Lbl_NumeroConta.TabIndex = 1;
@@ -60,7 +60,7 @@
             // Btn_Transferir
             // 
             this.Btn_Transferir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Transferir.Location = new System.Drawing.Point(349, 124);
+            this.Btn_Transferir.Location = new System.Drawing.Point(696, 124);
             this.Btn_Transferir.Name = "Btn_Transferir";
             this.Btn_Transferir.Size = new System.Drawing.Size(128, 23);
             this.Btn_Transferir.TabIndex = 2;
@@ -71,7 +71,7 @@
             // 
             this.Lbl_Valor.AutoSize = true;
             this.Lbl_Valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_Valor.Location = new System.Drawing.Point(491, 72);
+            this.Lbl_Valor.Location = new System.Drawing.Point(809, 75);
             this.Lbl_Valor.Name = "Lbl_Valor";
             this.Lbl_Valor.Size = new System.Drawing.Size(45, 16);
             this.Lbl_Valor.TabIndex = 3;
@@ -79,14 +79,14 @@
             // 
             // Txt_NumeroConta
             // 
-            this.Txt_NumeroConta.Location = new System.Drawing.Point(266, 68);
+            this.Txt_NumeroConta.Location = new System.Drawing.Point(584, 71);
             this.Txt_NumeroConta.Name = "Txt_NumeroConta";
             this.Txt_NumeroConta.Size = new System.Drawing.Size(123, 20);
             this.Txt_NumeroConta.TabIndex = 4;
             // 
             // Txt_Valor
             // 
-            this.Txt_Valor.Location = new System.Drawing.Point(542, 71);
+            this.Txt_Valor.Location = new System.Drawing.Point(860, 75);
             this.Txt_Valor.Name = "Txt_Valor";
             this.Txt_Valor.Size = new System.Drawing.Size(123, 20);
             this.Txt_Valor.TabIndex = 5;
@@ -102,7 +102,7 @@
             this.Controls.Add(this.Lbl_NumeroConta);
             this.Controls.Add(this.Lbl_Tranferir);
             this.Name = "Transferencia";
-            this.Size = new System.Drawing.Size(846, 150);
+            this.Size = new System.Drawing.Size(1310, 150);
             this.ResumeLayout(false);
             this.PerformLayout();
 
