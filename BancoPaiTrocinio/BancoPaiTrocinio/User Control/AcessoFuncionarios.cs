@@ -46,10 +46,11 @@ namespace BancoPaiTrocinio.User_Control {
         }
 
         private void Inserir_Click(object sender, EventArgs e) {
-            if (Txt_Nome.Text == string.Empty || Txt_Bairro.Text == string.Empty || Txt_Celular.Text == string.Empty || Txt_Cidade.Text == string.Empty || Txt_CPF.Text == string.Empty || Txt_Departamento.Text == string.Empty || Txt_Email.Text == string.Empty || Txt_Funcao.Text == string.Empty || Txt_Logradouro.Text == string.Empty || Txt_Rg.Text == string.Empty || Txt_Salario.Text == string.Empty || Txt_Telefone.Text == string.Empty){
+            if (Txt_Nome.Text == string.Empty || Txt_Bairro.Text == string.Empty || Txt_Celular.Text == string.Empty || Txt_Cidade.Text == string.Empty || Txt_CPF.Text == string.Empty || Txt_Departamento.Text == string.Empty || Txt_Email.Text == string.Empty || Txt_Funcao.Text == string.Empty || Txt_Logradouro.Text == string.Empty || Txt_Rg.Text == string.Empty || Txt_Salario.Text == string.Empty || Txt_Telefone.Text == string.Empty || Txt_Usuario.Text == string.Empty || Txt_Senha.Text == string.Empty){
                 MessageBox.Show("É necessário preencher todos os campos!");
             } else {
                 try {
+                    conexao.ExecutaSQL($"INSERT INTO usuario (u_usuario, u_cpf,u_rg,u_senha,u_nome,u_logradouro,u_complemento,u_bairro,u_cidade,u_estado,u_cep)VALUES('" + Convert.ToString(Txt_Usuario.Text) + "','" + Convert.ToString(Txt_CPF.Text) + "','" + Convert.ToString(Txt_Rg.Text) + "','" + Convert.ToString(Txt_Senha.Text) + "','" + Convert.ToString(Txt_Nome.Text) + "','" + Convert.ToString(Txt_Logradouro.Text) + "','" + Convert.ToString(Txt_Complemento.Text) + "','" + Convert.ToString(Txt_Bairro.Text) + "','" + Convert.ToString(Txt_Cidade.Text) + "','" + Convert.ToString(Txt_Estado.Text) + "','" + Convert.ToString(Txt_) + "');");
                     DataTable query = conexao.RetornaSQL($"SELECT u_id FROM usuario WHERE u_cpf='{Convert.ToString(Txt_CPF.Text)}';");
                     conexao.ExecutaSQL($"INSERT INTO funcionario (f_id_usuario, f_salario, f_departamento, f_funcao) VALUES ({query.Rows[0]["u_id"]},{float.Parse(Txt_Salario.Text)},{Txt_Departamento.Text},{Txt_Funcao.Text});");
                     DataTable query2 = conexao.RetornaSQL($"SELECT f_id FROM funcionario WHERE f_id_usuario = {query.Rows[0]["u_id"]}");

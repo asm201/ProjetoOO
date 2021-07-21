@@ -16,11 +16,11 @@ namespace BancoPaiTrocinio.Classes
         [RegularExpression("([0-9]+)", ErrorMessage = "Numero de telefone somente aceita valores numéricos")]
         public string ctt_tel { get; set; }
 
-        [Required(ErrorMessage = "Celular de telefone é obrigatorio")]
+        [Required(ErrorMessage = "Número de celular é obrigatorio")]
         [RegularExpression("([0-9]+)", ErrorMessage = "Numero de Celular somente aceita valores numéricos")]
         public string ctt_cel { get; set; }
 
-        [Required(ErrorMessage = "Celular de telefone é obrigatorio")]
+        [Required(ErrorMessage = "E-Mail é obrigatorio")]
         public string ctt_email { get; set; }
 
     }
