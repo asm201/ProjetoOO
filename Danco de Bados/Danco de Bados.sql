@@ -4,6 +4,7 @@ CREATE TABLE usuario (
     u_rg VARCHAR(12) NOT NULL,
 	u_senha VARCHAR(30) NOT NULL,
 	u_nome VARCHAR(100) NOT NULL,
+	u_usuario VARCHAR(100), NOT NULL,
     u_logradouro VARCHAR(200),
     u_complemento VARCHAR(200),
     u_bairro VARCHAR(100),

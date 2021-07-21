@@ -57,6 +57,11 @@
     <Compile Include="Classes\ContaCorrente.cs" />
     <Compile Include="Classes\ContaPoupanca.cs" />
     <Compile Include="Classes\Funcionario.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="User Control\AcessoCliente.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -135,14 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="User Control\AcessoFuncionarios.resx">
       <DependentUpon>AcessoFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,11 +171,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Imagens\Arquivo.png" />
+    <Content Include="Imagens\banco %281%29.ico" />
+    <Content Include="Imagens\banco.ico" />
+    <Content Include="Imagens\Banco.png" />
     <Content Include="Imagens\Cadastros.png" />
+    <Content Include="Imagens\Connectar.png" />
     <Content Include="Imagens\DeleteAll.png" />
     <Content Include="Imagens\DeleteLeft.png" />
     <Content Include="Imagens\DeleteRight.png" />
     <Content Include="Imagens\DeleteTab.png" />
+    <Content Include="Imagens\depositar %282%29.ico" />
+    <Content Include="Imagens\depositar.png" />
+    <Content Include="Imagens\desconnect.png" />
+    <Content Include="Imagens\diretor.ico" />
+    <Content Include="Imagens\Diretor.png" />
     <Content Include="Imagens\ExcluirBarra.png" />
     <Content Include="Imagens\Frm_DemonstracaoKey.ico" />
     <Content Include="Imagens\Frm_DemonstracaoKey.png" />
@@ -190,11 +199,16 @@
     <Content Include="Imagens\Frm_ValidaCPF2.png" />
     <Content Include="Imagens\Frm_ValidaSenha.ico" />
     <Content Include="Imagens\Frm_ValidaSenha.png" />
+    <Content Include="Imagens\Funcioanrio.png" />
+    <Content Include="Imagens\Gerente.png" />
+    <Content Include="Imagens\Info.png" />
     <Content Include="Imagens\key.png" />
     <Content Include="Imagens\LimparBarra.png" />
     <Content Include="Imagens\money.png" />
     <Content Include="Imagens\question.ico" />
     <Content Include="Imagens\question.png" />
+    <Content Include="Imagens\Sair.png" />
+    <Content Include="Imagens\Transferencia.png" />
     <Content Include="Imagens\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

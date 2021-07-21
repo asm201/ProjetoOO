@@ -26,7 +26,7 @@ namespace BancoPaiTrocinio.Classes
         [StringLength(9, MinimumLength = 9, ErrorMessage = "RG do Cliente deve ter 9 digitos")]
         public string u_rg { get; set; }
 
-        [Required(ErrorMessage = "RG é obrigatorio")]
+        [Required(ErrorMessage = "Senha é obrigatorio")]
         public string u_senha { get; set; }
 
         [Required(ErrorMessage = "CEP é obrigatorio")]
@@ -54,7 +54,8 @@ namespace BancoPaiTrocinio.Classes
         [StringLength(50, ErrorMessage = "Estado deve ter no máximo 50 digitos")]
         public string u_estado { get; set; }
 
-        
+        [Required(ErrorMessage = "Usuario é obrigatorio")]
+        public string u_usario { get; set; }
 
         public int u_id_cliente { get; set; }
         public int u_id_func { get; set; }

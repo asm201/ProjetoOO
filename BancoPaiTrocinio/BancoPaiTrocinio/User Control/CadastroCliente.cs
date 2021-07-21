@@ -156,6 +156,7 @@ namespace BancoPaiTrocinio
 
 
             c.c_profissao = Txt_Profissao.Text;
+            c.u_usario = Txt_Usuario.Text;
 
             return c;
         }
