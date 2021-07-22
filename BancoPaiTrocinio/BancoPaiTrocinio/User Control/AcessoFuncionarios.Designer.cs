@@ -51,6 +51,9 @@ namespace BancoPaiTrocinio.User_Control {
             this.lbl_bairro = new System.Windows.Forms.Label();
             this.lbl_estado = new System.Windows.Forms.Label();
             this.dados_func = new System.Windows.Forms.GroupBox();
+            this.Txt_Funcao = new System.Windows.Forms.ComboBox();
+            this.lbl_CEP = new System.Windows.Forms.Label();
+            this.Txt_CEP = new System.Windows.Forms.TextBox();
             this.Lbl_Senha = new System.Windows.Forms.Label();
             this.Txt_Senha = new System.Windows.Forms.TextBox();
             this.Txt_Usuario = new System.Windows.Forms.TextBox();
@@ -63,9 +66,8 @@ namespace BancoPaiTrocinio.User_Control {
             this.Txt_Departamento = new System.Windows.Forms.TextBox();
             this.Txt_Salario = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Txt_CEP = new System.Windows.Forms.TextBox();
-            this.lbl_CEP = new System.Windows.Forms.Label();
-            this.Txt_Funcao = new System.Windows.Forms.ComboBox();
+            this.Txt_Excluir = new System.Windows.Forms.TextBox();
+            this.lblExcluir = new System.Windows.Forms.Label();
             this.dados_func.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -95,7 +97,7 @@ namespace BancoPaiTrocinio.User_Control {
             // Excluir
             // 
             this.Excluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Excluir.Location = new System.Drawing.Point(685, 194);
+            this.Excluir.Location = new System.Drawing.Point(685, 255);
             this.Excluir.Name = "Excluir";
             this.Excluir.Size = new System.Drawing.Size(75, 23);
             this.Excluir.TabIndex = 4;
@@ -343,6 +345,38 @@ namespace BancoPaiTrocinio.User_Control {
             this.dados_func.TabStop = false;
             this.dados_func.Text = "Dados do Funcionário";
             // 
+            // Txt_Funcao
+            // 
+            this.Txt_Funcao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Txt_Funcao.FormattingEnabled = true;
+            this.Txt_Funcao.Items.AddRange(new object[] {
+            "Desenvolvedor",
+            "Diretor",
+            "Gerente de Contas",
+            "Estagiário",
+            "Secretário"});
+            this.Txt_Funcao.Location = new System.Drawing.Point(484, 115);
+            this.Txt_Funcao.Name = "Txt_Funcao";
+            this.Txt_Funcao.Size = new System.Drawing.Size(146, 21);
+            this.Txt_Funcao.TabIndex = 81;
+            // 
+            // lbl_CEP
+            // 
+            this.lbl_CEP.AutoSize = true;
+            this.lbl_CEP.Location = new System.Drawing.Point(148, 191);
+            this.lbl_CEP.Name = "lbl_CEP";
+            this.lbl_CEP.Size = new System.Drawing.Size(28, 13);
+            this.lbl_CEP.TabIndex = 80;
+            this.lbl_CEP.Text = "CEP";
+            // 
+            // Txt_CEP
+            // 
+            this.Txt_CEP.Location = new System.Drawing.Point(151, 205);
+            this.Txt_CEP.Name = "Txt_CEP";
+            this.Txt_CEP.Size = new System.Drawing.Size(120, 20);
+            this.Txt_CEP.TabIndex = 79;
+            // 
             // Lbl_Senha
             // 
             this.Lbl_Senha.AutoSize = true;
@@ -450,42 +484,32 @@ namespace BancoPaiTrocinio.User_Control {
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // Txt_CEP
+            // Txt_Excluir
             // 
-            this.Txt_CEP.Location = new System.Drawing.Point(151, 205);
-            this.Txt_CEP.Name = "Txt_CEP";
-            this.Txt_CEP.Size = new System.Drawing.Size(120, 20);
-            this.Txt_CEP.TabIndex = 79;
-            // 
-            // lbl_CEP
-            // 
-            this.lbl_CEP.AutoSize = true;
-            this.lbl_CEP.Location = new System.Drawing.Point(148, 191);
-            this.lbl_CEP.Name = "lbl_CEP";
-            this.lbl_CEP.Size = new System.Drawing.Size(28, 13);
-            this.lbl_CEP.TabIndex = 80;
-            this.lbl_CEP.Text = "CEP";
-            // 
-            // Txt_Funcao
-            // 
-            this.Txt_Funcao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.Txt_Excluir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_Funcao.FormattingEnabled = true;
-            this.Txt_Funcao.Items.AddRange(new object[] {
-            "Desenvolvedor",
-            "Diretor",
-            "Gerente de Contas",
-            "Estagiário",
-            "Secretário"});
-            this.Txt_Funcao.Location = new System.Drawing.Point(484, 115);
-            this.Txt_Funcao.Name = "Txt_Funcao";
-            this.Txt_Funcao.Size = new System.Drawing.Size(146, 21);
-            this.Txt_Funcao.TabIndex = 81;
+            this.Txt_Excluir.Location = new System.Drawing.Point(669, 225);
+            this.Txt_Excluir.Name = "Txt_Excluir";
+            this.Txt_Excluir.Size = new System.Drawing.Size(109, 20);
+            this.Txt_Excluir.TabIndex = 8;
+            // 
+            // lblExcluir
+            // 
+            this.lblExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblExcluir.AutoSize = true;
+            this.lblExcluir.Location = new System.Drawing.Point(669, 208);
+            this.lblExcluir.Name = "lblExcluir";
+            this.lblExcluir.Size = new System.Drawing.Size(111, 13);
+            this.lblExcluir.TabIndex = 9;
+            this.lblExcluir.Text = "Digite o CPF a excluir:";
             // 
             // AcessoFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblExcluir);
+            this.Controls.Add(this.Txt_Excluir);
             this.Controls.Add(this.cpf_busca);
             this.Controls.Add(this.Buscar);
             this.Controls.Add(this.TxtBusca);
@@ -552,5 +576,7 @@ namespace BancoPaiTrocinio.User_Control {
         private System.Windows.Forms.Label lbl_CEP;
         private System.Windows.Forms.TextBox Txt_CEP;
         private System.Windows.Forms.ComboBox Txt_Funcao;
+        private System.Windows.Forms.TextBox Txt_Excluir;
+        private System.Windows.Forms.Label lblExcluir;
     }
 }

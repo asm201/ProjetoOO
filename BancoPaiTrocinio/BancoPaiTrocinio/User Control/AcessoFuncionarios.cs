@@ -32,6 +32,8 @@ namespace BancoPaiTrocinio.User_Control {
             Txt_Rg.Text = "";
             Txt_Salario.Text = "";
             Txt_Telefone.Text = "";
+            Txt_Usuario.Text = "";
+            Txt_Senha.Text = "";
         }
 
         //public void AtualizaGrid() {
@@ -111,7 +113,9 @@ namespace BancoPaiTrocinio.User_Control {
         }
 
         private void Excluir_Click(object sender, EventArgs e) {
-            conexao.ExecutaSQL($"DELETE FROM usuario WHERE u_cpf = {Convert.ToString(Txt_CPF.Text)};");
+            DataTable query = conexao.RetornaSQL($"SELECT u_id FROM usuario WHERE u_cpf = {Txt_Excluir.Text}");
+            conexao.ExecutaSQL($"DELETE FROM usuario WHERE u_id = {query.Rows[0]["u_id"]};");
+            AcessoFuncionarios_Load(sender, e);
         }
     }
 }
