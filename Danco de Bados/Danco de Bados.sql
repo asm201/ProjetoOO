@@ -4,7 +4,6 @@ CREATE TABLE usuario (
     u_rg VARCHAR(12) NOT NULL,
 	u_senha VARCHAR(30) NOT NULL,
 	u_nome VARCHAR(100) NOT NULL,
-	u_usuario VARCHAR(100), NOT NULL,
     u_logradouro VARCHAR(200),
     u_complemento VARCHAR(200),
     u_bairro VARCHAR(100),
@@ -73,36 +72,36 @@ CREATE TABLE estagiario(
 );
 
 ALTER TABLE usuario
-ADD FOREIGN KEY (u_id_cliente) REFERENCES cliente(c_id);
+ADD FOREIGN KEY (u_id_cliente) REFERENCES cliente(c_id) ON DELETE SET NULL;
 ALTER TABLE usuario
-ADD FOREIGN KEY (u_id_funcionario) REFERENCES funcionario(f_id);
+ADD FOREIGN KEY (u_id_funcionario) REFERENCES funcionario(f_id) ON DELETE SET NULL;
 ALTER TABLE usuario
-ADD FOREIGN KEY (u_ctt_id) REFERENCES contato(ctt_id);
+ADD FOREIGN KEY (u_ctt_id) REFERENCES contato(ctt_id) ON DELETE SET NULL;
 ALTER TABLE contato
-ADD FOREIGN KEY (ctt_id_usuario) REFERENCES usuario(u_id);
+ADD FOREIGN KEY (ctt_id_usuario) REFERENCES usuario(u_id) ON DELETE CASCADE;
 ALTER TABLE cliente
-ADD FOREIGN KEY (c_id_usuario) REFERENCES usuario(u_id);
+ADD FOREIGN KEY (c_id_usuario) REFERENCES usuario(u_id) ON DELETE CASCADE;
 ALTER TABLE conta_bancaria
-ADD FOREIGN KEY (cb_id_cliente) REFERENCES cliente(c_id);
+ADD FOREIGN KEY (cb_id_cliente) REFERENCES cliente(c_id) ON DELETE CASCADE;
 ALTER TABLE conta_bancaria
-ADD FOREIGN KEY (cb_id_conta_corrente) REFERENCES conta_corrente(cc_id);
+ADD FOREIGN KEY (cb_id_conta_corrente) REFERENCES conta_corrente(cc_id) ON DELETE SET NULL;
 ALTER TABLE conta_bancaria
-ADD FOREIGN KEY (cb_id_conta_poupanca) REFERENCES conta_poupanca(cp_id);
+ADD FOREIGN KEY (cb_id_conta_poupanca) REFERENCES conta_poupanca(cp_id) ON DELETE SET NULL;
 ALTER TABLE conta_corrente
-ADD FOREIGN KEY (cc_id_conta_bancaria) REFERENCES conta_bancaria(cb_id);
+ADD FOREIGN KEY (cc_id_conta_bancaria) REFERENCES conta_bancaria(cb_id) ON DELETE CASCADE;
 ALTER TABLE conta_poupanca
-ADD FOREIGN KEY (cp_id_conta_bancaria) REFERENCES conta_bancaria(cb_id);
+ADD FOREIGN KEY (cp_id_conta_bancaria) REFERENCES conta_bancaria(cb_id) ON DELETE CASCADE;
 ALTER TABLE funcionario
-ADD FOREIGN KEY (f_id_usuario) REFERENCES usuario(u_id);
+ADD FOREIGN KEY (f_id_usuario) REFERENCES usuario(u_id) ON DELETE CASCADE;
 ALTER TABLE funcionario
-ADD FOREIGN KEY (f_id_gerente) REFERENCES gerente(g_id);
+ADD FOREIGN KEY (f_id_gerente) REFERENCES gerente(g_id) ON DELETE SET NULL;
 ALTER TABLE funcionario
-ADD FOREIGN KEY (f_id_diretor) REFERENCES diretor(di_id);
+ADD FOREIGN KEY (f_id_diretor) REFERENCES diretor(di_id) ON DELETE SET NULL;
 ALTER TABLE gerente
-ADD FOREIGN KEY (g_id_funcionario) REFERENCES funcionario(f_id);
+ADD FOREIGN KEY (g_id_funcionario) REFERENCES funcionario(f_id) ON DELETE CASCADE;
 ALTER TABLE desenvolvedor
-ADD FOREIGN KEY (de_id_funcionario) REFERENCES funcionario(f_id);
+ADD FOREIGN KEY (de_id_funcionario) REFERENCES funcionario(f_id) ON DELETE CASCADE;
 ALTER TABLE diretor
-ADD FOREIGN KEY (di_id_funcionario) REFERENCES funcionario(f_id);
+ADD FOREIGN KEY (di_id_funcionario) REFERENCES funcionario(f_id) ON DELETE CASCADE;
 ALTER TABLE estagiario
-ADD FOREIGN KEY (e_id_funcionario) REFERENCES funcionario(f_id);
+ADD FOREIGN KEY (e_id_funcionario) REFERENCES funcionario(f_id) ON DELETE CASCADE;
