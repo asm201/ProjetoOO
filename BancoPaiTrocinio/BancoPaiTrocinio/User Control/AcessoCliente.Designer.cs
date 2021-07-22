@@ -54,6 +54,10 @@
             this.lbl_bairro = new System.Windows.Forms.Label();
             this.lbl_estado = new System.Windows.Forms.Label();
             this.dados_cliente = new System.Windows.Forms.GroupBox();
+            this.lblprofissao = new System.Windows.Forms.Label();
+            this.Txt_Profissao = new System.Windows.Forms.TextBox();
+            this.lblCEP = new System.Windows.Forms.Label();
+            this.Txt_CEP = new System.Windows.Forms.TextBox();
             this.Grp_TipoConta = new System.Windows.Forms.GroupBox();
             this.Rdb_ContaPoupanca = new System.Windows.Forms.RadioButton();
             this.Rdb_ContaCorrente = new System.Windows.Forms.RadioButton();
@@ -67,10 +71,6 @@
             this.Txt_Saldo = new System.Windows.Forms.TextBox();
             this.Txt_Bairro = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Txt_CEP = new System.Windows.Forms.TextBox();
-            this.lblCEP = new System.Windows.Forms.Label();
-            this.Txt_Profissao = new System.Windows.Forms.TextBox();
-            this.lblprofissao = new System.Windows.Forms.Label();
             this.dados_cliente.SuspendLayout();
             this.Grp_TipoConta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -123,6 +123,7 @@
             this.Buscar.TabIndex = 6;
             this.Buscar.Text = "Buscar";
             this.Buscar.UseVisualStyleBackColor = true;
+            this.Buscar.Click += new System.EventHandler(this.Buscar_Click);
             // 
             // cpf_busca
             // 
@@ -161,7 +162,7 @@
             // 
             // Txt_Email
             // 
-            this.Txt_Email.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.Txt_Email.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Email.Location = new System.Drawing.Point(277, 127);
             this.Txt_Email.Name = "Txt_Email";
@@ -195,7 +196,7 @@
             // 
             // Txt_Celular
             // 
-            this.Txt_Celular.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.Txt_Celular.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Celular.Location = new System.Drawing.Point(463, 82);
             this.Txt_Celular.Name = "Txt_Celular";
@@ -268,7 +269,7 @@
             // 
             // Txt_Estado
             // 
-            this.Txt_Estado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.Txt_Estado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Estado.Location = new System.Drawing.Point(463, 167);
             this.Txt_Estado.Name = "Txt_Estado";
@@ -295,7 +296,7 @@
             // 
             // dados_cliente
             // 
-            this.dados_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dados_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dados_cliente.Controls.Add(this.lblprofissao);
             this.dados_cliente.Controls.Add(this.Txt_Profissao);
@@ -337,6 +338,38 @@
             this.dados_cliente.TabStop = false;
             this.dados_cliente.Text = "Dados do Cliente";
             // 
+            // lblprofissao
+            // 
+            this.lblprofissao.AutoSize = true;
+            this.lblprofissao.Location = new System.Drawing.Point(135, 66);
+            this.lblprofissao.Name = "lblprofissao";
+            this.lblprofissao.Size = new System.Drawing.Size(50, 13);
+            this.lblprofissao.TabIndex = 83;
+            this.lblprofissao.Text = "Profissão";
+            // 
+            // Txt_Profissao
+            // 
+            this.Txt_Profissao.Location = new System.Drawing.Point(135, 81);
+            this.Txt_Profissao.Name = "Txt_Profissao";
+            this.Txt_Profissao.Size = new System.Drawing.Size(136, 20);
+            this.Txt_Profissao.TabIndex = 82;
+            // 
+            // lblCEP
+            // 
+            this.lblCEP.AutoSize = true;
+            this.lblCEP.Location = new System.Drawing.Point(26, 109);
+            this.lblCEP.Name = "lblCEP";
+            this.lblCEP.Size = new System.Drawing.Size(28, 13);
+            this.lblCEP.TabIndex = 81;
+            this.lblCEP.Text = "CEP";
+            // 
+            // Txt_CEP
+            // 
+            this.Txt_CEP.Location = new System.Drawing.Point(26, 126);
+            this.Txt_CEP.Name = "Txt_CEP";
+            this.Txt_CEP.Size = new System.Drawing.Size(245, 20);
+            this.Txt_CEP.TabIndex = 80;
+            // 
             // Grp_TipoConta
             // 
             this.Grp_TipoConta.Controls.Add(this.Rdb_ContaPoupanca);
@@ -355,13 +388,13 @@
             this.Rdb_ContaPoupanca.Name = "Rdb_ContaPoupanca";
             this.Rdb_ContaPoupanca.Size = new System.Drawing.Size(105, 17);
             this.Rdb_ContaPoupanca.TabIndex = 1;
-            this.Rdb_ContaPoupanca.TabStop = true;
             this.Rdb_ContaPoupanca.Text = "Conta Poupança";
             this.Rdb_ContaPoupanca.UseVisualStyleBackColor = true;
             // 
             // Rdb_ContaCorrente
             // 
             this.Rdb_ContaCorrente.AutoSize = true;
+            this.Rdb_ContaCorrente.Checked = true;
             this.Rdb_ContaCorrente.Location = new System.Drawing.Point(25, 19);
             this.Rdb_ContaCorrente.Name = "Rdb_ContaCorrente";
             this.Rdb_ContaCorrente.Size = new System.Drawing.Size(96, 17);
@@ -429,7 +462,7 @@
             // 
             // Txt_Saldo
             // 
-            this.Txt_Saldo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.Txt_Saldo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Saldo.Location = new System.Drawing.Point(483, 42);
             this.Txt_Saldo.Name = "Txt_Saldo";
@@ -446,7 +479,7 @@
             // 
             // dataGridView2
             // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -454,38 +487,6 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(770, 217);
             this.dataGridView2.TabIndex = 8;
-            // 
-            // Txt_CEP
-            // 
-            this.Txt_CEP.Location = new System.Drawing.Point(26, 126);
-            this.Txt_CEP.Name = "Txt_CEP";
-            this.Txt_CEP.Size = new System.Drawing.Size(245, 20);
-            this.Txt_CEP.TabIndex = 80;
-            // 
-            // lblCEP
-            // 
-            this.lblCEP.AutoSize = true;
-            this.lblCEP.Location = new System.Drawing.Point(26, 109);
-            this.lblCEP.Name = "lblCEP";
-            this.lblCEP.Size = new System.Drawing.Size(28, 13);
-            this.lblCEP.TabIndex = 81;
-            this.lblCEP.Text = "CEP";
-            // 
-            // Txt_Profissao
-            // 
-            this.Txt_Profissao.Location = new System.Drawing.Point(135, 81);
-            this.Txt_Profissao.Name = "Txt_Profissao";
-            this.Txt_Profissao.Size = new System.Drawing.Size(136, 20);
-            this.Txt_Profissao.TabIndex = 82;
-            // 
-            // lblprofissao
-            // 
-            this.lblprofissao.AutoSize = true;
-            this.lblprofissao.Location = new System.Drawing.Point(135, 66);
-            this.lblprofissao.Name = "lblprofissao";
-            this.lblprofissao.Size = new System.Drawing.Size(50, 13);
-            this.lblprofissao.TabIndex = 83;
-            this.lblprofissao.Text = "Profissão";
             // 
             // AcessoCliente
             // 
