@@ -63,14 +63,12 @@
             this.Lbl_NumeroConta = new System.Windows.Forms.Label();
             this.lbl_complemento = new System.Windows.Forms.Label();
             this.Txt_Complemento = new System.Windows.Forms.TextBox();
-            this.lbl_funcao = new System.Windows.Forms.Label();
             this.lbl_salario = new System.Windows.Forms.Label();
-            this.lbl_departamento = new System.Windows.Forms.Label();
-            this.Txt_Profissao = new System.Windows.Forms.TextBox();
-            this.Txt_Departamento = new System.Windows.Forms.TextBox();
             this.Txt_Saldo = new System.Windows.Forms.TextBox();
             this.Txt_Bairro = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Txt_CEP = new System.Windows.Forms.TextBox();
+            this.lblCEP = new System.Windows.Forms.Label();
             this.dados_cliente.SuspendLayout();
             this.Grp_TipoConta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -137,7 +135,7 @@
             // Lbl_Rg
             // 
             this.Lbl_Rg.AutoSize = true;
-            this.Lbl_Rg.Location = new System.Drawing.Point(274, 70);
+            this.Lbl_Rg.Location = new System.Drawing.Point(23, 67);
             this.Lbl_Rg.Name = "Lbl_Rg";
             this.Lbl_Rg.Size = new System.Drawing.Size(23, 13);
             this.Lbl_Rg.TabIndex = 51;
@@ -146,7 +144,7 @@
             // Lbl_Telefone
             // 
             this.Lbl_Telefone.AutoSize = true;
-            this.Lbl_Telefone.Location = new System.Drawing.Point(274, 115);
+            this.Lbl_Telefone.Location = new System.Drawing.Point(274, 66);
             this.Lbl_Telefone.Name = "Lbl_Telefone";
             this.Lbl_Telefone.Size = new System.Drawing.Size(107, 13);
             this.Lbl_Telefone.TabIndex = 52;
@@ -154,7 +152,7 @@
             // 
             // Txt_Telefone
             // 
-            this.Txt_Telefone.Location = new System.Drawing.Point(277, 131);
+            this.Txt_Telefone.Location = new System.Drawing.Point(277, 82);
             this.Txt_Telefone.Name = "Txt_Telefone";
             this.Txt_Telefone.Size = new System.Drawing.Size(171, 20);
             this.Txt_Telefone.TabIndex = 48;
@@ -163,22 +161,22 @@
             // 
             this.Txt_Email.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_Email.Location = new System.Drawing.Point(277, 176);
+            this.Txt_Email.Location = new System.Drawing.Point(277, 127);
             this.Txt_Email.Name = "Txt_Email";
             this.Txt_Email.Size = new System.Drawing.Size(353, 20);
             this.Txt_Email.TabIndex = 53;
             // 
             // Txt_Rg
             // 
-            this.Txt_Rg.Location = new System.Drawing.Point(277, 85);
+            this.Txt_Rg.Location = new System.Drawing.Point(26, 82);
             this.Txt_Rg.Name = "Txt_Rg";
-            this.Txt_Rg.Size = new System.Drawing.Size(200, 20);
+            this.Txt_Rg.Size = new System.Drawing.Size(245, 20);
             this.Txt_Rg.TabIndex = 50;
             // 
             // Lbl_Email
             // 
             this.Lbl_Email.AutoSize = true;
-            this.Lbl_Email.Location = new System.Drawing.Point(274, 160);
+            this.Lbl_Email.Location = new System.Drawing.Point(274, 111);
             this.Lbl_Email.Name = "Lbl_Email";
             this.Lbl_Email.Size = new System.Drawing.Size(35, 13);
             this.Lbl_Email.TabIndex = 54;
@@ -197,7 +195,7 @@
             // 
             this.Txt_Celular.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_Celular.Location = new System.Drawing.Point(463, 131);
+            this.Txt_Celular.Location = new System.Drawing.Point(463, 82);
             this.Txt_Celular.Name = "Txt_Celular";
             this.Txt_Celular.Size = new System.Drawing.Size(167, 20);
             this.Txt_Celular.TabIndex = 55;
@@ -212,7 +210,7 @@
             // Lbl_Celular
             // 
             this.Lbl_Celular.AutoSize = true;
-            this.Lbl_Celular.Location = new System.Drawing.Point(460, 115);
+            this.Lbl_Celular.Location = new System.Drawing.Point(460, 66);
             this.Lbl_Celular.Name = "Lbl_Celular";
             this.Lbl_Celular.Size = new System.Drawing.Size(84, 13);
             this.Lbl_Celular.TabIndex = 56;
@@ -237,7 +235,7 @@
             // lbl_logradouro
             // 
             this.lbl_logradouro.AutoSize = true;
-            this.lbl_logradouro.Location = new System.Drawing.Point(23, 115);
+            this.lbl_logradouro.Location = new System.Drawing.Point(23, 151);
             this.lbl_logradouro.Name = "lbl_logradouro";
             this.lbl_logradouro.Size = new System.Drawing.Size(61, 13);
             this.lbl_logradouro.TabIndex = 59;
@@ -245,14 +243,14 @@
             // 
             // Txt_Logradouro
             // 
-            this.Txt_Logradouro.Location = new System.Drawing.Point(26, 131);
+            this.Txt_Logradouro.Location = new System.Drawing.Point(26, 167);
             this.Txt_Logradouro.Name = "Txt_Logradouro";
             this.Txt_Logradouro.Size = new System.Drawing.Size(245, 20);
             this.Txt_Logradouro.TabIndex = 60;
             // 
             // Txt_Cidade
             // 
-            this.Txt_Cidade.Location = new System.Drawing.Point(26, 216);
+            this.Txt_Cidade.Location = new System.Drawing.Point(26, 260);
             this.Txt_Cidade.Name = "Txt_Cidade";
             this.Txt_Cidade.Size = new System.Drawing.Size(245, 20);
             this.Txt_Cidade.TabIndex = 61;
@@ -260,7 +258,7 @@
             // lbl_cidade
             // 
             this.lbl_cidade.AutoSize = true;
-            this.lbl_cidade.Location = new System.Drawing.Point(26, 200);
+            this.lbl_cidade.Location = new System.Drawing.Point(26, 244);
             this.lbl_cidade.Name = "lbl_cidade";
             this.lbl_cidade.Size = new System.Drawing.Size(40, 13);
             this.lbl_cidade.TabIndex = 62;
@@ -270,7 +268,7 @@
             // 
             this.Txt_Estado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_Estado.Location = new System.Drawing.Point(463, 216);
+            this.Txt_Estado.Location = new System.Drawing.Point(463, 167);
             this.Txt_Estado.Name = "Txt_Estado";
             this.Txt_Estado.Size = new System.Drawing.Size(167, 20);
             this.Txt_Estado.TabIndex = 64;
@@ -278,7 +276,7 @@
             // lbl_bairro
             // 
             this.lbl_bairro.AutoSize = true;
-            this.lbl_bairro.Location = new System.Drawing.Point(274, 200);
+            this.lbl_bairro.Location = new System.Drawing.Point(274, 151);
             this.lbl_bairro.Name = "lbl_bairro";
             this.lbl_bairro.Size = new System.Drawing.Size(34, 13);
             this.lbl_bairro.TabIndex = 65;
@@ -287,7 +285,7 @@
             // lbl_estado
             // 
             this.lbl_estado.AutoSize = true;
-            this.lbl_estado.Location = new System.Drawing.Point(460, 200);
+            this.lbl_estado.Location = new System.Drawing.Point(460, 151);
             this.lbl_estado.Name = "lbl_estado";
             this.lbl_estado.Size = new System.Drawing.Size(40, 13);
             this.lbl_estado.TabIndex = 66;
@@ -297,6 +295,8 @@
             // 
             this.dados_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dados_cliente.Controls.Add(this.lblCEP);
+            this.dados_cliente.Controls.Add(this.Txt_CEP);
             this.dados_cliente.Controls.Add(this.Grp_TipoConta);
             this.dados_cliente.Controls.Add(this.Lbl_NumeroAgencia);
             this.dados_cliente.Controls.Add(this.Txt_NumeroAgencia);
@@ -304,11 +304,7 @@
             this.dados_cliente.Controls.Add(this.Lbl_NumeroConta);
             this.dados_cliente.Controls.Add(this.lbl_complemento);
             this.dados_cliente.Controls.Add(this.Txt_Complemento);
-            this.dados_cliente.Controls.Add(this.lbl_funcao);
             this.dados_cliente.Controls.Add(this.lbl_salario);
-            this.dados_cliente.Controls.Add(this.lbl_departamento);
-            this.dados_cliente.Controls.Add(this.Txt_Profissao);
-            this.dados_cliente.Controls.Add(this.Txt_Departamento);
             this.dados_cliente.Controls.Add(this.Txt_Saldo);
             this.dados_cliente.Controls.Add(this.lbl_estado);
             this.dados_cliente.Controls.Add(this.lbl_bairro);
@@ -341,7 +337,7 @@
             // 
             this.Grp_TipoConta.Controls.Add(this.Rdb_ContaPoupanca);
             this.Grp_TipoConta.Controls.Add(this.Rdb_ContaCorrente);
-            this.Grp_TipoConta.Location = new System.Drawing.Point(350, 245);
+            this.Grp_TipoConta.Location = new System.Drawing.Point(328, 200);
             this.Grp_TipoConta.Name = "Grp_TipoConta";
             this.Grp_TipoConta.Size = new System.Drawing.Size(279, 45);
             this.Grp_TipoConta.TabIndex = 79;
@@ -373,7 +369,7 @@
             // Lbl_NumeroAgencia
             // 
             this.Lbl_NumeroAgencia.AutoSize = true;
-            this.Lbl_NumeroAgencia.Location = new System.Drawing.Point(187, 239);
+            this.Lbl_NumeroAgencia.Location = new System.Drawing.Point(474, 244);
             this.Lbl_NumeroAgencia.Name = "Lbl_NumeroAgencia";
             this.Lbl_NumeroAgencia.Size = new System.Drawing.Size(101, 13);
             this.Lbl_NumeroAgencia.TabIndex = 78;
@@ -381,22 +377,22 @@
             // 
             // Txt_NumeroAgencia
             // 
-            this.Txt_NumeroAgencia.Location = new System.Drawing.Point(187, 255);
+            this.Txt_NumeroAgencia.Location = new System.Drawing.Point(463, 260);
             this.Txt_NumeroAgencia.Name = "Txt_NumeroAgencia";
-            this.Txt_NumeroAgencia.Size = new System.Drawing.Size(155, 20);
+            this.Txt_NumeroAgencia.Size = new System.Drawing.Size(166, 20);
             this.Txt_NumeroAgencia.TabIndex = 77;
             // 
             // Txt_NumeroConta
             // 
-            this.Txt_NumeroConta.Location = new System.Drawing.Point(26, 255);
+            this.Txt_NumeroConta.Location = new System.Drawing.Point(277, 260);
             this.Txt_NumeroConta.Name = "Txt_NumeroConta";
-            this.Txt_NumeroConta.Size = new System.Drawing.Size(155, 20);
+            this.Txt_NumeroConta.Size = new System.Drawing.Size(171, 20);
             this.Txt_NumeroConta.TabIndex = 76;
             // 
             // Lbl_NumeroConta
             // 
             this.Lbl_NumeroConta.AutoSize = true;
-            this.Lbl_NumeroConta.Location = new System.Drawing.Point(26, 239);
+            this.Lbl_NumeroConta.Location = new System.Drawing.Point(277, 244);
             this.Lbl_NumeroConta.Name = "Lbl_NumeroConta";
             this.Lbl_NumeroConta.Size = new System.Drawing.Size(90, 13);
             this.Lbl_NumeroConta.TabIndex = 75;
@@ -405,7 +401,7 @@
             // lbl_complemento
             // 
             this.lbl_complemento.AutoSize = true;
-            this.lbl_complemento.Location = new System.Drawing.Point(26, 161);
+            this.lbl_complemento.Location = new System.Drawing.Point(26, 200);
             this.lbl_complemento.Name = "lbl_complemento";
             this.lbl_complemento.Size = new System.Drawing.Size(71, 13);
             this.lbl_complemento.TabIndex = 74;
@@ -413,19 +409,10 @@
             // 
             // Txt_Complemento
             // 
-            this.Txt_Complemento.Location = new System.Drawing.Point(26, 176);
+            this.Txt_Complemento.Location = new System.Drawing.Point(26, 215);
             this.Txt_Complemento.Name = "Txt_Complemento";
             this.Txt_Complemento.Size = new System.Drawing.Size(245, 20);
             this.Txt_Complemento.TabIndex = 73;
-            // 
-            // lbl_funcao
-            // 
-            this.lbl_funcao.AutoSize = true;
-            this.lbl_funcao.Location = new System.Drawing.Point(480, 69);
-            this.lbl_funcao.Name = "lbl_funcao";
-            this.lbl_funcao.Size = new System.Drawing.Size(47, 13);
-            this.lbl_funcao.TabIndex = 72;
-            this.lbl_funcao.Text = "Pofissão";
             // 
             // lbl_salario
             // 
@@ -435,31 +422,6 @@
             this.lbl_salario.Size = new System.Drawing.Size(34, 13);
             this.lbl_salario.TabIndex = 71;
             this.lbl_salario.Text = "Saldo";
-            // 
-            // lbl_departamento
-            // 
-            this.lbl_departamento.AutoSize = true;
-            this.lbl_departamento.Location = new System.Drawing.Point(23, 69);
-            this.lbl_departamento.Name = "lbl_departamento";
-            this.lbl_departamento.Size = new System.Drawing.Size(74, 13);
-            this.lbl_departamento.TabIndex = 70;
-            this.lbl_departamento.Text = "Departamento";
-            // 
-            // Txt_Profissao
-            // 
-            this.Txt_Profissao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_Profissao.Location = new System.Drawing.Point(483, 85);
-            this.Txt_Profissao.Name = "Txt_Profissao";
-            this.Txt_Profissao.Size = new System.Drawing.Size(147, 20);
-            this.Txt_Profissao.TabIndex = 69;
-            // 
-            // Txt_Departamento
-            // 
-            this.Txt_Departamento.Location = new System.Drawing.Point(26, 85);
-            this.Txt_Departamento.Name = "Txt_Departamento";
-            this.Txt_Departamento.Size = new System.Drawing.Size(245, 20);
-            this.Txt_Departamento.TabIndex = 68;
             // 
             // Txt_Saldo
             // 
@@ -473,7 +435,7 @@
             // 
             // Txt_Bairro
             // 
-            this.Txt_Bairro.Location = new System.Drawing.Point(277, 216);
+            this.Txt_Bairro.Location = new System.Drawing.Point(277, 167);
             this.Txt_Bairro.Name = "Txt_Bairro";
             this.Txt_Bairro.Size = new System.Drawing.Size(171, 20);
             this.Txt_Bairro.TabIndex = 63;
@@ -482,11 +444,28 @@
             // 
             this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(4, 309);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(770, 217);
             this.dataGridView2.TabIndex = 8;
+            // 
+            // Txt_CEP
+            // 
+            this.Txt_CEP.Location = new System.Drawing.Point(26, 126);
+            this.Txt_CEP.Name = "Txt_CEP";
+            this.Txt_CEP.Size = new System.Drawing.Size(245, 20);
+            this.Txt_CEP.TabIndex = 80;
+            // 
+            // lblCEP
+            // 
+            this.lblCEP.AutoSize = true;
+            this.lblCEP.Location = new System.Drawing.Point(26, 109);
+            this.lblCEP.Name = "lblCEP";
+            this.lblCEP.Size = new System.Drawing.Size(28, 13);
+            this.lblCEP.TabIndex = 81;
+            this.lblCEP.Text = "CEP";
             // 
             // AcessoCliente
             // 
@@ -502,6 +481,7 @@
             this.Controls.Add(this.dados_cliente);
             this.Name = "AcessoCliente";
             this.Size = new System.Drawing.Size(781, 532);
+            this.Load += new System.EventHandler(this.AcessoCliente_Load);
             this.dados_cliente.ResumeLayout(false);
             this.dados_cliente.PerformLayout();
             this.Grp_TipoConta.ResumeLayout(false);
@@ -543,11 +523,7 @@
     private System.Windows.Forms.Label lbl_bairro;
     private System.Windows.Forms.Label lbl_estado;
     private System.Windows.Forms.GroupBox dados_cliente;
-    private System.Windows.Forms.Label lbl_funcao;
     private System.Windows.Forms.Label lbl_salario;
-    private System.Windows.Forms.Label lbl_departamento;
-    private System.Windows.Forms.TextBox Txt_Profissao;
-    private System.Windows.Forms.TextBox Txt_Departamento;
     private System.Windows.Forms.TextBox Txt_Saldo;
     private System.Windows.Forms.Label lbl_complemento;
     private System.Windows.Forms.TextBox Txt_Complemento;
@@ -560,5 +536,7 @@
         private System.Windows.Forms.RadioButton Rdb_ContaPoupanca;
         private System.Windows.Forms.RadioButton Rdb_ContaCorrente;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label lblCEP;
+        private System.Windows.Forms.TextBox Txt_CEP;
     }
 }
