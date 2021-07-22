@@ -11,6 +11,7 @@ using System.Windows.Forms;
 namespace BancoPaiTrocinio.User_Control {
     public partial class AcessoFuncionarios : UserControl {
 
+        public string strGelio = "SELECT u.u_nome, u.u_cpf,u.u_rg,u.u_logradouro,u.u_complemento,u.u_bairro,u.u_cidade,u.u_estado,c.ctt_tel,c.ctt_cel,c.ctt_email,f.f_salario,f.f_departamento,f.f_funcao,u.u_usuario,u.u_senha FROM usuario u INNER JOIN contato c ON u.u_id = c.ctt_id_usuario INNER JOIN funcionario f ON u.u_id = f.f_id_usuario;";
         Conexões.ConexaoMySql conexao = new Conexões.ConexaoMySql();
         public AcessoFuncionarios() {
             InitializeComponent();
@@ -51,7 +52,8 @@ namespace BancoPaiTrocinio.User_Control {
         }
 
         private void Buscar_Click(object sender, EventArgs e) {
-
+            this.strGelio = ($"SELECT u.u_nome, u.u_cpf,u.u_rg,u.u_logradouro,u.u_complemento,u.u_bairro,u.u_cidade,u.u_estado,c.ctt_tel,c.ctt_cel,c.ctt_email,f.f_salario,f.f_departamento,f.f_funcao,u.u_usuario,u.u_senha FROM usuario u INNER JOIN contato c ON u.u_id = c.ctt_id_usuario INNER JOIN funcionario f ON u.u_id = f.f_id_usuario WHERE u.u_cpf = '{Convert.ToString(TxtBusca.Text)}';");
+            AcessoFuncionarios_Load(sender, e);
         }
 
         private void Inserir_Click(object sender, EventArgs e) {
@@ -97,13 +99,14 @@ namespace BancoPaiTrocinio.User_Control {
 
         private void AcessoFuncionarios_Load(object sender, EventArgs e) {
             try {
-                dataGridView2.DataSource = conexao.RetornaSQL("SELECT u.u_nome, u.u_cpf,u.u_rg,u.u_logradouro,u.u_complemento,u.u_bairro,u.u_cidade,u.u_estado,c.ctt_tel,c.ctt_cel,c.ctt_email,f.f_salario,f.f_departamento,f.f_funcao,u.u_usuario,u.u_senha FROM usuario u INNER JOIN contato c ON u.u_id = c.ctt_id_usuario INNER JOIN funcionario f ON u.u_id = f.f_id_usuario;");
+                dataGridView2.DataSource = conexao.RetornaSQL(this.strGelio);
             } catch (Exception ex) {
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }
 
         private void Atualizar_Click(object sender, EventArgs e) {
+            this.strGelio = "SELECT u.u_nome, u.u_cpf,u.u_rg,u.u_logradouro,u.u_complemento,u.u_bairro,u.u_cidade,u.u_estado,c.ctt_tel,c.ctt_cel,c.ctt_email,f.f_salario,f.f_departamento,f.f_funcao,u.u_usuario,u.u_senha FROM usuario u INNER JOIN contato c ON u.u_id = c.ctt_id_usuario INNER JOIN funcionario f ON u.u_id = f.f_id_usuario;";
             AcessoFuncionarios_Load(sender, e);
         }
 
