@@ -94,6 +94,7 @@ namespace BancoPaiTrocinio
             Txt_Telefone.Text = "";
             Txt_Profissao.Text = "";
             Txt_Celular.Text = "";
+            Rdb_ContaCorrente.Checked = true;
 
         }
 
@@ -127,72 +128,115 @@ namespace BancoPaiTrocinio
             }
         }
 
-        Cliente LeituraFormulario()
+        ContaCorrente LeituraFormularioContaCorrente()
         {
-            Cliente c = new Cliente();
-            c.u_nome = Txt_NomeCliente.Text;
-            c.u_rg = Txt_Rg.Text;
-            c.u_cpf = Txt_CPF.Text;
+            ContaCorrente cc = new ContaCorrente();
+            cc.u_nome = Txt_NomeCliente.Text;
+            cc.u_rg = Txt_Rg.Text;
+            cc.u_cpf = Txt_CPF.Text;
             if(Txt_Senha.Text == Txt_SenhaConfirmacao.Text)
             {
-                c.u_senha = Txt_Senha.Text;
+                cc.u_senha = Txt_Senha.Text;
             }
 
-            c.u_cep = Txt_CEP.Text;
-            c.u_logradouro = Txt_Logradouro.Text;
-            c.u_complemento = Txt_Complemento.Text;
-            c.u_cidade = Txt_Cidade.Text;
-            c.u_bairro = Txt_Bairro.Text;
+            cc.u_cep = Txt_CEP.Text;
+            cc.u_logradouro = Txt_Logradouro.Text;
+            cc.u_complemento = Txt_Complemento.Text;
+            cc.u_cidade = Txt_Cidade.Text;
+            cc.u_bairro = Txt_Bairro.Text;
             if (Cmb_Estados.SelectedIndex < 0)
             {
-                c.u_estado = "";
+                cc.u_estado = "";
             }
             else
             {
-                 c.u_estado = Cmb_Estados.Items[Cmb_Estados.SelectedIndex].ToString();
+                 cc.u_estado = Cmb_Estados.Items[Cmb_Estados.SelectedIndex].ToString();
+            }
+            cc.ctt_tel = Txt_Telefone.Text;
+            cc.ctt_cel = Txt_Celular.Text;
+            cc.ctt_email = Txt_Email.Text;
+            cc.cb_agencia = 1010;
+            Random rnd = new Random();
+            cc.cc_nr_conta_corrente = rnd.Next(10000000, 99999999);
+
+            cc.c_profissao = Txt_Profissao.Text;
+            cc.u_usario = Txt_Usuario.Text;
+
+            return cc;
+        }
+
+        ContaPoupanca LeituraFormularioContaPoupanca()
+        {
+            ContaPoupanca cp = new ContaPoupanca();
+            cp.u_nome = Txt_NomeCliente.Text;
+            cp.u_rg = Txt_Rg.Text;
+            cp.u_cpf = Txt_CPF.Text;
+            if (Txt_Senha.Text == Txt_SenhaConfirmacao.Text)
+            {
+                cp.u_senha = Txt_Senha.Text;
             }
 
-            c.ctt_tel = Txt_Telefone.Text;
-            c.ctt_cel = Txt_Celular.Text;
-            c.ctt_email = Txt_Email.Text;
+            cp.u_cep = Txt_CEP.Text;
+            cp.u_logradouro = Txt_Logradouro.Text;
+            cp.u_complemento = Txt_Complemento.Text;
+            cp.u_cidade = Txt_Cidade.Text;
+            cp.u_bairro = Txt_Bairro.Text;
+            if (Cmb_Estados.SelectedIndex < 0)
+            {
+                cp.u_estado = "";
+            }
+            else
+            {
+                cp.u_estado = Cmb_Estados.Items[Cmb_Estados.SelectedIndex].ToString();
+            }
+            cp.ctt_tel = Txt_Telefone.Text;
+            cp.ctt_cel = Txt_Celular.Text;
+            cp.ctt_email = Txt_Email.Text;
+            cp.cb_agencia = 1010;
+            Random rnd = new Random();
+            cp.cp_nr_conta_poupanca = rnd.Next(1000000, 9999999);
 
+            cp.c_profissao = Txt_Profissao.Text;
+            cp.u_usario = Txt_Usuario.Text;
 
-            c.c_profissao = Txt_Profissao.Text;
-            c.u_usario = Txt_Usuario.Text;
-
-            return c;
-        }
-
-
-        private void salvarToolStripButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CadastroCliente_Load(object sender, EventArgs e) {
-
-        }
-
-        private void Grp_DadosPessoais_Enter(object sender, EventArgs e) {
-
+            return cp;
         }
 
         private void cadastrar_Click(object sender, EventArgs e)
         {
             try
             {
-                Usuario u = new Usuario();
-                u = LeituraFormulario();
-                u.ValidaClasse();
-                u.ValidaComplemento();
-                connect.ExecutaSQL("INSERT INTO usuario (u_usuario, u_cpf,u_rg,u_senha,u_nome,u_logradouro,u_complemento,u_bairro,u_cidade,u_estado,u_cep)VALUES('"+ Convert.ToString(u.u_usario)+"','" + Convert.ToString(u.u_cpf) + "','" + Convert.ToString(u.u_rg) + "','" + Convert.ToString(u.u_senha) + "','" + Convert.ToString(u.u_nome) + "','" + Convert.ToString(u.u_logradouro) + "','" + Convert.ToString(u.u_complemento) + "','" + Convert.ToString(u.u_bairro) + "','" + Convert.ToString(u.u_cidade) + "','" + Convert.ToString(u.u_estado) + "','" + Convert.ToString(u.u_cep) + "');");
-                DataTable query = connect.RetornaSQL($"SELECT u_id FROM usuario WHERE u_cpf='{Convert.ToString(u.u_cpf)}';");
-                //Messagebox.show($"funcionou {query.rows[0]["u_id"]}");
-                connect.ExecutaSQL($"INSERT INTO contato (ctt_id_usuario,ctt_tel,ctt_cel,ctt_email) VALUES ({query.Rows[0]["u_id"]},'{Convert.ToString(u.ctt_tel)}','{Convert.ToString(u.ctt_cel)}','{Convert.ToString(u.ctt_email)}');");
-                DataTable query2 = connect.RetornaSQL($"SELECT ctt_id FROM contato WHERE ctt_id_usuario = {query.Rows[0]["u_id"]};");
-                connect.ExecutaSQL($"UPDATE usuario SET u_ctt_id = {query2.Rows[0]["ctt_id"]} WHERE u_cpf = '{Convert.ToString(u.u_cpf)}';");
-                LimparFormulario();
-                MessageBox.Show("Cadastro realizado com sucesso!");
+                if (Rdb_ContaCorrente.Checked == true)
+                {
+                    ContaCorrente cc = new ContaCorrente();
+                    cc = LeituraFormularioContaCorrente();
+                    cc.ValidaClasse();
+                    cc.ValidaComplemento();
+                    connect.ExecutaSQL("INSERT INTO usuario (u_usuario, u_cpf,u_rg,u_senha,u_nome,u_logradouro,u_complemento,u_bairro,u_cidade,u_estado,u_cep)VALUES('" + Convert.ToString(cc.u_usario) + "','" + Convert.ToString(cc.u_cpf) + "','" + Convert.ToString(cc.u_rg) + "','" + Convert.ToString(cc.u_senha) + "','" + Convert.ToString(cc.u_nome) + "','" + Convert.ToString(cc.u_logradouro) + "','" + Convert.ToString(cc.u_complemento) + "','" + Convert.ToString(cc.u_bairro) + "','" + Convert.ToString(cc.u_cidade) + "','" + Convert.ToString(cc.u_estado) + "','" + Convert.ToString(cc.u_cep) + "');");
+                    DataTable query = connect.RetornaSQL($"SELECT u_id FROM usuario WHERE u_cpf='{Convert.ToString(cc.u_cpf)}';");
+                    connect.ExecutaSQL($"INSERT INTO contato (ctt_id_usuario,ctt_tel,ctt_cel,ctt_email) VALUES ({query.Rows[0]["u_id"]},'{Convert.ToString(cc.ctt_tel)}','{Convert.ToString(cc.ctt_cel)}','{Convert.ToString(cc.ctt_email)}');");
+                    DataTable query2 = connect.RetornaSQL($"SELECT ctt_id FROM contato WHERE ctt_id_usuario = {query.Rows[0]["u_id"]};");
+                    connect.ExecutaSQL($"UPDATE usuario SET u_ctt_id = {query2.Rows[0]["ctt_id"]} WHERE u_cpf = '{Convert.ToString(cc.u_cpf)}';");
+                    //Add cadastro nas contas bancarias
+                    LimparFormulario();
+                    MessageBox.Show("Cadastro realizado com sucesso!");
+                }
+                else if(Rdb_ContaPoupanca.Checked == true)
+                {
+                    ContaPoupanca cp = new ContaPoupanca();
+                    cp = LeituraFormularioContaPoupanca();
+                    cp.ValidaClasse();
+                    cp.ValidaComplemento();
+                    connect.ExecutaSQL("INSERT INTO usuario (u_usuario, u_cpf,u_rg,u_senha,u_nome,u_logradouro,u_complemento,u_bairro,u_cidade,u_estado,u_cep)VALUES('" + Convert.ToString(cp.u_usario) + "','" + Convert.ToString(cp.u_cpf) + "','" + Convert.ToString(cp.u_rg) + "','" + Convert.ToString(cp.u_senha) + "','" + Convert.ToString(cp.u_nome) + "','" + Convert.ToString(cp.u_logradouro) + "','" + Convert.ToString(cp.u_complemento) + "','" + Convert.ToString(cp.u_bairro) + "','" + Convert.ToString(cp.u_cidade) + "','" + Convert.ToString(cp.u_estado) + "','" + Convert.ToString(cp.u_cep) + "');");
+                    DataTable query = connect.RetornaSQL($"SELECT u_id FROM usuario WHERE u_cpf='{Convert.ToString(cp.u_cpf)}';");
+                    connect.ExecutaSQL($"INSERT INTO contato (ctt_id_usuario,ctt_tel,ctt_cel,ctt_email) VALUES ({query.Rows[0]["u_id"]},'{Convert.ToString(cp.ctt_tel)}','{Convert.ToString(cp.ctt_cel)}','{Convert.ToString(cp.ctt_email)}');");
+                    DataTable query2 = connect.RetornaSQL($"SELECT ctt_id FROM contato WHERE ctt_id_usuario = {query.Rows[0]["u_id"]};");
+                    connect.ExecutaSQL($"UPDATE usuario SET u_ctt_id = {query2.Rows[0]["ctt_id"]} WHERE u_cpf = '{Convert.ToString(cp.u_cpf)}';");
+                    //Add cadastro nas contas bancarias
+                    LimparFormulario();
+                    MessageBox.Show("Cadastro realizado com sucesso!");
+                }
+
             }
             catch (Exception ex)
             {
@@ -200,9 +244,5 @@ namespace BancoPaiTrocinio
             }
         }
 
-        private void Cancelar_Click(object sender, EventArgs e) 
-        {
-
-        }
     }
 }

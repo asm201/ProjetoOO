@@ -8,13 +8,13 @@ namespace BancoPaiTrocinio.Classes
 {
     class Funcionario : Usuario
     {
-        int f_id { get; set; }
-        int f_id_usuario { get; set; }
+        public int f_id { get; set; }
+        public int f_id_usuario { get; set; }
 
-        float f_salario { get; set; }
-        string f_departamento { get; set; }
-        string f_funcao { get; set; }
-        int f_id_gerente { get; set; }
-        int f_id_diretor { get; set; }
+        public double f_salario { get; set; }
+        public string f_departamento { get; set; }
+        public string f_funcao { get; set; }
+        public int f_id_gerente { get; set; }
+        public int f_id_diretor { get; set; }
     }
 }

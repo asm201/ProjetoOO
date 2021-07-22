@@ -21,10 +21,14 @@ namespace BancoPaiTrocinio.User_Control
             InitializeComponent();
         }
 
-        private void AcessoCliente_Load(object sender, EventArgs e) {
-            try {
+        private void AcessoCliente_Load(object sender, EventArgs e)
+        {
+            try
+            {
                 dataGridView2.DataSource = conexao.RetornaSQL(this.strGelio);
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }

@@ -6,14 +6,21 @@ using System.Threading.Tasks;
 
 namespace BancoPaiTrocinio.Classes
 {
-    class ContaBancaria : Cliente
+    public abstract class ContaBancaria : Cliente
     {
-        int cb_id { get; set; }
-	    int cb_agencia { get; set; }
-        int cb_id_cliente { get; set; }
+        public int cb_id { get; set; }
+        public int cb_agencia { get; set; }
+        public int cb_id_cliente { get; set; }
 
-        int cb_id_conta_corrente { get; set; }
+        public int cb_id_conta_corrente { get; set; }
 
-        int cb_id_conta_poupanca { get; set; }
+        public int cb_id_conta_poupanca { get; set; }
+
+        public abstract void Depositar(double valor);
+
+        public abstract void Transferir(double valor);
     }
+
+
+
 }

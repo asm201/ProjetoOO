@@ -57,6 +57,7 @@
     <Compile Include="Classes\ContaCorrente.cs" />
     <Compile Include="Classes\ContaPoupanca.cs" />
     <Compile Include="Classes\Funcionario.cs" />
+    <Compile Include="Classes\IAutenticar.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -105,11 +106,11 @@
     <Compile Include="User Control\AcessoFuncionarios.Designer.cs">
       <DependentUpon>AcessoFuncionarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Control\Depositar.cs">
+    <Compile Include="User Control\Deposito.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Control\Depositar.Designer.cs">
-      <DependentUpon>Depositar.cs</DependentUpon>
+    <Compile Include="User Control\Deposito.Designer.cs">
+      <DependentUpon>Deposito.cs</DependentUpon>
     </Compile>
     <Compile Include="User Control\Transferencia.cs">
       <SubType>UserControl</SubType>
@@ -146,8 +147,8 @@
     <EmbeddedResource Include="User Control\AcessoFuncionarios.resx">
       <DependentUpon>AcessoFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Control\Depositar.resx">
-      <DependentUpon>Depositar.cs</DependentUpon>
+    <EmbeddedResource Include="User Control\Deposito.resx">
+      <DependentUpon>Deposito.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control\Transferencia.resx">
       <DependentUpon>Transferencia.cs</DependentUpon>

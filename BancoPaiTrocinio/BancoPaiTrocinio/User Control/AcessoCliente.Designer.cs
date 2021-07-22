@@ -27,7 +27,7 @@
         /// o conteúdo deste método com o editor de código.
         /// </summary>
         private void InitializeComponent()
-        { 
+        {
             this.Atualizar = new System.Windows.Forms.Button();
             this.Inserir = new System.Windows.Forms.Button();
             this.Excluir = new System.Windows.Forms.Button();
@@ -161,7 +161,7 @@
             // 
             // Txt_Email
             // 
-            this.Txt_Email.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.Txt_Email.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Email.Location = new System.Drawing.Point(277, 127);
             this.Txt_Email.Name = "Txt_Email";
@@ -195,7 +195,7 @@
             // 
             // Txt_Celular
             // 
-            this.Txt_Celular.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.Txt_Celular.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Celular.Location = new System.Drawing.Point(463, 82);
             this.Txt_Celular.Name = "Txt_Celular";
@@ -268,7 +268,7 @@
             // 
             // Txt_Estado
             // 
-            this.Txt_Estado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.Txt_Estado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Estado.Location = new System.Drawing.Point(463, 167);
             this.Txt_Estado.Name = "Txt_Estado";
@@ -295,7 +295,7 @@
             // 
             // dados_cliente
             // 
-            this.dados_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dados_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dados_cliente.Controls.Add(this.lblprofissao);
             this.dados_cliente.Controls.Add(this.Txt_Profissao);
@@ -429,7 +429,7 @@
             // 
             // Txt_Saldo
             // 
-            this.Txt_Saldo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.Txt_Saldo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Saldo.Location = new System.Drawing.Point(483, 42);
             this.Txt_Saldo.Name = "Txt_Saldo";
@@ -446,7 +446,7 @@
             // 
             // dataGridView2
             // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -510,43 +510,43 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
-    }
+        }
 
-    #endregion
+        #endregion
 
-    private System.Windows.Forms.Panel panel1;
-    private System.Windows.Forms.DataGridView dataGridView1;
-    private System.Windows.Forms.Button button1;
-    private System.Windows.Forms.Button Atualizar;
-    private System.Windows.Forms.Button Inserir;
-    private System.Windows.Forms.Button Excluir;
-    private System.Windows.Forms.TextBox TxtBusca;
-    private System.Windows.Forms.Button Buscar;
-    private System.Windows.Forms.Label cpf_busca;
-    private System.Windows.Forms.Label Lbl_Rg;
-    private System.Windows.Forms.Label Lbl_Telefone;
-    private System.Windows.Forms.TextBox Txt_Telefone;
-    private System.Windows.Forms.TextBox Txt_Email;
-    private System.Windows.Forms.TextBox Txt_Rg;
-    private System.Windows.Forms.Label Lbl_Email;
-    private System.Windows.Forms.Label Lbl_CPF;
-    private System.Windows.Forms.TextBox Txt_Celular;
-    private System.Windows.Forms.TextBox Txt_CPF;
-    private System.Windows.Forms.Label Lbl_Celular;
-    private System.Windows.Forms.TextBox Txt_Nome;
-    private System.Windows.Forms.Label lbl_nome;
-    private System.Windows.Forms.Label lbl_logradouro;
-    private System.Windows.Forms.TextBox Txt_Logradouro;
-    private System.Windows.Forms.TextBox Txt_Cidade;
-    private System.Windows.Forms.Label lbl_cidade;
-    private System.Windows.Forms.TextBox Txt_Estado;
-    private System.Windows.Forms.Label lbl_bairro;
-    private System.Windows.Forms.Label lbl_estado;
-    private System.Windows.Forms.GroupBox dados_cliente;
-    private System.Windows.Forms.Label lbl_salario;
-    private System.Windows.Forms.TextBox Txt_Saldo;
-    private System.Windows.Forms.Label lbl_complemento;
-    private System.Windows.Forms.TextBox Txt_Complemento;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Atualizar;
+        private System.Windows.Forms.Button Inserir;
+        private System.Windows.Forms.Button Excluir;
+        private System.Windows.Forms.TextBox TxtBusca;
+        private System.Windows.Forms.Button Buscar;
+        private System.Windows.Forms.Label cpf_busca;
+        private System.Windows.Forms.Label Lbl_Rg;
+        private System.Windows.Forms.Label Lbl_Telefone;
+        private System.Windows.Forms.TextBox Txt_Telefone;
+        private System.Windows.Forms.TextBox Txt_Email;
+        private System.Windows.Forms.TextBox Txt_Rg;
+        private System.Windows.Forms.Label Lbl_Email;
+        private System.Windows.Forms.Label Lbl_CPF;
+        private System.Windows.Forms.TextBox Txt_Celular;
+        private System.Windows.Forms.TextBox Txt_CPF;
+        private System.Windows.Forms.Label Lbl_Celular;
+        private System.Windows.Forms.TextBox Txt_Nome;
+        private System.Windows.Forms.Label lbl_nome;
+        private System.Windows.Forms.Label lbl_logradouro;
+        private System.Windows.Forms.TextBox Txt_Logradouro;
+        private System.Windows.Forms.TextBox Txt_Cidade;
+        private System.Windows.Forms.Label lbl_cidade;
+        private System.Windows.Forms.TextBox Txt_Estado;
+        private System.Windows.Forms.Label lbl_bairro;
+        private System.Windows.Forms.Label lbl_estado;
+        private System.Windows.Forms.GroupBox dados_cliente;
+        private System.Windows.Forms.Label lbl_salario;
+        private System.Windows.Forms.TextBox Txt_Saldo;
+        private System.Windows.Forms.Label lbl_complemento;
+        private System.Windows.Forms.TextBox Txt_Complemento;
         private System.Windows.Forms.Label Lbl_NumeroAgencia;
         private System.Windows.Forms.TextBox Txt_NumeroAgencia;
         private System.Windows.Forms.TextBox Txt_NumeroConta;
