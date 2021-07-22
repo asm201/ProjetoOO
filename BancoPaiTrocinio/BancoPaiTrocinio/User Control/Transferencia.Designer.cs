@@ -66,6 +66,7 @@
             this.Btn_Transferir.TabIndex = 2;
             this.Btn_Transferir.Text = "Transferir";
             this.Btn_Transferir.UseVisualStyleBackColor = true;
+            this.Btn_Transferir.Click += new System.EventHandler(this.Btn_Transferir_Click);
             // 
             // Lbl_Valor
             // 

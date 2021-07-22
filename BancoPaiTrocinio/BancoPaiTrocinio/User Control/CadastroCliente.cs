@@ -158,6 +158,7 @@ namespace BancoPaiTrocinio
             cc.cb_agencia = 1010;
             Random rnd = new Random();
             cc.cc_nr_conta_corrente = rnd.Next(10000000, 99999999);
+            cc.cc_saldo = 100;
 
             cc.c_profissao = Txt_Profissao.Text;
             cc.u_usario = Txt_Usuario.Text;
@@ -195,7 +196,7 @@ namespace BancoPaiTrocinio
             cp.cb_agencia = 1010;
             Random rnd = new Random();
             cp.cp_nr_conta_poupanca = rnd.Next(1000000, 9999999);
-
+            cp.cp_saldo = 0;
             cp.c_profissao = Txt_Profissao.Text;
             cp.u_usario = Txt_Usuario.Text;
 

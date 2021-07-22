@@ -30,7 +30,7 @@
         {
             this.Btn_Depositar = new System.Windows.Forms.Button();
             this.Lbl_Depositar = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Txt_Valor = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // Btn_Depositar
@@ -53,18 +53,18 @@
             this.Lbl_Depositar.TabIndex = 1;
             this.Lbl_Depositar.Text = "Qual o valor que você deseja depositar em sua conta ?";
             // 
-            // textBox1
+            // Txt_Valor
             // 
-            this.textBox1.Location = new System.Drawing.Point(622, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(202, 20);
-            this.textBox1.TabIndex = 2;
+            this.Txt_Valor.Location = new System.Drawing.Point(622, 70);
+            this.Txt_Valor.Name = "Txt_Valor";
+            this.Txt_Valor.Size = new System.Drawing.Size(202, 20);
+            this.Txt_Valor.TabIndex = 2;
             // 
             // Deposito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.Txt_Valor);
             this.Controls.Add(this.Lbl_Depositar);
             this.Controls.Add(this.Btn_Depositar);
             this.Name = "Deposito";
@@ -78,6 +78,6 @@
 
         private System.Windows.Forms.Button Btn_Depositar;
         private System.Windows.Forms.Label Lbl_Depositar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Txt_Valor;
     }
 }

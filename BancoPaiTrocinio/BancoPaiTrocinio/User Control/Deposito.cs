@@ -24,7 +24,33 @@ namespace BancoPaiTrocinio.User_Control
 
         private void Btn_Depositar_Click(object sender, EventArgs e)
         {
+            if(clienteCorrente == null)
+            {
+                try
+                {
+                    clientePoupanca.Depositar(Convert.ToDouble(Txt_Valor.Text));
+                    MessageBox.Show("Deposito feito com sucesso","Banco Paitrocinio", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                catch (ArgumentException ex)
+                {
 
+                    MessageBox.Show(ex.Message, "Banco Paitrocinio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            if(clientePoupanca == null)
+            {
+                try
+                {
+                    clienteCorrente.Depositar(Convert.ToDouble(Txt_Valor.Text));
+                    MessageBox.Show("Deposito feito com sucesso", "Banco Paitrocinio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (ArgumentException ex)
+                {
+                    MessageBox.Show(ex.Message, "Banco Paitrocinio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
         }
     }
 }

@@ -18,7 +18,7 @@ namespace BancoPaiTrocinio.Classes
 
         public abstract void Depositar(double valor);
 
-        public abstract void Transferir(double valor);
+        public abstract void Transferir(double valor, string conta );
     }
 
 

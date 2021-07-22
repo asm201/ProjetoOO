@@ -12,7 +12,7 @@ using BancoPaiTrocinio.Classes;
 
 namespace BancoPaiTrocinio
 {
-    public partial class Frm_BancoPaiTrocinio : Form
+    public partial class Frm_BancoPaiTrocinio : Form, IAutenticar
     {
         int controleCadastroCliente = 0;
         int controleAcessoFunc = 0;
@@ -41,6 +41,7 @@ namespace BancoPaiTrocinio
             u.ShowDialog();
             string senha = u.senha;
             string login = u.login;
+
 
             if (Cls_Uteis.ValidaSenhaLogin(senha) == true)
             {
