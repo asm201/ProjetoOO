@@ -486,7 +486,8 @@ namespace BancoPaiTrocinio.User_Control {
             // 
             // Txt_Excluir
             // 
-            this.Txt_Excluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Txt_Excluir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Excluir.Location = new System.Drawing.Point(669, 225);
             this.Txt_Excluir.Name = "Txt_Excluir";
             this.Txt_Excluir.Size = new System.Drawing.Size(109, 20);
