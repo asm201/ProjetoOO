@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BancoPaiTrocinio.Classes
 {
-    class Usuario : Contato
+    public abstract class Usuario : Contato
     {
         public int u_id { get; set; }
 

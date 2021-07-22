@@ -65,14 +65,19 @@
             this.Lbl_Usuario = new System.Windows.Forms.Label();
             this.Txt_Usuario = new System.Windows.Forms.TextBox();
             this.Cadastrar = new System.Windows.Forms.Button();
+            this.Grp_TipoConta = new System.Windows.Forms.GroupBox();
+            this.Rdb_ContaPoupanca = new System.Windows.Forms.RadioButton();
+            this.Rdb_ContaCorrente = new System.Windows.Forms.RadioButton();
             this.Grp_Outros.SuspendLayout();
             this.Grp_Endereco.SuspendLayout();
             this.Grp_DadosPessoais.SuspendLayout();
             this.Grp_Cadastro.SuspendLayout();
+            this.Grp_TipoConta.SuspendLayout();
             this.SuspendLayout();
             // 
             // Grp_Outros
             // 
+            this.Grp_Outros.Controls.Add(this.Grp_TipoConta);
             this.Grp_Outros.Controls.Add(this.Txt_Profissao);
             this.Grp_Outros.Controls.Add(this.Lbl_Profissao);
             this.Grp_Outros.Location = new System.Drawing.Point(3, 423);
@@ -257,7 +262,6 @@
             this.Grp_DadosPessoais.TabIndex = 57;
             this.Grp_DadosPessoais.TabStop = false;
             this.Grp_DadosPessoais.Text = "groupBox1";
-            this.Grp_DadosPessoais.Enter += new System.EventHandler(this.Grp_DadosPessoais_Enter);
             // 
             // Lbl_Celular
             // 
@@ -426,6 +430,39 @@
             this.Cadastrar.UseVisualStyleBackColor = true;
             this.Cadastrar.Click += new System.EventHandler(this.cadastrar_Click);
             // 
+            // Grp_TipoConta
+            // 
+            this.Grp_TipoConta.Controls.Add(this.Rdb_ContaPoupanca);
+            this.Grp_TipoConta.Controls.Add(this.Rdb_ContaCorrente);
+            this.Grp_TipoConta.Location = new System.Drawing.Point(373, 16);
+            this.Grp_TipoConta.Name = "Grp_TipoConta";
+            this.Grp_TipoConta.Size = new System.Drawing.Size(300, 45);
+            this.Grp_TipoConta.TabIndex = 80;
+            this.Grp_TipoConta.TabStop = false;
+            this.Grp_TipoConta.Text = "Tipo da Conta";
+            // 
+            // Rdb_ContaPoupanca
+            // 
+            this.Rdb_ContaPoupanca.AutoSize = true;
+            this.Rdb_ContaPoupanca.Location = new System.Drawing.Point(179, 19);
+            this.Rdb_ContaPoupanca.Name = "Rdb_ContaPoupanca";
+            this.Rdb_ContaPoupanca.Size = new System.Drawing.Size(105, 17);
+            this.Rdb_ContaPoupanca.TabIndex = 1;
+            this.Rdb_ContaPoupanca.TabStop = true;
+            this.Rdb_ContaPoupanca.Text = "Conta Poupança";
+            this.Rdb_ContaPoupanca.UseVisualStyleBackColor = true;
+            // 
+            // Rdb_ContaCorrente
+            // 
+            this.Rdb_ContaCorrente.AutoSize = true;
+            this.Rdb_ContaCorrente.Location = new System.Drawing.Point(25, 19);
+            this.Rdb_ContaCorrente.Name = "Rdb_ContaCorrente";
+            this.Rdb_ContaCorrente.Size = new System.Drawing.Size(96, 17);
+            this.Rdb_ContaCorrente.TabIndex = 0;
+            this.Rdb_ContaCorrente.TabStop = true;
+            this.Rdb_ContaCorrente.Text = "Conta Corrente";
+            this.Rdb_ContaCorrente.UseVisualStyleBackColor = true;
+            // 
             // CadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -437,7 +474,6 @@
             this.Controls.Add(this.Grp_Cadastro);
             this.Name = "CadastroCliente";
             this.Size = new System.Drawing.Size(781, 532);
-            this.Load += new System.EventHandler(this.CadastroCliente_Load);
             this.Grp_Outros.ResumeLayout(false);
             this.Grp_Outros.PerformLayout();
             this.Grp_Endereco.ResumeLayout(false);
@@ -446,6 +482,8 @@
             this.Grp_DadosPessoais.PerformLayout();
             this.Grp_Cadastro.ResumeLayout(false);
             this.Grp_Cadastro.PerformLayout();
+            this.Grp_TipoConta.ResumeLayout(false);
+            this.Grp_TipoConta.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -489,6 +527,9 @@
         private System.Windows.Forms.TextBox Txt_Email;
         private System.Windows.Forms.Label Lbl_Rg;
         private System.Windows.Forms.TextBox Txt_Rg;
+        private System.Windows.Forms.GroupBox Grp_TipoConta;
+        private System.Windows.Forms.RadioButton Rdb_ContaPoupanca;
+        private System.Windows.Forms.RadioButton Rdb_ContaCorrente;
     }
 }
 

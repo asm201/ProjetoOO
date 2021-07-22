@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BancoPaiTrocinio.User_Control;
+using BancoPaiTrocinio.Classes;
 
 namespace BancoPaiTrocinio
 {
@@ -19,6 +20,10 @@ namespace BancoPaiTrocinio
         int controleDepositar = 0;
         int controleTransferir = 0;
         int controleAcessoCliente = 0;
+
+        ContaCorrente clienteCorrente;
+        ContaPoupanca clientePoupanca;
+
         public Frm_BancoPaiTrocinio()
         {
             InitializeComponent();
@@ -289,7 +294,7 @@ namespace BancoPaiTrocinio
             if (controleDepositar == 0)
             {
                 controleDepositar++;
-                Depositar u = new Depositar();
+                Deposito u = new Deposito();
                 TabPage tb = new TabPage();
                 u.Dock = DockStyle.Fill;
                 tb.Name = "Depositar";

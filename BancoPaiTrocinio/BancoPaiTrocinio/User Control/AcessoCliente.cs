@@ -15,16 +15,20 @@ namespace BancoPaiTrocinio.User_Control
     {
 
         private static ConexaoMySql conexao;
-        public string strGelio = "SELECT u.u_nome,u.u_cpf,u.u_saldo,u.u_departamento,u.u_rg,u.u_logradouro,u.u_complemento,u.u_cidade,u.u_bairro,u.u_estado";
+        public string strGelio = "SELECT u.u_nome,u.u_cpf,u.u_departamento,u.u_rg,u.u_logradouro,u.u_complemento,u.u_cidade,u.u_bairro,u.u_estado,ct.ctt_tel,ct.ctt_cel,ct.ctt_email, ";
         public AcessoCliente()
         {
             InitializeComponent();
         }
 
-        private void AcessoCliente_Load(object sender, EventArgs e) {
-            try {
+        private void AcessoCliente_Load(object sender, EventArgs e)
+        {
+            try
+            {
                 dataGridView2.DataSource = conexao.RetornaSQL(this.strGelio);
-            } catch (Exception ex) {
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show("Erro: " + ex.Message);
             }
         }

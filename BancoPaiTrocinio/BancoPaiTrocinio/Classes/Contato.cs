@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BancoPaiTrocinio.Classes
 {
-    class Contato
+    public abstract class Contato
     {
         public int ctt_id { get; set; }
         public int ctt_id_usuario { get; set; }

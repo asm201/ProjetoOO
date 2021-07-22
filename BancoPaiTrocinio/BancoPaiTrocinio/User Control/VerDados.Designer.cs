@@ -51,7 +51,7 @@
             this.Lbl_Cidade = new System.Windows.Forms.Label();
             this.bairro = new System.Windows.Forms.Label();
             this.Lbl_Bairro = new System.Windows.Forms.Label();
-            this.coplemento = new System.Windows.Forms.Label();
+            this.complemento = new System.Windows.Forms.Label();
             this.Lbl_Complemento = new System.Windows.Forms.Label();
             this.Lbl_Logradouro = new System.Windows.Forms.Label();
             this.logradouro = new System.Windows.Forms.Label();
@@ -252,7 +252,7 @@
             this.Grp_Endereço.Controls.Add(this.Lbl_Cidade);
             this.Grp_Endereço.Controls.Add(this.bairro);
             this.Grp_Endereço.Controls.Add(this.Lbl_Bairro);
-            this.Grp_Endereço.Controls.Add(this.coplemento);
+            this.Grp_Endereço.Controls.Add(this.complemento);
             this.Grp_Endereço.Controls.Add(this.Lbl_Complemento);
             this.Grp_Endereço.Controls.Add(this.Lbl_Logradouro);
             this.Grp_Endereço.Controls.Add(this.logradouro);
@@ -325,15 +325,15 @@
             this.Lbl_Bairro.TabIndex = 6;
             this.Lbl_Bairro.Text = "Bairro";
             // 
-            // coplemento
+            // complemento
             // 
-            this.coplemento.AutoSize = true;
-            this.coplemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.coplemento.Location = new System.Drawing.Point(471, 29);
-            this.coplemento.Name = "coplemento";
-            this.coplemento.Size = new System.Drawing.Size(109, 20);
-            this.coplemento.TabIndex = 5;
-            this.coplemento.Text = "373, Apto 201";
+            this.complemento.AutoSize = true;
+            this.complemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.complemento.Location = new System.Drawing.Point(471, 29);
+            this.complemento.Name = "complemento";
+            this.complemento.Size = new System.Drawing.Size(109, 20);
+            this.complemento.TabIndex = 5;
+            this.complemento.Text = "373, Apto 201";
             // 
             // Lbl_Complemento
             // 
@@ -523,7 +523,7 @@
         private System.Windows.Forms.Label telefone;
         private System.Windows.Forms.Label Lbl_Telefone;
         private System.Windows.Forms.GroupBox Grp_Endereço;
-        private System.Windows.Forms.Label coplemento;
+        private System.Windows.Forms.Label complemento;
         private System.Windows.Forms.Label Lbl_Complemento;
         private System.Windows.Forms.Label Lbl_Logradouro;
         private System.Windows.Forms.Label logradouro;

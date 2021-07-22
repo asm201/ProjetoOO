@@ -6,13 +6,39 @@ using System.Threading.Tasks;
 
 namespace BancoPaiTrocinio.Classes
 {
-    class ContaCorrente : ContaBancaria
+    public class ContaCorrente : ContaBancaria
     {
-        int cc_id { get; set; }
-        int cc_id_conta_bancaria { get; set; }
+        public int cc_id { get; set; }
+        public int cc_id_conta_bancaria { get; set; }
 
-        int cc_nr_conta_corrente { get; set; }
-        float cc_saldo { get; set; }
+        public int cc_nr_conta_corrente { get; set; }
+        private double _saldo = 100;
+        public double cc_saldo
+        {
+            get
+            {
+                return _saldo;
+            }
+            set
+            {
+                if (value < 0)
+                {
+                    return;
+                }
+
+                _saldo = value;
+            }
+        }
+
+        public override void Depositar(double valor)
+        {
+
+        }
+
+        public override void Transferir(double valor)
+        {
+
+        }
     }
 
 }

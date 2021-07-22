@@ -1,6 +1,6 @@
 ﻿namespace BancoPaiTrocinio.User_Control
 {
-    partial class Depositar
+    partial class Deposito
     {
         /// <summary> 
         /// Variável de designer necessária.
@@ -41,6 +41,7 @@
             this.Btn_Depositar.TabIndex = 0;
             this.Btn_Depositar.Text = "Depositar";
             this.Btn_Depositar.UseVisualStyleBackColor = true;
+            this.Btn_Depositar.Click += new System.EventHandler(this.Btn_Depositar_Click);
             // 
             // Lbl_Depositar
             // 
@@ -59,14 +60,14 @@
             this.textBox1.Size = new System.Drawing.Size(202, 20);
             this.textBox1.TabIndex = 2;
             // 
-            // Depositar
+            // Deposito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Lbl_Depositar);
             this.Controls.Add(this.Btn_Depositar);
-            this.Name = "Depositar";
+            this.Name = "Deposito";
             this.Size = new System.Drawing.Size(1310, 150);
             this.ResumeLayout(false);
             this.PerformLayout();
