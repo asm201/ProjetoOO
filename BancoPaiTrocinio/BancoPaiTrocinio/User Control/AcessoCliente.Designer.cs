@@ -69,6 +69,8 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Txt_CEP = new System.Windows.Forms.TextBox();
             this.lblCEP = new System.Windows.Forms.Label();
+            this.Txt_Profissao = new System.Windows.Forms.TextBox();
+            this.lblprofissao = new System.Windows.Forms.Label();
             this.dados_cliente.SuspendLayout();
             this.Grp_TipoConta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -168,9 +170,9 @@
             // 
             // Txt_Rg
             // 
-            this.Txt_Rg.Location = new System.Drawing.Point(26, 82);
+            this.Txt_Rg.Location = new System.Drawing.Point(26, 81);
             this.Txt_Rg.Name = "Txt_Rg";
-            this.Txt_Rg.Size = new System.Drawing.Size(245, 20);
+            this.Txt_Rg.Size = new System.Drawing.Size(103, 20);
             this.Txt_Rg.TabIndex = 50;
             // 
             // Lbl_Email
@@ -295,6 +297,8 @@
             // 
             this.dados_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dados_cliente.Controls.Add(this.lblprofissao);
+            this.dados_cliente.Controls.Add(this.Txt_Profissao);
             this.dados_cliente.Controls.Add(this.lblCEP);
             this.dados_cliente.Controls.Add(this.Txt_CEP);
             this.dados_cliente.Controls.Add(this.Grp_TipoConta);
@@ -467,6 +471,22 @@
             this.lblCEP.TabIndex = 81;
             this.lblCEP.Text = "CEP";
             // 
+            // Txt_Profissao
+            // 
+            this.Txt_Profissao.Location = new System.Drawing.Point(135, 81);
+            this.Txt_Profissao.Name = "Txt_Profissao";
+            this.Txt_Profissao.Size = new System.Drawing.Size(136, 20);
+            this.Txt_Profissao.TabIndex = 82;
+            // 
+            // lblprofissao
+            // 
+            this.lblprofissao.AutoSize = true;
+            this.lblprofissao.Location = new System.Drawing.Point(135, 66);
+            this.lblprofissao.Name = "lblprofissao";
+            this.lblprofissao.Size = new System.Drawing.Size(50, 13);
+            this.lblprofissao.TabIndex = 83;
+            this.lblprofissao.Text = "Profissão";
+            // 
             // AcessoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -538,5 +558,7 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label lblCEP;
         private System.Windows.Forms.TextBox Txt_CEP;
+        private System.Windows.Forms.Label lblprofissao;
+        private System.Windows.Forms.TextBox Txt_Profissao;
     }
 }
