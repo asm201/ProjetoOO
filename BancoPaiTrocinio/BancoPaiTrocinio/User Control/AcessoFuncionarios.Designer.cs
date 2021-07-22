@@ -51,19 +51,21 @@ namespace BancoPaiTrocinio.User_Control {
             this.lbl_bairro = new System.Windows.Forms.Label();
             this.lbl_estado = new System.Windows.Forms.Label();
             this.dados_func = new System.Windows.Forms.GroupBox();
+            this.Lbl_Senha = new System.Windows.Forms.Label();
+            this.Txt_Senha = new System.Windows.Forms.TextBox();
+            this.Txt_Usuario = new System.Windows.Forms.TextBox();
+            this.Lbl_Usuario = new System.Windows.Forms.Label();
             this.lbl_complemento = new System.Windows.Forms.Label();
             this.Txt_Complemento = new System.Windows.Forms.TextBox();
             this.lbl_funcao = new System.Windows.Forms.Label();
             this.lbl_salario = new System.Windows.Forms.Label();
             this.lbl_departamento = new System.Windows.Forms.Label();
-            this.Txt_Funcao = new System.Windows.Forms.TextBox();
             this.Txt_Departamento = new System.Windows.Forms.TextBox();
             this.Txt_Salario = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Lbl_Usuario = new System.Windows.Forms.Label();
-            this.Txt_Usuario = new System.Windows.Forms.TextBox();
-            this.Txt_Senha = new System.Windows.Forms.TextBox();
-            this.Lbl_Senha = new System.Windows.Forms.Label();
+            this.Txt_CEP = new System.Windows.Forms.TextBox();
+            this.lbl_CEP = new System.Windows.Forms.Label();
+            this.Txt_Funcao = new System.Windows.Forms.ComboBox();
             this.dados_func.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -77,6 +79,7 @@ namespace BancoPaiTrocinio.User_Control {
             this.Atualizar.TabIndex = 2;
             this.Atualizar.Text = "Atualizar";
             this.Atualizar.UseVisualStyleBackColor = true;
+            this.Atualizar.Click += new System.EventHandler(this.Atualizar_Click);
             // 
             // Inserir
             // 
@@ -98,6 +101,7 @@ namespace BancoPaiTrocinio.User_Control {
             this.Excluir.TabIndex = 4;
             this.Excluir.Text = "Excluir";
             this.Excluir.UseVisualStyleBackColor = true;
+            this.Excluir.Click += new System.EventHandler(this.Excluir_Click);
             // 
             // TxtBusca
             // 
@@ -298,6 +302,9 @@ namespace BancoPaiTrocinio.User_Control {
             // 
             this.dados_func.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dados_func.Controls.Add(this.Txt_Funcao);
+            this.dados_func.Controls.Add(this.lbl_CEP);
+            this.dados_func.Controls.Add(this.Txt_CEP);
             this.dados_func.Controls.Add(this.Lbl_Senha);
             this.dados_func.Controls.Add(this.Txt_Senha);
             this.dados_func.Controls.Add(this.Txt_Usuario);
@@ -307,7 +314,6 @@ namespace BancoPaiTrocinio.User_Control {
             this.dados_func.Controls.Add(this.lbl_funcao);
             this.dados_func.Controls.Add(this.lbl_salario);
             this.dados_func.Controls.Add(this.lbl_departamento);
-            this.dados_func.Controls.Add(this.Txt_Funcao);
             this.dados_func.Controls.Add(this.Txt_Departamento);
             this.dados_func.Controls.Add(this.Txt_Salario);
             this.dados_func.Controls.Add(this.lbl_estado);
@@ -337,6 +343,41 @@ namespace BancoPaiTrocinio.User_Control {
             this.dados_func.TabStop = false;
             this.dados_func.Text = "Dados do Funcionário";
             // 
+            // Lbl_Senha
+            // 
+            this.Lbl_Senha.AutoSize = true;
+            this.Lbl_Senha.Location = new System.Drawing.Point(350, 16);
+            this.Lbl_Senha.Name = "Lbl_Senha";
+            this.Lbl_Senha.Size = new System.Drawing.Size(38, 13);
+            this.Lbl_Senha.TabIndex = 78;
+            this.Lbl_Senha.Text = "Senha";
+            // 
+            // Txt_Senha
+            // 
+            this.Txt_Senha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Txt_Senha.Location = new System.Drawing.Point(353, 32);
+            this.Txt_Senha.Name = "Txt_Senha";
+            this.Txt_Senha.Size = new System.Drawing.Size(277, 20);
+            this.Txt_Senha.TabIndex = 77;
+            this.Txt_Senha.UseSystemPasswordChar = true;
+            // 
+            // Txt_Usuario
+            // 
+            this.Txt_Usuario.Location = new System.Drawing.Point(26, 32);
+            this.Txt_Usuario.Name = "Txt_Usuario";
+            this.Txt_Usuario.Size = new System.Drawing.Size(321, 20);
+            this.Txt_Usuario.TabIndex = 76;
+            // 
+            // Lbl_Usuario
+            // 
+            this.Lbl_Usuario.AutoSize = true;
+            this.Lbl_Usuario.Location = new System.Drawing.Point(23, 16);
+            this.Lbl_Usuario.Name = "Lbl_Usuario";
+            this.Lbl_Usuario.Size = new System.Drawing.Size(43, 13);
+            this.Lbl_Usuario.TabIndex = 75;
+            this.Lbl_Usuario.Text = "Usuário";
+            // 
             // lbl_complemento
             // 
             this.lbl_complemento.AutoSize = true;
@@ -350,7 +391,7 @@ namespace BancoPaiTrocinio.User_Control {
             // 
             this.Txt_Complemento.Location = new System.Drawing.Point(26, 205);
             this.Txt_Complemento.Name = "Txt_Complemento";
-            this.Txt_Complemento.Size = new System.Drawing.Size(245, 20);
+            this.Txt_Complemento.Size = new System.Drawing.Size(119, 20);
             this.Txt_Complemento.TabIndex = 73;
             // 
             // lbl_funcao
@@ -380,15 +421,6 @@ namespace BancoPaiTrocinio.User_Control {
             this.lbl_departamento.TabIndex = 70;
             this.lbl_departamento.Text = "Departamento";
             // 
-            // Txt_Funcao
-            // 
-            this.Txt_Funcao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_Funcao.Location = new System.Drawing.Point(483, 114);
-            this.Txt_Funcao.Name = "Txt_Funcao";
-            this.Txt_Funcao.Size = new System.Drawing.Size(147, 20);
-            this.Txt_Funcao.TabIndex = 69;
-            // 
             // Txt_Departamento
             // 
             this.Txt_Departamento.Location = new System.Drawing.Point(26, 114);
@@ -410,6 +442,7 @@ namespace BancoPaiTrocinio.User_Control {
             this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(4, 284);
             this.dataGridView2.Name = "dataGridView2";
@@ -417,39 +450,37 @@ namespace BancoPaiTrocinio.User_Control {
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // Lbl_Usuario
+            // Txt_CEP
             // 
-            this.Lbl_Usuario.AutoSize = true;
-            this.Lbl_Usuario.Location = new System.Drawing.Point(23, 16);
-            this.Lbl_Usuario.Name = "Lbl_Usuario";
-            this.Lbl_Usuario.Size = new System.Drawing.Size(43, 13);
-            this.Lbl_Usuario.TabIndex = 75;
-            this.Lbl_Usuario.Text = "Usuário";
+            this.Txt_CEP.Location = new System.Drawing.Point(151, 205);
+            this.Txt_CEP.Name = "Txt_CEP";
+            this.Txt_CEP.Size = new System.Drawing.Size(120, 20);
+            this.Txt_CEP.TabIndex = 79;
             // 
-            // Txt_Usuario
+            // lbl_CEP
             // 
-            this.Txt_Usuario.Location = new System.Drawing.Point(26, 32);
-            this.Txt_Usuario.Name = "Txt_Usuario";
-            this.Txt_Usuario.Size = new System.Drawing.Size(321, 20);
-            this.Txt_Usuario.TabIndex = 76;
+            this.lbl_CEP.AutoSize = true;
+            this.lbl_CEP.Location = new System.Drawing.Point(148, 191);
+            this.lbl_CEP.Name = "lbl_CEP";
+            this.lbl_CEP.Size = new System.Drawing.Size(28, 13);
+            this.lbl_CEP.TabIndex = 80;
+            this.lbl_CEP.Text = "CEP";
             // 
-            // Txt_Senha
+            // Txt_Funcao
             // 
-            this.Txt_Senha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.Txt_Funcao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_Senha.Location = new System.Drawing.Point(353, 32);
-            this.Txt_Senha.Name = "Txt_Senha";
-            this.Txt_Senha.Size = new System.Drawing.Size(277, 20);
-            this.Txt_Senha.TabIndex = 77;
-            // 
-            // Lbl_Senha
-            // 
-            this.Lbl_Senha.AutoSize = true;
-            this.Lbl_Senha.Location = new System.Drawing.Point(350, 16);
-            this.Lbl_Senha.Name = "Lbl_Senha";
-            this.Lbl_Senha.Size = new System.Drawing.Size(38, 13);
-            this.Lbl_Senha.TabIndex = 78;
-            this.Lbl_Senha.Text = "Senha";
+            this.Txt_Funcao.FormattingEnabled = true;
+            this.Txt_Funcao.Items.AddRange(new object[] {
+            "Desenvolvedor",
+            "Diretor",
+            "Gerente de Contas",
+            "Estagiário",
+            "Secretário"});
+            this.Txt_Funcao.Location = new System.Drawing.Point(484, 115);
+            this.Txt_Funcao.Name = "Txt_Funcao";
+            this.Txt_Funcao.Size = new System.Drawing.Size(146, 21);
+            this.Txt_Funcao.TabIndex = 81;
             // 
             // AcessoFuncionarios
             // 
@@ -509,7 +540,6 @@ namespace BancoPaiTrocinio.User_Control {
         private System.Windows.Forms.Label lbl_funcao;
         private System.Windows.Forms.Label lbl_salario;
         private System.Windows.Forms.Label lbl_departamento;
-        private System.Windows.Forms.TextBox Txt_Funcao;
         private System.Windows.Forms.TextBox Txt_Departamento;
         private System.Windows.Forms.TextBox Txt_Salario;
         private System.Windows.Forms.Label lbl_complemento;
@@ -519,5 +549,8 @@ namespace BancoPaiTrocinio.User_Control {
         private System.Windows.Forms.TextBox Txt_Senha;
         private System.Windows.Forms.TextBox Txt_Usuario;
         private System.Windows.Forms.Label Lbl_Usuario;
+        private System.Windows.Forms.Label lbl_CEP;
+        private System.Windows.Forms.TextBox Txt_CEP;
+        private System.Windows.Forms.ComboBox Txt_Funcao;
     }
 }

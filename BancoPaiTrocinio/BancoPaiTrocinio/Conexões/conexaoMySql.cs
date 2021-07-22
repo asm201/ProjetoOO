@@ -45,9 +45,10 @@ namespace BancoPaiTrocinio.Conexões {
         public DataTable RetornaSQL(string instrucaoSQL)
         {
             Conectar();
-            MySqlDataAdapter adapter = new MySqlDataAdapter(instrucaoSQL, conexao);
             DataTable dt = new DataTable();
-            adapter.Fill(dt);
+            using (MySqlDataAdapter adapter = new MySqlDataAdapter(instrucaoSQL, conexao)) {
+                adapter.Fill(dt);
+            }
             Desconectar();
             return dt;
         }
