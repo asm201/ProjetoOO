@@ -19,15 +19,15 @@ namespace BancoPaiTrocinio.User_Control
                                    u.u_cidade,u.u_bairro,u.u_estado,ct.ctt_tel,ct.ctt_cel,ct.ctt_email,
                                    c.c_profissao,cb.cb_agencia, ";
         public Boolean jp;
-        
+
         public AcessoCliente()
         {
             InitializeComponent();
         }
 
         public string Manipula_String(string s) {
-            
-            
+
+
             return s;
         }
 
