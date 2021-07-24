@@ -12,7 +12,7 @@ using BancoPaiTrocinio.Classes;
 
 namespace BancoPaiTrocinio
 {
-    public partial class Frm_BancoPaiTrocinio : Form, IAutenticar
+    public partial class Frm_BancoPaiTrocinio : Form
     {
         int controleCadastroCliente = 0;
         int controleAcessoFunc = 0;

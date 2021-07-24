@@ -85,6 +85,7 @@
             this.Atualizar.TabIndex = 2;
             this.Atualizar.Text = "Atualizar";
             this.Atualizar.UseVisualStyleBackColor = true;
+            this.Atualizar.Click += new System.EventHandler(this.Atualizar_Click);
             // 
             // Inserir
             // 
@@ -95,6 +96,7 @@
             this.Inserir.TabIndex = 3;
             this.Inserir.Text = "Inserir";
             this.Inserir.UseVisualStyleBackColor = true;
+            this.Inserir.Click += new System.EventHandler(this.Inserir_Click);
             // 
             // Excluir
             // 
@@ -162,7 +164,7 @@
             // 
             // Txt_Email
             // 
-            this.Txt_Email.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.Txt_Email.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Email.Location = new System.Drawing.Point(277, 127);
             this.Txt_Email.Name = "Txt_Email";
@@ -196,7 +198,7 @@
             // 
             // Txt_Celular
             // 
-            this.Txt_Celular.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.Txt_Celular.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Celular.Location = new System.Drawing.Point(463, 82);
             this.Txt_Celular.Name = "Txt_Celular";
@@ -269,7 +271,7 @@
             // 
             // Txt_Estado
             // 
-            this.Txt_Estado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.Txt_Estado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Estado.Location = new System.Drawing.Point(463, 167);
             this.Txt_Estado.Name = "Txt_Estado";
@@ -296,7 +298,7 @@
             // 
             // dados_cliente
             // 
-            this.dados_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dados_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dados_cliente.Controls.Add(this.lblprofissao);
             this.dados_cliente.Controls.Add(this.Txt_Profissao);
@@ -337,7 +339,7 @@
             this.dados_cliente.TabIndex = 1;
             this.dados_cliente.TabStop = false;
             this.dados_cliente.Text = "Dados do Cliente";
-            //
+            // 
             // lblprofissao
             // 
             this.lblprofissao.AutoSize = true;
@@ -369,7 +371,7 @@
             this.Txt_CEP.Name = "Txt_CEP";
             this.Txt_CEP.Size = new System.Drawing.Size(245, 20);
             this.Txt_CEP.TabIndex = 80;
-            //
+            // 
             // Grp_TipoConta
             // 
             this.Grp_TipoConta.Controls.Add(this.Rdb_ContaPoupanca);
@@ -462,7 +464,7 @@
             // 
             // Txt_Saldo
             // 
-            this.Txt_Saldo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.Txt_Saldo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Saldo.Location = new System.Drawing.Point(483, 42);
             this.Txt_Saldo.Name = "Txt_Saldo";
@@ -479,7 +481,7 @@
             // 
             // dataGridView2
             // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
