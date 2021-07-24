@@ -15,6 +15,7 @@ namespace BancoPaiTrocinio.User_Control
     {
 
         private static ConexaoMySql conexao;
+        private string radioText;
         public string strGelio = @"SELECT u.u_nome,u.u_cpf,u.u_departamento,u.u_rg,u.u_logradouro,u.u_complemento,
                                    u.u_cidade,u.u_bairro,u.u_estado,ct.ctt_tel,ct.ctt_cel,ct.ctt_email,
                                    c.c_profissao,cb.cb_agencia, ";
@@ -35,7 +36,6 @@ namespace BancoPaiTrocinio.User_Control
         {
             try
             {
-                string radioText;
                 foreach(RadioButton r in Grp_TipoConta.Controls) {
                     if (r.Checked) {
                         radioText = r.Text;
