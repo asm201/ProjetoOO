@@ -71,6 +71,8 @@
             this.Txt_Saldo = new System.Windows.Forms.TextBox();
             this.Txt_Bairro = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Txt_Excluir = new System.Windows.Forms.TextBox();
+            this.lblExcluir = new System.Windows.Forms.Label();
             this.dados_cliente.SuspendLayout();
             this.Grp_TipoConta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -101,12 +103,13 @@
             // Excluir
             // 
             this.Excluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Excluir.Location = new System.Drawing.Point(685, 194);
+            this.Excluir.Location = new System.Drawing.Point(685, 237);
             this.Excluir.Name = "Excluir";
             this.Excluir.Size = new System.Drawing.Size(75, 23);
             this.Excluir.TabIndex = 4;
             this.Excluir.Text = "Excluir";
             this.Excluir.UseVisualStyleBackColor = true;
+            this.Excluir.Click += new System.EventHandler(this.Excluir_Click);
             // 
             // TxtBusca
             // 
@@ -395,6 +398,7 @@
             // 
             // Rdb_ContaCorrente
             // 
+            this.Rdb_ContaCorrente.AutoCheck = false;
             this.Rdb_ContaCorrente.AutoSize = true;
             this.Rdb_ContaCorrente.Checked = true;
             this.Rdb_ContaCorrente.Location = new System.Drawing.Point(25, 19);
@@ -489,11 +493,32 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(770, 217);
             this.dataGridView2.TabIndex = 8;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            // 
+            // Txt_Excluir
+            // 
+            this.Txt_Excluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Txt_Excluir.Location = new System.Drawing.Point(673, 211);
+            this.Txt_Excluir.Name = "Txt_Excluir";
+            this.Txt_Excluir.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Excluir.TabIndex = 9;
+            // 
+            // lblExcluir
+            // 
+            this.lblExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblExcluir.AutoSize = true;
+            this.lblExcluir.Location = new System.Drawing.Point(669, 195);
+            this.lblExcluir.Name = "lblExcluir";
+            this.lblExcluir.Size = new System.Drawing.Size(111, 13);
+            this.lblExcluir.TabIndex = 10;
+            this.lblExcluir.Text = "Digite o CPF a excluir:";
             // 
             // AcessoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblExcluir);
+            this.Controls.Add(this.Txt_Excluir);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.cpf_busca);
             this.Controls.Add(this.Buscar);
@@ -563,5 +588,7 @@
         private System.Windows.Forms.TextBox Txt_CEP;
         private System.Windows.Forms.Label lblprofissao;
         private System.Windows.Forms.TextBox Txt_Profissao;
+        private System.Windows.Forms.TextBox Txt_Excluir;
+        private System.Windows.Forms.Label lblExcluir;
     }
 }
