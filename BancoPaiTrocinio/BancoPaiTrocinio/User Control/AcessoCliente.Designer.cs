@@ -398,7 +398,6 @@
             // 
             // Rdb_ContaCorrente
             // 
-            this.Rdb_ContaCorrente.AutoCheck = false;
             this.Rdb_ContaCorrente.AutoSize = true;
             this.Rdb_ContaCorrente.Checked = true;
             this.Rdb_ContaCorrente.Location = new System.Drawing.Point(25, 19);

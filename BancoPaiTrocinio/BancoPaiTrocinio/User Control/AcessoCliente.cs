@@ -29,30 +29,30 @@ namespace BancoPaiTrocinio.User_Control
                     s = @"SELECT u.u_nome,u.u_cpf,u.u_rg,u.u_cep,u.u_logradouro,u.u_complemento,
                           u.u_cidade,u.u_bairro,u.u_estado,ct.ctt_tel,ct.ctt_cel,ct.ctt_email,
                           c.c_profissao,cb.cb_agencia, cc.cc_nr_conta_corrente, cc.cc_saldo
-                          FROM usuario u INNER JOIN contato ct ON u.u_ctt_id = ct.ctt_id_usuadio
-                          LEFT JOIN cliente c ON u.u_id_cliente = c.c_id_usuario
-                          LEFT JOIN conta_bancaria cb ON c.c_id = cb.cb_id_cliente
-                          LEFT JOIN conta_corrente cc ON cb.cb_id_conta_corrente = cc.cc_id_conta_bancaria
+                          FROM usuario u INNER JOIN contato ct ON u.u_id = ct.ctt_id_usuario
+                          INNER JOIN cliente c ON u.u_id_cliente = c.c_id
+                          INNER JOIN conta_bancaria cb ON c.c_id = cb.cb_id_cliente
+                          INNER JOIN conta_corrente cc ON cb.cb_id_conta_corrente = cc.cc_id
                           WHERE u.u_cpf = " + Convert.ToString(TxtBusca.Text) + ";";
                 } else if (this.radioText == "Conta Poupança" && TxtBusca.Text != string.Empty && buscaOn == 1) {
                     s = @"SELECT u.u_nome,u.u_cpf,u.u_rg,u.u_cep,u.u_logradouro,u.u_complemento,
                           u.u_cidade,u.u_bairro,u.u_estado,ct.ctt_tel,ct.ctt_cel,ct.ctt_email,
                           c.c_profissao,cb.cb_agencia, cp.cp_nr_conta_poupanca, cp.cp_valor
-                          FROM usuario u INNER JOIN contato ct ON u.u_ctt_id = ct.ctt_id_usuadio
-                          LEFT JOIN cliente c ON u.u_id_cliente = c.c_id_usuario
-                          LEFT JOIN conta_bancaria cb ON c.c_id = cb.cb_id_cliente
-                          LEFT JOIN conta_poupanca cp ON cb.cb_id_conta_poupanca = cp.cp_id_conta_bancaria
+                          FROM usuario u INNER JOIN contato ct ON u.u_ctt_id = ct.ctt_id
+                          INNER JOIN cliente c ON u.u_id_cliente = c.c_id
+                          INNER JOIN conta_bancaria cb ON c.c_id = cb.cb_id_cliente
+                          INNER JOIN conta_poupanca cp ON cb.cb_id_conta_poupanca = cp.cp_id
                           WHERE u.u_cpf = " + Convert.ToString(TxtBusca.Text) + ";";
                 } else if (this.radioText == "Conta Corrente") {
-                    s = "SELECT u.u_nome,u.u_cpf,u.u_rg,u.u_cep,u.u_logradouro,u.u_complemento,u.u_cidade,u.u_bairro,u.u_estado,ct.ctt_tel,ct.ctt_cel,ct.ctt_email,c.c_profissao,cb.cb_agencia, cc.cc_nr_conta_corrente, cc.cc_saldo FROM usuario u INNER JOIN contato ct ON u.u_ctt_id = ct.ctt_id_usuario LEFT JOIN cliente c ON u.u_id_cliente = c.c_id_usuario LEFT JOIN conta_bancaria cb ON c.c_id = cb.cb_id_cliente LEFT JOIN conta_corrente cc ON cb.cb_id_conta_corrente = cc.cc_id_conta_bancaria;";
+                    s = "SELECT u.u_nome,u.u_cpf,u.u_rg,u.u_cep,u.u_logradouro,u.u_complemento,u.u_cidade,u.u_bairro,u.u_estado,ct.ctt_tel,ct.ctt_cel,ct.ctt_email,c.c_profissao,cb.cb_agencia, cc.cc_nr_conta_corrente, cc.cc_saldo FROM usuario u INNER JOIN contato ct ON u.u_ctt_id = ct.ctt_id INNER JOIN cliente c ON u.u_id_cliente = c.c_id INNER JOIN conta_bancaria cb ON c.c_id = cb.cb_id_cliente INNER JOIN conta_corrente cc ON cb.cb_id_conta_corrente = cc.cc_id;";
                 } else if (this.radioText == "Conta Poupança") {
                     s = @"SELECT u.u_nome,u.u_cpf,u.u_rg,u.u_cep,u.u_logradouro,u.u_complemento,
                           u.u_cidade,u.u_bairro,u.u_estado,ct.ctt_tel,ct.ctt_cel,ct.ctt_email,
                           c.c_profissao,cb.cb_agencia, cp.cp_nr_conta_poupanca, cp.cp_valor
-                          FROM usuario u INNER JOIN contato ct ON u.u_ctt_id = ct.ctt_id_usuadio
-                          LEFT JOIN cliente c ON u.u_id_cliente = c.c_id_usuario
-                          LEFT JOIN conta_bancaria cb ON c.c_id = cb.cb_id_cliente
-                          LEFT JOIN conta_poupanca cp ON cb.cb_id_conta_poupanca = cp.cp_id_conta_bancaria";
+                          FROM usuario u INNER JOIN contato ct ON u.u_ctt_id = ct.ctt_id
+                          INNER JOIN cliente c ON u.u_id_cliente = c.c_id
+                          INNER JOIN conta_bancaria cb ON c.c_id = cb.cb_id_cliente
+                          INNER JOIN conta_poupanca cp ON cb.cb_id_conta_poupanca = cp.cp_id";
                 }
             } catch (Exception e) {
                 MessageBox.Show("Erro: " + e.Message);
@@ -61,6 +61,25 @@ namespace BancoPaiTrocinio.User_Control
                 buscaOn = 0;
             }
             return s;
+        }
+
+        private void LimparFormulario() {
+            Txt_Nome.Text = "";
+            Txt_CPF.Text = "";
+            Txt_Rg.Text = "";
+            Txt_CEP.Text = "";
+            Txt_Logradouro.Text = "";
+            Txt_Complemento.Text = "";
+            Txt_Cidade.Text = "";
+            Txt_Bairro.Text = "";
+            Txt_Estado.Text = "";
+            Txt_Telefone.Text = "";
+            Txt_Celular.Text = "";
+            Txt_Email.Text = "";
+            Txt_Profissao.Text = "";
+            Txt_NumeroAgencia.Text = "";
+            Txt_NumeroConta.Text = "";
+            Txt_Saldo.Text = "";
         }
 
         private string ConfirmaBotao() {
@@ -107,27 +126,50 @@ namespace BancoPaiTrocinio.User_Control
             } else {
                 this.radioText = ConfirmaBotao();
                 try {
-                    try {
-                        DataTable averigua = conexao.RetornaSQL($"SELECT u_id FROM usuario WHERE u_cpf='{Convert.ToString(Txt_CPF.Text)}';");
-                    } catch (Exception b) {
-                        MessageBox.Show("Cliente não consta no sistema! Erro: " + b.Message);
-                        return;
+                    if (this.radioText == "Conta Corrente") {
+                        ContaCorrente cc = new ContaCorrente();
+                        cc = LeituraFormularioContaCorrente();
+                        cc.ValidaClasse();
+                        cc.ValidaComplemento();
+                        conexao.ExecutaSQL("INSERT INTO usuario (u_usuario, u_cpf,u_rg,u_senha,u_nome,u_logradouro,u_complemento,u_bairro,u_cidade,u_estado,u_cep)VALUES('" + Convert.ToString(cc.u_usario) + "','" + Convert.ToString(cc.u_cpf) + "','" + Convert.ToString(cc.u_rg) + "','" + Convert.ToString(cc.u_senha) + "','" + Convert.ToString(cc.u_nome) + "','" + Convert.ToString(cc.u_logradouro) + "','" + Convert.ToString(cc.u_complemento) + "','" + Convert.ToString(cc.u_bairro) + "','" + Convert.ToString(cc.u_cidade) + "','" + Convert.ToString(cc.u_estado) + "','" + Convert.ToString(cc.u_cep) + "');");
+                        DataTable query = conexao.RetornaSQL($"SELECT u_id FROM usuario WHERE u_cpf='{Convert.ToString(cc.u_cpf)}';");
+                        conexao.ExecutaSQL($"INSERT INTO contato (ctt_id_usuario,ctt_tel,ctt_cel,ctt_email) VALUES ({query.Rows[0]["u_id"]},'{Convert.ToString(cc.ctt_tel)}','{Convert.ToString(cc.ctt_cel)}','{Convert.ToString(cc.ctt_email)}');");
+                        DataTable query2 = conexao.RetornaSQL($"SELECT ctt_id FROM contato WHERE ctt_id_usuario = {query.Rows[0]["u_id"]};");
+                        conexao.ExecutaSQL($"UPDATE usuario SET u_ctt_id = {query2.Rows[0]["ctt_id"]} WHERE u_cpf = '{Convert.ToString(cc.u_cpf)}';");
+                        conexao.ExecutaSQL($"INSERT INTO cliente (c_id_usuario, c_profissao) VALUES ({Convert.ToInt32(query.Rows[0]["u_id"])},'{Convert.ToString(cc.c_profissao)}');");
+                        DataTable query3 = conexao.RetornaSQL($"SELECT c_id FROM cliente WHERE c_id_usuario = {query.Rows[0]["u_id"]};");
+                        conexao.ExecutaSQL($"UPDATE usuario SET u_id_cliente = {query3.Rows[0]["c_id"]} WHERE u_id = {Convert.ToInt32(query.Rows[0]["u_id"])};");
+                        conexao.ExecutaSQL($"INSERT INTO conta_bancaria (cb_agencia, cb_id_cliente) VALUES ({cc.cb_agencia},{Convert.ToInt32(query3.Rows[0]["c_id"])});");
+                        DataTable query4 = conexao.RetornaSQL($"SELECT cb_id FROM conta_bancaria WHERE cb_id_cliente = {query3.Rows[0]["c_id"]};");
+                        conexao.ExecutaSQL($"INSERT INTO conta_corrente (cc_id_conta_bancaria,cc_nr_conta_corrente,cc_saldo) VALUES ({Convert.ToInt32(query4.Rows[0]["cb_id"])},{cc.cc_nr_conta_corrente},{cc.cc_saldo});");
+                        DataTable query5 = conexao.RetornaSQL($"SELECT cc_id FROM conta_corrente WHERE cc_id_conta_bancaria = {Convert.ToInt32(query4.Rows[0]["cb_id"])};");
+                        conexao.ExecutaSQL($"UPDATE conta_bancaria SET cb_id_conta_corrente = {Convert.ToInt32(query5.Rows[0]["cc_id"])} WHERE cb_id = {Convert.ToInt32(query4.Rows[0]["cb_id"])};");
+                        //Add cadastro nas contas bancarias
+                        LimparFormulario();
+                        MessageBox.Show("Cadastro realizado com sucesso!");
+                    } else if (this.radioText == "Conta Poupança") {
+                        ContaPoupanca cp = new ContaPoupanca();
+                        cp = LeituraFormularioContaPoupanca();
+                        cp.ValidaClasse();
+                        cp.ValidaComplemento();
+                        conexao.ExecutaSQL("INSERT INTO usuario (u_usuario, u_cpf,u_rg,u_senha,u_nome,u_logradouro,u_complemento,u_bairro,u_cidade,u_estado,u_cep)VALUES('" + Convert.ToString(cp.u_usario) + "','" + Convert.ToString(cp.u_cpf) + "','" + Convert.ToString(cp.u_rg) + "','" + Convert.ToString(cp.u_senha) + "','" + Convert.ToString(cp.u_nome) + "','" + Convert.ToString(cp.u_logradouro) + "','" + Convert.ToString(cp.u_complemento) + "','" + Convert.ToString(cp.u_bairro) + "','" + Convert.ToString(cp.u_cidade) + "','" + Convert.ToString(cp.u_estado) + "','" + Convert.ToString(cp.u_cep) + "');");
+                        DataTable query = conexao.RetornaSQL($"SELECT u_id FROM usuario WHERE u_cpf='{Convert.ToString(cp.u_cpf)}';");
+                        conexao.ExecutaSQL($"INSERT INTO contato (ctt_id_usuario,ctt_tel,ctt_cel,ctt_email) VALUES ({query.Rows[0]["u_id"]},'{Convert.ToString(cp.ctt_tel)}','{Convert.ToString(cp.ctt_cel)}','{Convert.ToString(cp.ctt_email)}');");
+                        DataTable query2 = conexao.RetornaSQL($"SELECT ctt_id FROM contato WHERE ctt_id_usuario = {query.Rows[0]["u_id"]};");
+                        conexao.ExecutaSQL($"UPDATE usuario SET u_ctt_id = {query2.Rows[0]["ctt_id"]} WHERE u_cpf = '{Convert.ToString(cp.u_cpf)}';");
+                        conexao.ExecutaSQL($"INSERT INTO cliente (c_id_usuario, c_profissao) VALUES ({Convert.ToInt32(query.Rows[0]["u_id"])},'{Convert.ToString(cp.c_profissao)}');");
+                        DataTable query3 = conexao.RetornaSQL($"SELECT c_id FROM cliente WHERE c_id_usuario = {query.Rows[0]["u_id"]};");
+                        conexao.ExecutaSQL($"UPDATE usuario SET u_id_cliente = {query3.Rows[0]["c_id"]} WHERE u_id = {Convert.ToInt32(query.Rows[0]["u_id"])};");
+                        conexao.ExecutaSQL($"INSERT INTO conta_bancaria (cb_agencia, cb_id_cliente) VALUES ({cp.cb_agencia},{Convert.ToInt32(query3.Rows[0]["c_id"])});");
+                        DataTable query4 = conexao.RetornaSQL($"SELECT cb_id FROM conta_bancaria WHERE cb_id_cliente = {query3.Rows[0]["c_id"]};");
+                        conexao.ExecutaSQL($"INSERT INTO conta_poupanca (cp_id_conta_bancaria,cp_nr_conta_poupanca,cp_valor) VALUES ({Convert.ToInt32(query4.Rows[0]["cb_id"])},{cp.cp_nr_conta_poupanca},{cp.cp_saldo});");
+                        DataTable query5 = conexao.RetornaSQL($"SELECT cp_id FROM conta_poupanca WHERE cp_id_conta_bancaria = {Convert.ToInt32(query4.Rows[0]["cb_id"])};");
+                        conexao.ExecutaSQL($"UPDATE conta_bancaria SET cb_id_conta_poupanca = {Convert.ToInt32(query5.Rows[0]["cc_id"])} WHERE cb_id = {Convert.ToInt32(query4.Rows[0]["cb_id"])};");
+                        //Add cadastro nas contas bancarias
+                        LimparFormulario();
+                        MessageBox.Show("Cadastro realizado com sucesso!");
                     }
-                    DataTable query = conexao.RetornaSQL($"SELECT u_id FROM usuario WHERE u_cpf='{Convert.ToString(Txt_CPF.Text)}';");
-                    conexao.ExecutaSQL($"INSERT INTO cliente (c_id_usuario, c_profissao) VALUES ({Convert.ToInt32(query.Rows[0]["u_id"])},{Convert.ToString(Txt_Profissao.Text)});");
-                    DataTable query2 = conexao.RetornaSQL($"SELECT c_id FROM cliente WHERE c_id_usuario = {query.Rows[0]["u_id"]};");
-                    conexao.ExecutaSQL($"UPDATE usuario SET u_id_cliente = {query2.Rows[0]["c_id"]} WHERE u_id = {Convert.ToInt32(query.Rows[0]["u_id"])};");
-                    conexao.ExecutaSQL($"INSERT INTO conta_bancaria (cb_agencia, cb_id_cliente) VALUES ({Convert.ToInt64(Txt_NumeroAgencia.Text)},{Convert.ToInt32(query2.Rows[0]["c_id"])});");
-                    DataTable query3 = conexao.RetornaSQL($"SELECT cb_id FROM conta_bancaria WHERE cb_id_cliente = {query2.Rows[0]["c_id"]};");
-                    if (radioText == "Conta Corrente") {
-                        conexao.ExecutaSQL($"INSERT INTO conta_corrente (cc_id_conta_bancaria,cc_nr_conta_corrente,cc_saldo) VALUES ({Convert.ToInt32(query3.Rows[0]["cb_id"])},{Convert.ToInt64(Txt_NumeroConta.Text)},{float.Parse(Txt_Saldo.Text)});");
-                        DataTable query4 = conexao.RetornaSQL($"SELECT cc_id FROM conta_corrente WHERE cc_id_conta_bancaria = {Convert.ToInt32(query3.Rows[0]["cb_id"])};");
-                        conexao.ExecutaSQL($"UPDATE conta_bancaria SET cb_id_conta_corrente = {Convert.ToInt32(query4.Rows[0]["cc_id"])} WHERE cb_id = {Convert.ToInt32(query3.Rows[0]["cb_id"])};");
-                    } else if (radioText == "Conta Poupança") {
-                        conexao.ExecutaSQL($"INSERT INTO conta_poupanca (cp_id_conta_bancaria, cp_nr_conta_poupanca, cp_valor) VALUES ({Convert.ToInt32(query3.Rows[0]["cb_id"])},{Convert.ToInt64(Txt_NumeroConta.Text)},{float.Parse(Txt_Saldo.Text)});");
-                        DataTable query4 = conexao.RetornaSQL($"SELECT cp_id FROM conta_corrente WHERE cp_id_conta_bancaria = { Convert.ToInt32(query3.Rows[0]["cb_id"])}; ");
-                        conexao.ExecutaSQL($"UPDATE conta_bancaria SET cb_id_conta_poupanca = {Convert.ToInt32(query4.Rows[0]["cp_id"])} WHERE cb_id = {Convert.ToInt32(query3.Rows[0]["cb_id"])};");
-                    }
+               
                 } catch (Exception a) {
                     MessageBox.Show(a.Message);
                 }
@@ -141,17 +183,22 @@ namespace BancoPaiTrocinio.User_Control
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e) {
-            //Txt_Nome.Text =;
-            //Txt_CPF.Text =;
-            //Txt_Rg.Text =;
-            //Txt_CEP.Text =;
-            //Txt_Logradouro.Text =;
-            //Txt_Complemento.Text =;
-            //Txt_Cidade.Text =;
-            //Txt_Bairro.Text =;
-            //Txt_Estado.Text =;
-            //Txt_Telefone.Text =;
-            //Txt_Celular.Text =;
+            Txt_Nome.Text = Convert.ToString(dataGridView2.Rows[e.RowIndex].Cells[0].Value);
+            Txt_CPF.Text = Convert.ToString(dataGridView2.Rows[e.RowIndex].Cells[1].Value);
+            Txt_Rg.Text = Convert.ToString(dataGridView2.Rows[e.RowIndex].Cells[2].Value);
+            Txt_CEP.Text = Convert.ToString(dataGridView2.Rows[e.RowIndex].Cells[3].Value);
+            Txt_Logradouro.Text = Convert.ToString(dataGridView2.Rows[e.RowIndex].Cells[4].Value);
+            Txt_Complemento.Text = Convert.ToString(dataGridView2.Rows[e.RowIndex].Cells[5].Value);
+            Txt_Cidade.Text = Convert.ToString(dataGridView2.Rows[e.RowIndex].Cells[6].Value);
+            Txt_Bairro.Text = Convert.ToString(dataGridView2.Rows[e.RowIndex].Cells[7].Value);
+            Txt_Estado.Text = Convert.ToString(dataGridView2.Rows[e.RowIndex].Cells[8].Value);
+            Txt_Telefone.Text = Convert.ToString(dataGridView2.Rows[e.RowIndex].Cells[9].Value);
+            Txt_Celular.Text = Convert.ToString(dataGridView2.Rows[e.RowIndex].Cells[10].Value);
+            Txt_Email.Text = Convert.ToString(dataGridView2.Rows[e.RowIndex].Cells[11].Value);
+            Txt_Profissao.Text = Convert.ToString(dataGridView2.Rows[e.RowIndex].Cells[12].Value);
+            Txt_NumeroAgencia.Text = Convert.ToString(dataGridView2.Rows[e.RowIndex].Cells[13].Value);
+            Txt_NumeroConta.Text = Convert.ToString(dataGridView2.Rows[e.RowIndex].Cells[14].Value);
+            Txt_Saldo.Text = Convert.ToString(dataGridView2.Rows[e.RowIndex].Cells[15].Value);
         }
     }
 }

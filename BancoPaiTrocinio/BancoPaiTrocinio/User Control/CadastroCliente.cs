@@ -196,7 +196,7 @@ namespace BancoPaiTrocinio
             cp.cb_agencia = 1010;
             Random rnd = new Random();
             cp.cp_nr_conta_poupanca = rnd.Next(1000000, 9999999);
-            cp.cp_saldo = 0;
+            cp.cp_saldo = 0.00;
             cp.c_profissao = Txt_Profissao.Text;
             cp.u_usario = Txt_Usuario.Text;
 
@@ -218,6 +218,14 @@ namespace BancoPaiTrocinio
                     connect.ExecutaSQL($"INSERT INTO contato (ctt_id_usuario,ctt_tel,ctt_cel,ctt_email) VALUES ({query.Rows[0]["u_id"]},'{Convert.ToString(cc.ctt_tel)}','{Convert.ToString(cc.ctt_cel)}','{Convert.ToString(cc.ctt_email)}');");
                     DataTable query2 = connect.RetornaSQL($"SELECT ctt_id FROM contato WHERE ctt_id_usuario = {query.Rows[0]["u_id"]};");
                     connect.ExecutaSQL($"UPDATE usuario SET u_ctt_id = {query2.Rows[0]["ctt_id"]} WHERE u_cpf = '{Convert.ToString(cc.u_cpf)}';");
+                    connect.ExecutaSQL($"INSERT INTO cliente (c_id_usuario, c_profissao) VALUES ({Convert.ToInt32(query.Rows[0]["u_id"])},'{Convert.ToString(cc.c_profissao)}');");
+                    DataTable query3 = connect.RetornaSQL($"SELECT c_id FROM cliente WHERE c_id_usuario = {query.Rows[0]["u_id"]};");
+                    connect.ExecutaSQL($"UPDATE usuario SET u_id_cliente = {query3.Rows[0]["c_id"]} WHERE u_id = {Convert.ToInt32(query.Rows[0]["u_id"])};");
+                    connect.ExecutaSQL($"INSERT INTO conta_bancaria (cb_agencia, cb_id_cliente) VALUES ({cc.cb_agencia},{Convert.ToInt32(query3.Rows[0]["c_id"])});");
+                    DataTable query4 = connect.RetornaSQL($"SELECT cb_id FROM conta_bancaria WHERE cb_id_cliente = {query3.Rows[0]["c_id"]};");
+                    connect.ExecutaSQL($"INSERT INTO conta_corrente (cc_id_conta_bancaria,cc_nr_conta_corrente,cc_saldo) VALUES ({Convert.ToInt32(query4.Rows[0]["cb_id"])},{cc.cc_nr_conta_corrente},{cc.cc_saldo});");
+                    DataTable query5 = connect.RetornaSQL($"SELECT cc_id FROM conta_corrente WHERE cc_id_conta_bancaria = {Convert.ToInt32(query4.Rows[0]["cb_id"])};");
+                    connect.ExecutaSQL($"UPDATE conta_bancaria SET cb_id_conta_corrente = {Convert.ToInt32(query5.Rows[0]["cc_id"])} WHERE cb_id = {Convert.ToInt32(query4.Rows[0]["cb_id"])};");
                     //Add cadastro nas contas bancarias
                     LimparFormulario();
                     MessageBox.Show("Cadastro realizado com sucesso!");
@@ -233,6 +241,14 @@ namespace BancoPaiTrocinio
                     connect.ExecutaSQL($"INSERT INTO contato (ctt_id_usuario,ctt_tel,ctt_cel,ctt_email) VALUES ({query.Rows[0]["u_id"]},'{Convert.ToString(cp.ctt_tel)}','{Convert.ToString(cp.ctt_cel)}','{Convert.ToString(cp.ctt_email)}');");
                     DataTable query2 = connect.RetornaSQL($"SELECT ctt_id FROM contato WHERE ctt_id_usuario = {query.Rows[0]["u_id"]};");
                     connect.ExecutaSQL($"UPDATE usuario SET u_ctt_id = {query2.Rows[0]["ctt_id"]} WHERE u_cpf = '{Convert.ToString(cp.u_cpf)}';");
+                    connect.ExecutaSQL($"INSERT INTO cliente (c_id_usuario, c_profissao) VALUES ({Convert.ToInt32(query.Rows[0]["u_id"])},'{Convert.ToString(cp.c_profissao)}');");
+                    DataTable query3 = connect.RetornaSQL($"SELECT c_id FROM cliente WHERE c_id_usuario = {query.Rows[0]["u_id"]};");
+                    connect.ExecutaSQL($"UPDATE usuario SET u_id_cliente = {query3.Rows[0]["c_id"]} WHERE u_id = {Convert.ToInt32(query.Rows[0]["u_id"])};");
+                    connect.ExecutaSQL($"INSERT INTO conta_bancaria (cb_agencia, cb_id_cliente) VALUES ({cp.cb_agencia},{Convert.ToInt32(query3.Rows[0]["c_id"])});");
+                    DataTable query4 = connect.RetornaSQL($"SELECT cb_id FROM conta_bancaria WHERE cb_id_cliente = {query3.Rows[0]["c_id"]};");
+                    connect.ExecutaSQL($"INSERT INTO conta_poupanca (cp_id_conta_bancaria,cp_nr_conta_poupanca,cp_valor) VALUES ({Convert.ToInt32(query4.Rows[0]["cb_id"])},{cp.cp_nr_conta_poupanca},{cp.cp_saldo});");
+                    DataTable query5 = connect.RetornaSQL($"SELECT cp_id FROM conta_poupanca WHERE cp_id_conta_bancaria = {Convert.ToInt32(query4.Rows[0]["cb_id"])};");
+                    connect.ExecutaSQL($"UPDATE conta_bancaria SET cb_id_conta_poupanca = {Convert.ToInt32(query5.Rows[0]["cc_id"])} WHERE cb_id = {Convert.ToInt32(query4.Rows[0]["cb_id"])};");
                     //Add cadastro nas contas bancarias
                     LimparFormulario();
                     MessageBox.Show("Cadastro realizado com sucesso!");
