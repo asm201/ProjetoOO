@@ -214,7 +214,7 @@ namespace BancoPaiTrocinio
 
         private void desconectarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Frm_Questao db = new Frm_Questao("question", "Você deseja se desconctar?");
+            Frm_Questao db = new Frm_Questao("question", "Você deseja se desconectar?");
             db.ShowDialog();
             if (db.DialogResult == DialogResult.Yes)
             {
