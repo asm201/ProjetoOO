@@ -8,6 +8,7 @@ using System.Net;
 using System.IO;
 using System.Data;
 using System.Windows.Forms;
+using BancoPaiTrocinio.Classes;
 
 namespace BancoPaiTrocinio {
     public class Cls_Uteis {
@@ -56,6 +57,7 @@ namespace BancoPaiTrocinio {
                         return false;
                     }
                 } catch (Exception e) {
+                    MessageBox.Show(e.Message, "Banco Paitrocinio", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false;
                 }
             } else {
@@ -84,6 +86,7 @@ namespace BancoPaiTrocinio {
                 }
 
             } catch (Exception e) {
+                MessageBox.Show(e.Message, "Banco Paitrocinio",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 return null;
             }
             return null;

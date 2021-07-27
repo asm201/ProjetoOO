@@ -57,7 +57,6 @@
     <Compile Include="Classes\ContaCorrente.cs" />
     <Compile Include="Classes\ContaPoupanca.cs" />
     <Compile Include="Classes\Funcionario.cs" />
-    <Compile Include="Classes\IAutenticar.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

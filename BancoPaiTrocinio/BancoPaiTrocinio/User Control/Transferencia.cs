@@ -30,7 +30,7 @@ namespace BancoPaiTrocinio.User_Control
                 try
                 {
                     clientePoupanca.Transferir(Convert.ToDouble(Txt_Valor.Text), Txt_NumeroConta.Text);
-                    MessageBox.Show("Tranferrencia feito com sucesso", "Banco Paitrocinio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Tranferencia feito com sucesso", "Banco Paitrocinio", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (ArgumentException ex)
                 {
@@ -44,7 +44,7 @@ namespace BancoPaiTrocinio.User_Control
                 try
                 {
                     clienteCorrente.Transferir(Convert.ToDouble(Txt_Valor.Text), Txt_NumeroConta.Text);
-                    MessageBox.Show("Tranferrencia", "Banco Paitrocinio", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Tranferencia feito com sucesso", "Banco Paitrocinio", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (ArgumentException ex)
                 {
