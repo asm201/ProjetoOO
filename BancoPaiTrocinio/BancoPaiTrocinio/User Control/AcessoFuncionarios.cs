@@ -16,6 +16,35 @@ namespace BancoPaiTrocinio.User_Control {
         Conexões.ConexaoMySql conexao = new Conexões.ConexaoMySql();
         public AcessoFuncionarios() {
             InitializeComponent();
+
+            Txt_Estado.Items.Clear();
+            Txt_Estado.Items.Add("Acre (AC)");
+            Txt_Estado.Items.Add("Alagoas(AL)");
+            Txt_Estado.Items.Add("Amapá(AP)");
+            Txt_Estado.Items.Add("Amazonas(AM)");
+            Txt_Estado.Items.Add("Bahia(BA)");
+            Txt_Estado.Items.Add("Ceará(CE)");
+            Txt_Estado.Items.Add("Distrito Federal(DF)");
+            Txt_Estado.Items.Add("Espírito Santo(ES)");
+            Txt_Estado.Items.Add("Goiás(GO)");
+            Txt_Estado.Items.Add("Maranhão(MA)");
+            Txt_Estado.Items.Add("Mato Grosso(MT)");
+            Txt_Estado.Items.Add("Mato Grosso do Sul(MS)");
+            Txt_Estado.Items.Add("Minas Gerais(MG)");
+            Txt_Estado.Items.Add("Pará(PA)");
+            Txt_Estado.Items.Add("Paraíba(PB)");
+            Txt_Estado.Items.Add("Paraná(PR)");
+            Txt_Estado.Items.Add("Pernambuco(PE)");
+            Txt_Estado.Items.Add("Piauí(PI)");
+            Txt_Estado.Items.Add("Rio de Janeiro(RJ)");
+            Txt_Estado.Items.Add("Rio Grande do Norte(RN)");
+            Txt_Estado.Items.Add("Rio Grande do Sul(RS)");
+            Txt_Estado.Items.Add("Rondônia(RO)");
+            Txt_Estado.Items.Add("Roraima(RR)");
+            Txt_Estado.Items.Add("Santa Catarina(SC)");
+            Txt_Estado.Items.Add("São Paulo(SP)");
+            Txt_Estado.Items.Add("Sergipe(SE)");
+            Txt_Estado.Items.Add("Tocantins(TO)");
         }
 
         private void LimpaTxt() {
@@ -23,11 +52,12 @@ namespace BancoPaiTrocinio.User_Control {
             Txt_Bairro.Text = "";
             Txt_Celular.Text = "";
             Txt_Cidade.Text = "";
+            Txt_CEP.Text = "";
             Txt_Complemento.Text = "";
             Txt_CPF.Text = "";
             Txt_Departamento.Text = "";
             Txt_Email.Text = "";
-            Txt_Estado.Text = "";
+            Txt_Estado.SelectedIndex = -1;
             Txt_Funcao.Text = "";
             Txt_Logradouro.Text = "";
             Txt_Rg.Text = "";
@@ -67,6 +97,7 @@ namespace BancoPaiTrocinio.User_Control {
             f.f_departamento = Txt_Departamento.Text;
             f.f_salario = Convert.ToDouble(Txt_Salario.Text);
             f.u_usario = Txt_Usuario.Text;
+            f.u_senha = Txt_Senha.Text;
 
             return f;
         }
@@ -83,9 +114,9 @@ namespace BancoPaiTrocinio.User_Control {
                 try {
                     Funcionario f = new Funcionario();
                     f = LeituraFormularioFuncioanario();
-                    conexao.ExecutaSQL($"INSERT INTO usuario (u_usuario, u_cpf,u_rg,u_senha,u_nome,u_logradouro,u_complemento,u_bairro,u_cidade,u_estado,u_cep)VALUES('" + Convert.ToString(f.u_usario) + "','" + Convert.ToString(f.u_cpf) + "','" + Convert.ToString(f.u_rg) + "','" + Convert.ToString(f.u_senha) + "','" + Convert.ToString(f.u_nome) + "','" + Convert.ToString(f.u_logradouro) + "','" + Convert.ToString(f.u_complemento) + "','" + Convert.ToString(f.u_bairro) + "','" + Convert.ToString(f.u_cidade) + "','" + Convert.ToString(f.u_estado) + "','" + Convert.ToString(f.u_cep) + "');");
+                    conexao.ExecutaSQL($"INSERT INTO usuario (u_usuario, u_senha, u_cpf,u_rg,u_senha,u_nome,u_logradouro,u_complemento,u_bairro,u_cidade,u_estado,u_cep)VALUES('" + Convert.ToString(f.u_usario) + "','" + Convert.ToString(f.u_senha) + "','" + Convert.ToString(f.u_cpf) + "','" + Convert.ToString(f.u_rg) + "','" + Convert.ToString(f.u_senha) + "','" + Convert.ToString(f.u_nome) + "','" + Convert.ToString(f.u_logradouro) + "','" + Convert.ToString(f.u_complemento) + "','" + Convert.ToString(f.u_bairro) + "','" + Convert.ToString(f.u_cidade) + "','" + Convert.ToString(f.u_estado) + "','" + Convert.ToString(f.u_cep) + "');");
                     DataTable query = conexao.RetornaSQL($"SELECT u_id FROM usuario WHERE u_cpf='{Convert.ToString(Txt_CPF.Text)}';");
-                    conexao.ExecutaSQL($"INSERT INTO funcionario (f_id_usuario, f_salario, f_departamento, f_funcao) VALUES ({query.Rows[0]["u_id"]},'{/*float.Parse(Txt_Salario.Text)*/f.f_salario}','{f.f_departamento}','{f.f_funcao}');");
+                    conexao.ExecutaSQL($"INSERT INTO funcionario (f_id_usuario, f_salario, f_departamento, f_funcao) VALUES ({query.Rows[0]["u_id"]},'{f.f_salario}','{f.f_departamento}','{f.f_funcao}');");
                     DataTable query2 = conexao.RetornaSQL($"SELECT f_id FROM funcionario WHERE f_id_usuario = {query.Rows[0]["u_id"]}");
                     conexao.ExecutaSQL($"UPDATE usuario SET u_id_funcionario = {query2.Rows[0]["f_id"]} WHERE u_cpf = '{Convert.ToString(f.u_cpf)}';");
                     conexao.ExecutaSQL($"INSERT INTO contato (ctt_id_usuario,ctt_tel,ctt_cel,ctt_email) VALUES ({query.Rows[0]["u_id"]},'{Convert.ToString(f.ctt_tel)}','{Convert.ToString(f.ctt_cel)}','{Convert.ToString(f.ctt_email)}');");
@@ -133,9 +164,13 @@ namespace BancoPaiTrocinio.User_Control {
         }
 
         private void Excluir_Click(object sender, EventArgs e) {
-            DataTable query = conexao.RetornaSQL($"SELECT u_id FROM usuario WHERE u_cpf = {Txt_Excluir.Text}");
-            conexao.ExecutaSQL($"DELETE FROM usuario WHERE u_id = {query.Rows[0]["u_id"]};");
-            AcessoFuncionarios_Load(sender, e);
+            try {
+                DataTable query = conexao.RetornaSQL($"SELECT u_id FROM usuario WHERE u_cpf = {Txt_Excluir.Text}");
+                conexao.ExecutaSQL($"DELETE FROM usuario WHERE u_id = {query.Rows[0]["u_id"]};");
+                AcessoFuncionarios_Load(sender, e);
+            } catch(Exception a) {
+                MessageBox.Show(a.Message);
+            }
         }
     }
 }

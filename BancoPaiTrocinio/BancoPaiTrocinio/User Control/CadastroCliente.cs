@@ -210,48 +210,55 @@ namespace BancoPaiTrocinio
                 if (Rdb_ContaCorrente.Checked == true)
                 {
                     ContaCorrente cc = new ContaCorrente();
-                    cc = LeituraFormularioContaCorrente();
-                    cc.ValidaClasse();
-                    cc.ValidaComplemento();
-                    connect.ExecutaSQL("INSERT INTO usuario (u_usuario, u_cpf,u_rg,u_senha,u_nome,u_logradouro,u_complemento,u_bairro,u_cidade,u_estado,u_cep)VALUES('" + Convert.ToString(cc.u_usario) + "','" + Convert.ToString(cc.u_cpf) + "','" + Convert.ToString(cc.u_rg) + "','" + Convert.ToString(cc.u_senha) + "','" + Convert.ToString(cc.u_nome) + "','" + Convert.ToString(cc.u_logradouro) + "','" + Convert.ToString(cc.u_complemento) + "','" + Convert.ToString(cc.u_bairro) + "','" + Convert.ToString(cc.u_cidade) + "','" + Convert.ToString(cc.u_estado) + "','" + Convert.ToString(cc.u_cep) + "');");
-                    DataTable query = connect.RetornaSQL($"SELECT u_id FROM usuario WHERE u_cpf='{Convert.ToString(cc.u_cpf)}';");
-                    connect.ExecutaSQL($"INSERT INTO contato (ctt_id_usuario,ctt_tel,ctt_cel,ctt_email) VALUES ({query.Rows[0]["u_id"]},'{Convert.ToString(cc.ctt_tel)}','{Convert.ToString(cc.ctt_cel)}','{Convert.ToString(cc.ctt_email)}');");
-                    DataTable query2 = connect.RetornaSQL($"SELECT ctt_id FROM contato WHERE ctt_id_usuario = {query.Rows[0]["u_id"]};");
-                    connect.ExecutaSQL($"UPDATE usuario SET u_ctt_id = {query2.Rows[0]["ctt_id"]} WHERE u_cpf = '{Convert.ToString(cc.u_cpf)}';");
-                    connect.ExecutaSQL($"INSERT INTO cliente (c_id_usuario, c_profissao) VALUES ({Convert.ToInt32(query.Rows[0]["u_id"])},'{Convert.ToString(cc.c_profissao)}');");
-                    DataTable query3 = connect.RetornaSQL($"SELECT c_id FROM cliente WHERE c_id_usuario = {query.Rows[0]["u_id"]};");
-                    connect.ExecutaSQL($"UPDATE usuario SET u_id_cliente = {query3.Rows[0]["c_id"]} WHERE u_id = {Convert.ToInt32(query.Rows[0]["u_id"])};");
-                    connect.ExecutaSQL($"INSERT INTO conta_bancaria (cb_agencia, cb_id_cliente) VALUES ({cc.cb_agencia},{Convert.ToInt32(query3.Rows[0]["c_id"])});");
-                    DataTable query4 = connect.RetornaSQL($"SELECT cb_id FROM conta_bancaria WHERE cb_id_cliente = {query3.Rows[0]["c_id"]};");
-                    connect.ExecutaSQL($"INSERT INTO conta_corrente (cc_id_conta_bancaria,cc_nr_conta_corrente,cc_saldo) VALUES ({Convert.ToInt32(query4.Rows[0]["cb_id"])},{cc.cc_nr_conta_corrente},{cc.cc_saldo});");
-                    DataTable query5 = connect.RetornaSQL($"SELECT cc_id FROM conta_corrente WHERE cc_id_conta_bancaria = {Convert.ToInt32(query4.Rows[0]["cb_id"])};");
-                    connect.ExecutaSQL($"UPDATE conta_bancaria SET cb_id_conta_corrente = {Convert.ToInt32(query5.Rows[0]["cc_id"])} WHERE cb_id = {Convert.ToInt32(query4.Rows[0]["cb_id"])};");
-                    //Add cadastro nas contas bancarias
-                    LimparFormulario();
-                    MessageBox.Show("Cadastro realizado com sucesso!");
-                }
+                    if (Txt_Usuario.Text == string.Empty || Txt_Senha.Text == string.Empty) {
+                        cc = LeituraFormularioContaCorrente();
+                        cc.ValidaClasse();
+                        cc.ValidaComplemento();
+                        connect.ExecutaSQL("INSERT INTO usuario (u_usuario, u_cpf,u_rg,u_senha,u_nome,u_logradouro,u_complemento,u_bairro,u_cidade,u_estado,u_cep)VALUES('" + Convert.ToString(cc.u_usario) + "','" + Convert.ToString(cc.u_cpf) + "','" + Convert.ToString(cc.u_rg) + "','" + Convert.ToString(cc.u_senha) + "','" + Convert.ToString(cc.u_nome) + "','" + Convert.ToString(cc.u_logradouro) + "','" + Convert.ToString(cc.u_complemento) + "','" + Convert.ToString(cc.u_bairro) + "','" + Convert.ToString(cc.u_cidade) + "','" + Convert.ToString(cc.u_estado) + "','" + Convert.ToString(cc.u_cep) + "');");
+                        DataTable query = connect.RetornaSQL($"SELECT u_id FROM usuario WHERE u_cpf='{Convert.ToString(cc.u_cpf)}';");
+                        connect.ExecutaSQL($"INSERT INTO contato (ctt_id_usuario,ctt_tel,ctt_cel,ctt_email) VALUES ({query.Rows[0]["u_id"]},'{Convert.ToString(cc.ctt_tel)}','{Convert.ToString(cc.ctt_cel)}','{Convert.ToString(cc.ctt_email)}');");
+                        DataTable query2 = connect.RetornaSQL($"SELECT ctt_id FROM contato WHERE ctt_id_usuario = {query.Rows[0]["u_id"]};");
+                        connect.ExecutaSQL($"UPDATE usuario SET u_ctt_id = {query2.Rows[0]["ctt_id"]} WHERE u_cpf = '{Convert.ToString(cc.u_cpf)}';");
+                        connect.ExecutaSQL($"INSERT INTO cliente (c_id_usuario, c_profissao) VALUES ({Convert.ToInt32(query.Rows[0]["u_id"])},'{Convert.ToString(cc.c_profissao)}');");
+                        DataTable query3 = connect.RetornaSQL($"SELECT c_id FROM cliente WHERE c_id_usuario = {query.Rows[0]["u_id"]};");
+                        connect.ExecutaSQL($"UPDATE usuario SET u_id_cliente = {query3.Rows[0]["c_id"]} WHERE u_id = {Convert.ToInt32(query.Rows[0]["u_id"])};");
+                        connect.ExecutaSQL($"INSERT INTO conta_bancaria (cb_agencia, cb_id_cliente) VALUES ({cc.cb_agencia},{Convert.ToInt32(query3.Rows[0]["c_id"])});");
+                        DataTable query4 = connect.RetornaSQL($"SELECT cb_id FROM conta_bancaria WHERE cb_id_cliente = {query3.Rows[0]["c_id"]};");
+                        connect.ExecutaSQL($"INSERT INTO conta_corrente (cc_id_conta_bancaria,cc_nr_conta_corrente,cc_saldo) VALUES ({Convert.ToInt32(query4.Rows[0]["cb_id"])},{cc.cc_nr_conta_corrente},{cc.cc_saldo});");
+                        DataTable query5 = connect.RetornaSQL($"SELECT cc_id FROM conta_corrente WHERE cc_id_conta_bancaria = {Convert.ToInt32(query4.Rows[0]["cb_id"])};");
+                        connect.ExecutaSQL($"UPDATE conta_bancaria SET cb_id_conta_corrente = {Convert.ToInt32(query5.Rows[0]["cc_id"])} WHERE cb_id = {Convert.ToInt32(query4.Rows[0]["cb_id"])};");
+                        //Add cadastro nas contas bancarias
+                        LimparFormulario();
+                        MessageBox.Show("Cadastro realizado com sucesso!");
+                    } else {
+                        MessageBox.Show("Usuário e senha são obrigatórios!");
+                        return;
+                    }
+                    }
                 else if(Rdb_ContaPoupanca.Checked == true)
                 {
                     ContaPoupanca cp = new ContaPoupanca();
-                    cp = LeituraFormularioContaPoupanca();
-                    cp.ValidaClasse();
-                    cp.ValidaComplemento();
-                    connect.ExecutaSQL("INSERT INTO usuario (u_usuario, u_cpf,u_rg,u_senha,u_nome,u_logradouro,u_complemento,u_bairro,u_cidade,u_estado,u_cep)VALUES('" + Convert.ToString(cp.u_usario) + "','" + Convert.ToString(cp.u_cpf) + "','" + Convert.ToString(cp.u_rg) + "','" + Convert.ToString(cp.u_senha) + "','" + Convert.ToString(cp.u_nome) + "','" + Convert.ToString(cp.u_logradouro) + "','" + Convert.ToString(cp.u_complemento) + "','" + Convert.ToString(cp.u_bairro) + "','" + Convert.ToString(cp.u_cidade) + "','" + Convert.ToString(cp.u_estado) + "','" + Convert.ToString(cp.u_cep) + "');");
-                    DataTable query = connect.RetornaSQL($"SELECT u_id FROM usuario WHERE u_cpf='{Convert.ToString(cp.u_cpf)}';");
-                    connect.ExecutaSQL($"INSERT INTO contato (ctt_id_usuario,ctt_tel,ctt_cel,ctt_email) VALUES ({query.Rows[0]["u_id"]},'{Convert.ToString(cp.ctt_tel)}','{Convert.ToString(cp.ctt_cel)}','{Convert.ToString(cp.ctt_email)}');");
-                    DataTable query2 = connect.RetornaSQL($"SELECT ctt_id FROM contato WHERE ctt_id_usuario = {query.Rows[0]["u_id"]};");
-                    connect.ExecutaSQL($"UPDATE usuario SET u_ctt_id = {query2.Rows[0]["ctt_id"]} WHERE u_cpf = '{Convert.ToString(cp.u_cpf)}';");
-                    connect.ExecutaSQL($"INSERT INTO cliente (c_id_usuario, c_profissao) VALUES ({Convert.ToInt32(query.Rows[0]["u_id"])},'{Convert.ToString(cp.c_profissao)}');");
-                    DataTable query3 = connect.RetornaSQL($"SELECT c_id FROM cliente WHERE c_id_usuario = {query.Rows[0]["u_id"]};");
-                    connect.ExecutaSQL($"UPDATE usuario SET u_id_cliente = {query3.Rows[0]["c_id"]} WHERE u_id = {Convert.ToInt32(query.Rows[0]["u_id"])};");
-                    connect.ExecutaSQL($"INSERT INTO conta_bancaria (cb_agencia, cb_id_cliente) VALUES ({cp.cb_agencia},{Convert.ToInt32(query3.Rows[0]["c_id"])});");
-                    DataTable query4 = connect.RetornaSQL($"SELECT cb_id FROM conta_bancaria WHERE cb_id_cliente = {query3.Rows[0]["c_id"]};");
-                    connect.ExecutaSQL($"INSERT INTO conta_poupanca (cp_id_conta_bancaria,cp_nr_conta_poupanca,cp_valor) VALUES ({Convert.ToInt32(query4.Rows[0]["cb_id"])},{cp.cp_nr_conta_poupanca},{cp.cp_saldo});");
-                    DataTable query5 = connect.RetornaSQL($"SELECT cp_id FROM conta_poupanca WHERE cp_id_conta_bancaria = {Convert.ToInt32(query4.Rows[0]["cb_id"])};");
-                    connect.ExecutaSQL($"UPDATE conta_bancaria SET cb_id_conta_poupanca = {Convert.ToInt32(query5.Rows[0]["cc_id"])} WHERE cb_id = {Convert.ToInt32(query4.Rows[0]["cb_id"])};");
-                    //Add cadastro nas contas bancarias
-                    LimparFormulario();
-                    MessageBox.Show("Cadastro realizado com sucesso!");
+                    if (Txt_Usuario.Text == string.Empty || Txt_Senha.Text == string.Empty) {
+                        cp = LeituraFormularioContaPoupanca();
+                        cp.ValidaClasse();
+                        cp.ValidaComplemento();
+                        connect.ExecutaSQL("INSERT INTO usuario (u_usuario, u_cpf,u_rg,u_senha,u_nome,u_logradouro,u_complemento,u_bairro,u_cidade,u_estado,u_cep)VALUES('" + Convert.ToString(cp.u_usario) + "','" + Convert.ToString(cp.u_cpf) + "','" + Convert.ToString(cp.u_rg) + "','" + Convert.ToString(cp.u_senha) + "','" + Convert.ToString(cp.u_nome) + "','" + Convert.ToString(cp.u_logradouro) + "','" + Convert.ToString(cp.u_complemento) + "','" + Convert.ToString(cp.u_bairro) + "','" + Convert.ToString(cp.u_cidade) + "','" + Convert.ToString(cp.u_estado) + "','" + Convert.ToString(cp.u_cep) + "');");
+                        DataTable query = connect.RetornaSQL($"SELECT u_id FROM usuario WHERE u_cpf='{Convert.ToString(cp.u_cpf)}';");
+                        connect.ExecutaSQL($"INSERT INTO contato (ctt_id_usuario,ctt_tel,ctt_cel,ctt_email) VALUES ({query.Rows[0]["u_id"]},'{Convert.ToString(cp.ctt_tel)}','{Convert.ToString(cp.ctt_cel)}','{Convert.ToString(cp.ctt_email)}');");
+                        DataTable query2 = connect.RetornaSQL($"SELECT ctt_id FROM contato WHERE ctt_id_usuario = {query.Rows[0]["u_id"]};");
+                        connect.ExecutaSQL($"UPDATE usuario SET u_ctt_id = {query2.Rows[0]["ctt_id"]} WHERE u_cpf = '{Convert.ToString(cp.u_cpf)}';");
+                        connect.ExecutaSQL($"INSERT INTO cliente (c_id_usuario, c_profissao) VALUES ({Convert.ToInt32(query.Rows[0]["u_id"])},'{Convert.ToString(cp.c_profissao)}');");
+                        DataTable query3 = connect.RetornaSQL($"SELECT c_id FROM cliente WHERE c_id_usuario = {query.Rows[0]["u_id"]};");
+                        connect.ExecutaSQL($"UPDATE usuario SET u_id_cliente = {query3.Rows[0]["c_id"]} WHERE u_id = {Convert.ToInt32(query.Rows[0]["u_id"])};");
+                        connect.ExecutaSQL($"INSERT INTO conta_bancaria (cb_agencia, cb_id_cliente) VALUES ({cp.cb_agencia},{Convert.ToInt32(query3.Rows[0]["c_id"])});");
+                        DataTable query4 = connect.RetornaSQL($"SELECT cb_id FROM conta_bancaria WHERE cb_id_cliente = {query3.Rows[0]["c_id"]};");
+                        connect.ExecutaSQL($"INSERT INTO conta_poupanca (cp_id_conta_bancaria,cp_nr_conta_poupanca,cp_valor) VALUES ({Convert.ToInt32(query4.Rows[0]["cb_id"])},{cp.cp_nr_conta_poupanca},{cp.cp_saldo});");
+                        DataTable query5 = connect.RetornaSQL($"SELECT cp_id FROM conta_poupanca WHERE cp_id_conta_bancaria = {Convert.ToInt32(query4.Rows[0]["cb_id"])};");
+                        connect.ExecutaSQL($"UPDATE conta_bancaria SET cb_id_conta_poupanca = {Convert.ToInt32(query5.Rows[0]["cc_id"])} WHERE cb_id = {Convert.ToInt32(query4.Rows[0]["cb_id"])};");
+                        //Add cadastro nas contas bancarias
+                        LimparFormulario();
+                        MessageBox.Show("Cadastro realizado com sucesso!");
+                    }
                 }
 
             }

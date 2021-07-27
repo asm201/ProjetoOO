@@ -50,10 +50,10 @@
             this.Txt_Logradouro = new System.Windows.Forms.TextBox();
             this.Txt_Cidade = new System.Windows.Forms.TextBox();
             this.lbl_cidade = new System.Windows.Forms.Label();
-            this.Txt_Estado = new System.Windows.Forms.TextBox();
             this.lbl_bairro = new System.Windows.Forms.Label();
             this.lbl_estado = new System.Windows.Forms.Label();
             this.dados_cliente = new System.Windows.Forms.GroupBox();
+            this.Txt_Estado = new System.Windows.Forms.ComboBox();
             this.lblprofissao = new System.Windows.Forms.Label();
             this.Txt_Profissao = new System.Windows.Forms.TextBox();
             this.lblCEP = new System.Windows.Forms.Label();
@@ -272,15 +272,6 @@
             this.lbl_cidade.TabIndex = 62;
             this.lbl_cidade.Text = "Cidade";
             // 
-            // Txt_Estado
-            // 
-            this.Txt_Estado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_Estado.Location = new System.Drawing.Point(463, 167);
-            this.Txt_Estado.Name = "Txt_Estado";
-            this.Txt_Estado.Size = new System.Drawing.Size(167, 20);
-            this.Txt_Estado.TabIndex = 64;
-            // 
             // lbl_bairro
             // 
             this.lbl_bairro.AutoSize = true;
@@ -303,6 +294,7 @@
             // 
             this.dados_cliente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dados_cliente.Controls.Add(this.Txt_Estado);
             this.dados_cliente.Controls.Add(this.lblprofissao);
             this.dados_cliente.Controls.Add(this.Txt_Profissao);
             this.dados_cliente.Controls.Add(this.lblCEP);
@@ -318,7 +310,6 @@
             this.dados_cliente.Controls.Add(this.Txt_Saldo);
             this.dados_cliente.Controls.Add(this.lbl_estado);
             this.dados_cliente.Controls.Add(this.lbl_bairro);
-            this.dados_cliente.Controls.Add(this.Txt_Estado);
             this.dados_cliente.Controls.Add(this.Txt_Bairro);
             this.dados_cliente.Controls.Add(this.lbl_cidade);
             this.dados_cliente.Controls.Add(this.Txt_Cidade);
@@ -342,6 +333,14 @@
             this.dados_cliente.TabIndex = 1;
             this.dados_cliente.TabStop = false;
             this.dados_cliente.Text = "Dados do Cliente";
+            // 
+            // Txt_Estado
+            // 
+            this.Txt_Estado.FormattingEnabled = true;
+            this.Txt_Estado.Location = new System.Drawing.Point(463, 165);
+            this.Txt_Estado.Name = "Txt_Estado";
+            this.Txt_Estado.Size = new System.Drawing.Size(167, 21);
+            this.Txt_Estado.TabIndex = 84;
             // 
             // lblprofissao
             // 
@@ -395,6 +394,7 @@
             this.Rdb_ContaPoupanca.TabIndex = 1;
             this.Rdb_ContaPoupanca.Text = "Conta Poupança";
             this.Rdb_ContaPoupanca.UseVisualStyleBackColor = true;
+            this.Rdb_ContaPoupanca.CheckedChanged += new System.EventHandler(this.Rdb_ContaPoupanca_CheckedChanged);
             // 
             // Rdb_ContaCorrente
             // 
@@ -407,6 +407,7 @@
             this.Rdb_ContaCorrente.TabStop = true;
             this.Rdb_ContaCorrente.Text = "Conta Corrente";
             this.Rdb_ContaCorrente.UseVisualStyleBackColor = true;
+            this.Rdb_ContaCorrente.CheckedChanged += new System.EventHandler(this.Rdb_ContaCorrente_CheckedChanged);
             // 
             // Lbl_NumeroAgencia
             // 
@@ -566,7 +567,6 @@
         private System.Windows.Forms.TextBox Txt_Logradouro;
         private System.Windows.Forms.TextBox Txt_Cidade;
         private System.Windows.Forms.Label lbl_cidade;
-        private System.Windows.Forms.TextBox Txt_Estado;
         private System.Windows.Forms.Label lbl_bairro;
         private System.Windows.Forms.Label lbl_estado;
         private System.Windows.Forms.GroupBox dados_cliente;
@@ -589,5 +589,6 @@
         private System.Windows.Forms.TextBox Txt_Profissao;
         private System.Windows.Forms.TextBox Txt_Excluir;
         private System.Windows.Forms.Label lblExcluir;
+        private System.Windows.Forms.ComboBox Txt_Estado;
     }
 }
