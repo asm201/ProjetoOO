@@ -37,8 +37,8 @@ namespace BancoPaiTrocinio.User_Control
                 estado.Text = clienteCorrente.u_estado;
                 tipoConta.Text = "Conta Corrente";
                 numeroAgencia.Text = clienteCorrente.cb_agencia.ToString();
-                numeroAgencia.Text = clienteCorrente.cc_nr_conta_corrente.ToString();
-                numeroAgencia.Text = "R$" + clienteCorrente.cc_saldo.ToString();
+                numeroConta.Text = clienteCorrente.cc_nr_conta_corrente.ToString();
+                saldo.Text = "R$" + clienteCorrente.cc_saldo.ToString();
             }
             if(cc == null)
             {
@@ -59,8 +59,8 @@ namespace BancoPaiTrocinio.User_Control
                 estado.Text = clientePoupanca.u_estado;
                 tipoConta.Text = "Conta Poupança";
                 numeroAgencia.Text = clientePoupanca.cb_agencia.ToString();
-                numeroAgencia.Text = clientePoupanca.cp_nr_conta_poupanca.ToString();
-                numeroAgencia.Text = "R$" + clientePoupanca.cp_saldo.ToString();
+                numeroConta.Text = clientePoupanca.cp_nr_conta_poupanca.ToString();
+                saldo.Text = "R$" + clientePoupanca.cp_saldo.ToString();
             }
         }
     }

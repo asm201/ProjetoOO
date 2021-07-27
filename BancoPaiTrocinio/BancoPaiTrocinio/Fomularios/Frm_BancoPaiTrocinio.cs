@@ -21,6 +21,7 @@ namespace BancoPaiTrocinio
         int controleTransferir = 0;
         int controleAcessoCliente = 0;
 
+        Conexões.ConexaoMySql connect = new Conexões.ConexaoMySql();
         ContaCorrente clienteCorrente;
         ContaPoupanca clientePoupanca;
 
@@ -43,8 +44,9 @@ namespace BancoPaiTrocinio
             string login = u.login;
 
 
-            if (Cls_Uteis.ValidaSenhaLogin(senha) == true)
+            if (Cls_Uteis.ValidaLogin(senha, login) == true)
             {
+
                 conectarToolStripMenuItem.Enabled = false;
                 desconectarToolStripMenuItem.Enabled = true;
                 clienteToolStripMenuItem1.Enabled = true;
@@ -56,6 +58,22 @@ namespace BancoPaiTrocinio
                 }
 
                 MessageBox.Show("Bem vindo " + login + "!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                switch (Cls_Uteis.VerificaConta(senha, login)){
+                    case "Conta Corrente":
+                        clienteCorrente = GeraContaCorrente(senha,login);
+                        clientePoupanca = null;
+
+                        break;
+                    
+                    case "Conta Poupança":
+                        clientePoupanca = GeraContaPoupanca(senha,login);
+                        clienteCorrente = null;
+
+                        break;
+                    
+                    default:
+                        throw new NullReferenceException("Este cliente não é gay");
+                }
             }
             else
             {
@@ -64,14 +82,87 @@ namespace BancoPaiTrocinio
             }
         }
 
+        private ContaCorrente GeraContaCorrente(string senha,string login) {
+            ContaCorrente cc = new ContaCorrente();
+            DataTable query = connect.RetornaSQL(@"SELECT u.u_nome,u.u_cpf,u.u_rg,u.u_cep,u.u_logradouro,u.u_complemento,
+                                                               u.u_cidade,u.u_bairro,u.u_estado,ct.ctt_tel,ct.ctt_cel,ct.ctt_email,
+                                                               c.c_profissao,cb.cb_agencia, cc.cc_nr_conta_corrente, cc.cc_saldo,
+                                                               u.u_usuario, u.u_senha, cc.cc_id
+                                                               FROM usuario u INNER JOIN contato ct ON u.u_id = ct.ctt_id_usuario
+                                                               INNER JOIN cliente c ON u.u_id_cliente = c.c_id
+                                                               INNER JOIN conta_bancaria cb ON c.c_id = cb.cb_id_cliente
+                                                               INNER JOIN conta_corrente cc ON cb.cb_id_conta_corrente = cc.cc_id
+                                                               WHERE u.u_usuario = '" + login + "' AND u.u_senha = '" + senha + "';");
+            
+            cc.u_nome = (string)query.Rows[0][0];
+            cc.u_cpf = (string)query.Rows[0][1];
+            cc.u_rg = (string)query.Rows[0][2];
+            cc.u_cep = (string)query.Rows[0][3];
+            cc.u_logradouro = (string)query.Rows[0][4];
+            cc.u_complemento = (string)query.Rows[0][5];
+            cc.u_cidade = (string)query.Rows[0][6];
+            cc.u_bairro = (string)query.Rows[0][7];
+            cc.u_estado = (string)query.Rows[0][8];
+            cc.ctt_tel = (string)query.Rows[0][9];
+            cc.ctt_cel = (string)query.Rows[0][10];
+            cc.ctt_email = (string)query.Rows[0][11];
+            cc.c_profissao = (string)query.Rows[0][12];
+            cc.cb_agencia = (int)query.Rows[0][13];
+            cc.cc_nr_conta_corrente = (int)query.Rows[0][14];
+            cc.cc_saldo = Convert.ToDouble(query.Rows[0][15]);
+            cc.u_usario = (string)query.Rows[0][16];
+            cc.u_senha = (string)query.Rows[0][17];
+            cc.cc_id = (int)query.Rows[0][18];
+
+            return cc;
+
+        }
+
+        private ContaPoupanca GeraContaPoupanca(string senha, string login) {
+            ContaPoupanca cc = new ContaPoupanca();
+            DataTable query = connect.RetornaSQL(@"SELECT u.u_nome,u.u_cpf,u.u_rg,u.u_cep,u.u_logradouro,u.u_complemento,
+                                                               u.u_cidade,u.u_bairro,u.u_estado,ct.ctt_tel,ct.ctt_cel,ct.ctt_email,
+                                                               c.c_profissao,cb.cb_agencia, cp.cp_nr_conta_poupanca, cp.cp_valor,
+                                                               u.u_usuario, u.u_senha, cp.cp_id
+                                                               FROM usuario u INNER JOIN contato ct ON u.u_id = ct.ctt_id_usuario
+                                                               INNER JOIN cliente c ON u.u_id_cliente = c.c_id
+                                                               INNER JOIN conta_bancaria cb ON c.c_id = cb.cb_id_cliente
+                                                               INNER JOIN conta_poupanca cp ON cb.cb_id_conta_poupanca = cp.cp_id
+                                                               WHERE u.u_usuario = '" + login + "' AND u.u_senha = '" + senha + "';");
+
+            cc.u_nome = (string)query.Rows[0][0];
+            cc.u_cpf = (string)query.Rows[0][1];
+            cc.u_rg = (string)query.Rows[0][2];
+            cc.u_cep = (string)query.Rows[0][3];
+            cc.u_logradouro = (string)query.Rows[0][4];
+            cc.u_complemento = (string)query.Rows[0][5];
+            cc.u_cidade = (string)query.Rows[0][6];
+            cc.u_bairro = (string)query.Rows[0][7];
+            cc.u_estado = (string)query.Rows[0][8];
+            cc.ctt_tel = (string)query.Rows[0][9];
+            cc.ctt_cel = (string)query.Rows[0][10];
+            cc.ctt_email = (string)query.Rows[0][11];
+            cc.c_profissao = (string)query.Rows[0][12];
+            cc.cb_agencia = (int)query.Rows[0][13];
+            cc.cp_nr_conta_poupanca = (int)query.Rows[0][14];
+            cc.cp_saldo = Convert.ToDouble(query.Rows[0][15]);
+            cc.u_usario = (string)query.Rows[0][16];
+            cc.u_senha = (string)query.Rows[0][17];
+            cc.cp_id = (int)query.Rows[0][18];
+
+            return cc;
+
+        }
+
         private void gerenteDeContasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Frm_Login u = new Frm_Login();
             u.ShowDialog();
             string senha = u.senha;
             string login = u.login;
+            string funcao = "Gerente de Contas";
 
-            if (Cls_Uteis.ValidaSenhaLogin(senha) == true)
+            if (Cls_Uteis.ValidaLogin(senha, login) == true && Cls_Uteis.ValidaFuncao(senha, login, funcao))
             {
                 conectarToolStripMenuItem.Enabled = false;
                 desconectarToolStripMenuItem.Enabled = true;
@@ -87,7 +178,7 @@ namespace BancoPaiTrocinio
             }
             else
             {
-                MessageBox.Show("Senha Invalida!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Login inválido! Por favor, verifique se está logando no campo correto.", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -98,8 +189,9 @@ namespace BancoPaiTrocinio
             u.ShowDialog();
             string senha = u.senha;
             string login = u.login;
+            string funcao = "Diretor";
 
-            if (Cls_Uteis.ValidaSenhaLogin(senha) == true)
+            if (Cls_Uteis.ValidaLogin(senha,login) == true && Cls_Uteis.ValidaFuncao(senha, login, funcao)==true)
             {
                 conectarToolStripMenuItem.Enabled = false;
                 desconectarToolStripMenuItem.Enabled = true;
@@ -115,7 +207,7 @@ namespace BancoPaiTrocinio
             }
             else
             {
-                MessageBox.Show("Senha Invalida!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Login inválido! Por favor, verifique se está logando no campo correto.", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }
@@ -276,13 +368,14 @@ namespace BancoPaiTrocinio
             if (controleVerDados == 0)
             {
                 controleVerDados++;
-                VerDados u = new VerDados();
+                VerDados u = new VerDados(clientePoupanca, clienteCorrente);
                 TabPage tb = new TabPage();
                 u.Dock = DockStyle.Fill;
                 tb.Name = "Ver Dados";
                 tb.Text = "Ver Dados";
                 tb.Controls.Add(u);
                 Tbc_Aplicacoes.TabPages.Add(tb);
+
             }
             else
             {
@@ -295,7 +388,7 @@ namespace BancoPaiTrocinio
             if (controleDepositar == 0)
             {
                 controleDepositar++;
-                Deposito u = new Deposito();
+                Deposito u = new Deposito(clientePoupanca, clienteCorrente);
                 TabPage tb = new TabPage();
                 u.Dock = DockStyle.Fill;
                 tb.Name = "Depositar";
@@ -314,7 +407,7 @@ namespace BancoPaiTrocinio
             if (controleTransferir == 0)
             {
                 controleTransferir++;
-                Transferencia u = new Transferencia();
+                Transferencia u = new Transferencia(clientePoupanca, clienteCorrente);
                 TabPage tb = new TabPage();
                 u.Dock = DockStyle.Fill;
                 tb.Name = "Transferencia";

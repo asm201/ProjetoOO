@@ -47,10 +47,10 @@ namespace BancoPaiTrocinio.User_Control {
             this.Txt_Cidade = new System.Windows.Forms.TextBox();
             this.lbl_cidade = new System.Windows.Forms.Label();
             this.Txt_Bairro = new System.Windows.Forms.TextBox();
-            this.Txt_Estado = new System.Windows.Forms.TextBox();
             this.lbl_bairro = new System.Windows.Forms.Label();
             this.lbl_estado = new System.Windows.Forms.Label();
             this.dados_func = new System.Windows.Forms.GroupBox();
+            this.Txt_Estado = new System.Windows.Forms.ComboBox();
             this.Txt_Funcao = new System.Windows.Forms.ComboBox();
             this.lbl_CEP = new System.Windows.Forms.Label();
             this.Txt_CEP = new System.Windows.Forms.TextBox();
@@ -273,15 +273,6 @@ namespace BancoPaiTrocinio.User_Control {
             this.Txt_Bairro.Size = new System.Drawing.Size(171, 20);
             this.Txt_Bairro.TabIndex = 63;
             // 
-            // Txt_Estado
-            // 
-            this.Txt_Estado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Txt_Estado.Location = new System.Drawing.Point(463, 245);
-            this.Txt_Estado.Name = "Txt_Estado";
-            this.Txt_Estado.Size = new System.Drawing.Size(167, 20);
-            this.Txt_Estado.TabIndex = 64;
-            // 
             // lbl_bairro
             // 
             this.lbl_bairro.AutoSize = true;
@@ -304,6 +295,7 @@ namespace BancoPaiTrocinio.User_Control {
             // 
             this.dados_func.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dados_func.Controls.Add(this.Txt_Estado);
             this.dados_func.Controls.Add(this.Txt_Funcao);
             this.dados_func.Controls.Add(this.lbl_CEP);
             this.dados_func.Controls.Add(this.Txt_CEP);
@@ -320,7 +312,6 @@ namespace BancoPaiTrocinio.User_Control {
             this.dados_func.Controls.Add(this.Txt_Salario);
             this.dados_func.Controls.Add(this.lbl_estado);
             this.dados_func.Controls.Add(this.lbl_bairro);
-            this.dados_func.Controls.Add(this.Txt_Estado);
             this.dados_func.Controls.Add(this.Txt_Bairro);
             this.dados_func.Controls.Add(this.lbl_cidade);
             this.dados_func.Controls.Add(this.Txt_Cidade);
@@ -344,6 +335,16 @@ namespace BancoPaiTrocinio.User_Control {
             this.dados_func.TabIndex = 1;
             this.dados_func.TabStop = false;
             this.dados_func.Text = "Dados do Funcionário";
+            // 
+            // Txt_Estado
+            // 
+            this.Txt_Estado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Txt_Estado.FormattingEnabled = true;
+            this.Txt_Estado.Location = new System.Drawing.Point(463, 245);
+            this.Txt_Estado.Name = "Txt_Estado";
+            this.Txt_Estado.Size = new System.Drawing.Size(167, 21);
+            this.Txt_Estado.TabIndex = 82;
             // 
             // Txt_Funcao
             // 
@@ -486,8 +487,7 @@ namespace BancoPaiTrocinio.User_Control {
             // 
             // Txt_Excluir
             // 
-            this.Txt_Excluir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Txt_Excluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Excluir.Location = new System.Drawing.Point(669, 225);
             this.Txt_Excluir.Name = "Txt_Excluir";
             this.Txt_Excluir.Size = new System.Drawing.Size(109, 20);
@@ -495,8 +495,7 @@ namespace BancoPaiTrocinio.User_Control {
             // 
             // lblExcluir
             // 
-            this.lblExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblExcluir.AutoSize = true;
             this.lblExcluir.Location = new System.Drawing.Point(669, 208);
             this.lblExcluir.Name = "lblExcluir";
@@ -557,7 +556,6 @@ namespace BancoPaiTrocinio.User_Control {
         private System.Windows.Forms.TextBox Txt_Cidade;
         private System.Windows.Forms.Label lbl_cidade;
         private System.Windows.Forms.TextBox Txt_Bairro;
-        private System.Windows.Forms.TextBox Txt_Estado;
         private System.Windows.Forms.Label lbl_bairro;
         private System.Windows.Forms.Label lbl_estado;
         private System.Windows.Forms.GroupBox dados_func;
@@ -578,5 +576,6 @@ namespace BancoPaiTrocinio.User_Control {
         private System.Windows.Forms.ComboBox Txt_Funcao;
         private System.Windows.Forms.TextBox Txt_Excluir;
         private System.Windows.Forms.Label lblExcluir;
+        private System.Windows.Forms.ComboBox Txt_Estado;
     }
 }
