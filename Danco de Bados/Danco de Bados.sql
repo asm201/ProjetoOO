@@ -6,6 +6,7 @@ CREATE TABLE usuario (
 	u_nome VARCHAR(100) NOT NULL,
     u_logradouro VARCHAR(200),
     u_complemento VARCHAR(200),
+	u_usuario VARCHAR(50),
     u_bairro VARCHAR(100),
     u_cidade VARCHAR(50),
     u_estado VARCHAR(50),
